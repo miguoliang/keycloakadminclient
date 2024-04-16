@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "generate:keycloak": "../node_modules/.bin/openapi-generator-cli generate --skip-validate-spec -i keycloak.yaml -g go -o ../ --package-name=keycloakadminclient --git-repo-id=keycloakadminclient --git-user-id=miguoliang"
+  },
+  "devDependencies": {
+    "@openapitools/openapi-generator-cli": "^2.13.2"
+  }
+}

@@ -19,46 +19,46 @@ import (
 	"strings"
 )
 
-
 // DefaultAPIService DefaultAPI service
 type DefaultAPIService service
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest) Execute() (*ResourceServerRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest) Execute() (*ResourceServerRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return ResourceServerRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest) (*ResourceServerRepresentation, *http.Response, error) {
+//
+//	@return ResourceServerRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerGetRequest) (*ResourceServerRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResourceServerRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResourceServerRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerGet")
@@ -128,46 +128,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest struct {
+	ctx                          context.Context
+	ApiService                   *DefaultAPIService
+	realm                        string
+	clientUuid                   string
 	resourceServerRepresentation *ResourceServerRepresentation
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest) ResourceServerRepresentation(resourceServerRepresentation ResourceServerRepresentation) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest) ResourceServerRepresentation(resourceServerRepresentation ResourceServerRepresentation) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest {
 	r.resourceServerRepresentation = &resourceServerRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerImportPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerImportPost")
@@ -230,48 +230,49 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest struct {
+	ctx                     context.Context
+	ApiService              *DefaultAPIService
+	realm                   string
+	clientUuid              string
 	policyEvaluationRequest *PolicyEvaluationRequest
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest) PolicyEvaluationRequest(policyEvaluationRequest PolicyEvaluationRequest) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest) PolicyEvaluationRequest(policyEvaluationRequest PolicyEvaluationRequest) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest {
 	r.policyEvaluationRequest = &policyEvaluationRequest
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest) Execute() (*PolicyEvaluationResponse, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest) Execute() (*PolicyEvaluationResponse, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyEvaluationResponse
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest) (*PolicyEvaluationResponse, *http.Response, error) {
+//
+//	@return PolicyEvaluationResponse
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePostRequest) (*PolicyEvaluationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyEvaluationResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyEvaluationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionEvaluatePost")
@@ -343,102 +344,103 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	fields *string
-	first *int32
-	max *int32
-	name *string
-	owner *string
+	fields     *string
+	first      *int32
+	max        *int32
+	name       *string
+	owner      *string
 	permission *bool
-	policyId *string
-	resource *string
-	scope *string
-	type_ *string
+	policyId   *string
+	resource   *string
+	scope      *string
+	type_      *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Fields(fields string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Fields(fields string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Permission(permission bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Permission(permission bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.permission = &permission
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) PolicyId(policyId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) PolicyId(policyId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.policyId = &policyId
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Resource(resource string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Resource(resource string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.resource = &resource
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Execute() ([]AbstractPolicyRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) Execute() ([]AbstractPolicyRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []AbstractPolicyRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) ([]AbstractPolicyRepresentation, *http.Response, error) {
+//
+//	@return []AbstractPolicyRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGetRequest) ([]AbstractPolicyRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AbstractPolicyRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AbstractPolicyRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionGet")
@@ -538,46 +540,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	body *string
+	body       *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest) Body(body string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest) Body(body string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionPost")
@@ -640,42 +642,43 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest) Execute() ([]PolicyProviderRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest) Execute() ([]PolicyProviderRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []PolicyProviderRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest) ([]PolicyProviderRepresentation, *http.Response, error) {
+//
+//	@return []PolicyProviderRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGetRequest) ([]PolicyProviderRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PolicyProviderRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PolicyProviderRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionProvidersGet")
@@ -745,54 +748,55 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	fields *string
-	name *string
+	fields     *string
+	name       *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) Fields(fields string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) Fields(fields string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) Execute() (*AbstractPolicyRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) Execute() (*AbstractPolicyRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return AbstractPolicyRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) (*AbstractPolicyRepresentation, *http.Response, error) {
+//
+//	@return AbstractPolicyRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGetRequest) (*AbstractPolicyRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AbstractPolicyRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AbstractPolicyRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPermissionSearchGet")
@@ -868,48 +872,49 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest struct {
+	ctx                     context.Context
+	ApiService              *DefaultAPIService
+	realm                   string
+	clientUuid              string
 	policyEvaluationRequest *PolicyEvaluationRequest
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest) PolicyEvaluationRequest(policyEvaluationRequest PolicyEvaluationRequest) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest) PolicyEvaluationRequest(policyEvaluationRequest PolicyEvaluationRequest) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest {
 	r.policyEvaluationRequest = &policyEvaluationRequest
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest) Execute() (*PolicyEvaluationResponse, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest) Execute() (*PolicyEvaluationResponse, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return PolicyEvaluationResponse
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest) (*PolicyEvaluationResponse, *http.Response, error) {
+//
+//	@return PolicyEvaluationResponse
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePostRequest) (*PolicyEvaluationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PolicyEvaluationResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PolicyEvaluationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyEvaluatePost")
@@ -981,102 +986,103 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	fields *string
-	first *int32
-	max *int32
-	name *string
-	owner *string
+	fields     *string
+	first      *int32
+	max        *int32
+	name       *string
+	owner      *string
 	permission *bool
-	policyId *string
-	resource *string
-	scope *string
-	type_ *string
+	policyId   *string
+	resource   *string
+	scope      *string
+	type_      *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Fields(fields string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Fields(fields string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Permission(permission bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Permission(permission bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.permission = &permission
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) PolicyId(policyId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) PolicyId(policyId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.policyId = &policyId
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Resource(resource string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Resource(resource string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.resource = &resource
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Execute() ([]AbstractPolicyRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) Execute() ([]AbstractPolicyRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []AbstractPolicyRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) ([]AbstractPolicyRepresentation, *http.Response, error) {
+//
+//	@return []AbstractPolicyRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGetRequest) ([]AbstractPolicyRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []AbstractPolicyRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []AbstractPolicyRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyGet")
@@ -1176,46 +1182,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	body *string
+	body       *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest) Body(body string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest) Body(body string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyPost")
@@ -1278,42 +1284,43 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest) Execute() ([]PolicyProviderRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest) Execute() ([]PolicyProviderRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []PolicyProviderRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest) ([]PolicyProviderRepresentation, *http.Response, error) {
+//
+//	@return []PolicyProviderRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGetRequest) ([]PolicyProviderRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PolicyProviderRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PolicyProviderRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicyProvidersGet")
@@ -1383,54 +1390,55 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	fields *string
-	name *string
+	fields     *string
+	name       *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) Fields(fields string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) Fields(fields string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest {
 	r.fields = &fields
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) Execute() (*AbstractPolicyRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) Execute() (*AbstractPolicyRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return AbstractPolicyRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) (*AbstractPolicyRepresentation, *http.Response, error) {
+//
+//	@return AbstractPolicyRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGetRequest) (*AbstractPolicyRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *AbstractPolicyRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *AbstractPolicyRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPolicySearchGet")
@@ -1506,46 +1514,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest struct {
+	ctx                          context.Context
+	ApiService                   *DefaultAPIService
+	realm                        string
+	clientUuid                   string
 	resourceServerRepresentation *ResourceServerRepresentation
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest) ResourceServerRepresentation(resourceServerRepresentation ResourceServerRepresentation) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest) ResourceServerRepresentation(resourceServerRepresentation ResourceServerRepresentation) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest {
 	r.resourceServerRepresentation = &resourceServerRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPutExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerPut Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerPut
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPut(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPut(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPutExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerPutExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerPut")
@@ -1608,108 +1616,109 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+	max         *int32
+	name        *string
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Execute() ([]ResourceRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) Execute() ([]ResourceRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []ResourceRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) ([]ResourceRepresentation, *http.Response, error) {
+//
+//	@return []ResourceRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGetRequest) ([]ResourceRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ResourceRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ResourceRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceGet")
@@ -1812,114 +1821,115 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
-	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest struct {
+	ctx                    context.Context
+	ApiService             *DefaultAPIService
+	realm                  string
+	clientUuid             string
+	id                     *string
+	deep                   *bool
+	exactName              *bool
+	first                  *int32
+	matchingUri            *bool
+	max                    *int32
+	name                   *string
+	owner                  *string
+	scope                  *string
+	type_                  *string
+	uri                    *string
 	resourceRepresentation *ResourceRepresentation
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) ResourceRepresentation(resourceRepresentation ResourceRepresentation) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) ResourceRepresentation(resourceRepresentation ResourceRepresentation) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
 	r.resourceRepresentation = &resourceRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Execute() (*ResourceRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) Execute() (*ResourceRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return ResourceRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) (*ResourceRepresentation, *http.Response, error) {
+//
+//	@return ResourceRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePostRequest) (*ResourceRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResourceRepresentation
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResourceRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourcePost")
@@ -2024,109 +2034,109 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	resourceId string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	resourceId  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+	max         *int32
+	name        *string
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param resourceId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param resourceId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGet(ctx context.Context, realm string, clientUuid string, resourceId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGet(ctx context.Context, realm string, clientUuid string, resourceId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 		resourceId: resourceId,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGetRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdAttributesGet")
@@ -2221,109 +2231,109 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	resourceId string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	resourceId  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+	max         *int32
+	name        *string
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDelete Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDelete
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param resourceId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param resourceId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDelete(ctx context.Context, realm string, clientUuid string, resourceId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDelete(ctx context.Context, realm string, clientUuid string, resourceId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 		resourceId: resourceId,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdDelete")
@@ -2418,111 +2428,112 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	resourceId string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	resourceId  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+	max         *int32
+	name        *string
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Execute() (*ResourceRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) Execute() (*ResourceRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param resourceId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param resourceId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGet(ctx context.Context, realm string, clientUuid string, resourceId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGet(ctx context.Context, realm string, clientUuid string, resourceId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 		resourceId: resourceId,
 	}
 }
 
 // Execute executes the request
-//  @return ResourceRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) (*ResourceRepresentation, *http.Response, error) {
+//
+//	@return ResourceRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGetRequest) (*ResourceRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResourceRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResourceRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdGet")
@@ -2626,111 +2637,112 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	resourceId string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	resourceId  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+	max         *int32
+	name        *string
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Execute() ([]PolicyRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) Execute() ([]PolicyRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param resourceId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param resourceId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGet(ctx context.Context, realm string, clientUuid string, resourceId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGet(ctx context.Context, realm string, clientUuid string, resourceId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 		resourceId: resourceId,
 	}
 }
 
 // Execute executes the request
-//  @return []PolicyRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) ([]PolicyRepresentation, *http.Response, error) {
+//
+//	@return []PolicyRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGetRequest) ([]PolicyRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PolicyRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PolicyRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPermissionsGet")
@@ -2834,115 +2846,115 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	resourceId string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
-	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest struct {
+	ctx                    context.Context
+	ApiService             *DefaultAPIService
+	realm                  string
+	clientUuid             string
+	resourceId             string
+	id                     *string
+	deep                   *bool
+	exactName              *bool
+	first                  *int32
+	matchingUri            *bool
+	max                    *int32
+	name                   *string
+	owner                  *string
+	scope                  *string
+	type_                  *string
+	uri                    *string
 	resourceRepresentation *ResourceRepresentation
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) ResourceRepresentation(resourceRepresentation ResourceRepresentation) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) ResourceRepresentation(resourceRepresentation ResourceRepresentation) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
 	r.resourceRepresentation = &resourceRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPut Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPut
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param resourceId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param resourceId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPut(ctx context.Context, realm string, clientUuid string, resourceId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPut(ctx context.Context, realm string, clientUuid string, resourceId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 		resourceId: resourceId,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdPut")
@@ -3039,111 +3051,112 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	resourceId string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	resourceId  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	name *string
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
+	max         *int32
+	name        *string
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Execute() ([]ScopeRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) Execute() ([]ScopeRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param resourceId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param resourceId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGet(ctx context.Context, realm string, clientUuid string, resourceId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGet(ctx context.Context, realm string, clientUuid string, resourceId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 		resourceId: resourceId,
 	}
 }
 
 // Execute executes the request
-//  @return []ScopeRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) ([]ScopeRepresentation, *http.Response, error) {
+//
+//	@return []ScopeRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGetRequest) ([]ScopeRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ScopeRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ScopeRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceResourceIdScopesGet")
@@ -3247,108 +3260,109 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	id *string
-	deep *bool
-	exactName *bool
-	first *int32
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest struct {
+	ctx         context.Context
+	ApiService  *DefaultAPIService
+	realm       string
+	clientUuid  string
+	id          *string
+	deep        *bool
+	exactName   *bool
+	first       *int32
 	matchingUri *bool
-	max *int32
-	owner *string
-	scope *string
-	type_ *string
-	uri *string
-	name *string
+	max         *int32
+	owner       *string
+	scope       *string
+	type_       *string
+	uri         *string
+	name        *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Id(id string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Id(id string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.id = &id
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Deep(deep bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Deep(deep bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.deep = &deep
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) ExactName(exactName bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) ExactName(exactName bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.exactName = &exactName
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) MatchingUri(matchingUri bool) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) MatchingUri(matchingUri bool) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.matchingUri = &matchingUri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Owner(owner string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Owner(owner string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.owner = &owner
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Scope(scope string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Scope(scope string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.scope = &scope
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Type_(type_ string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Type_(type_ string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Uri(uri string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Uri(uri string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.uri = &uri
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Execute() (*ResourceRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) Execute() (*ResourceRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return ResourceRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) (*ResourceRepresentation, *http.Response, error) {
+//
+//	@return ResourceRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGetRequest) (*ResourceRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResourceRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResourceRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerResourceSearchGet")
@@ -3451,66 +3465,67 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	first *int32
-	max *int32
-	name *string
-	scopeId *string
+	first      *int32
+	max        *int32
+	name       *string
+	scopeId    *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) First(first int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) First(first int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) Max(max int32) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) Max(max int32) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) ScopeId(scopeId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) ScopeId(scopeId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
 	r.scopeId = &scopeId
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) Execute() ([]ScopeRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) Execute() ([]ScopeRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []ScopeRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) ([]ScopeRepresentation, *http.Response, error) {
+//
+//	@return []ScopeRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGetRequest) ([]ScopeRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ScopeRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ScopeRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeGet")
@@ -3592,46 +3607,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest struct {
+	ctx                 context.Context
+	ApiService          *DefaultAPIService
+	realm               string
+	clientUuid          string
 	scopeRepresentation *ScopeRepresentation
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest) ScopeRepresentation(scopeRepresentation ScopeRepresentation) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest) ScopeRepresentation(scopeRepresentation ScopeRepresentation) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest {
 	r.scopeRepresentation = &scopeRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePost Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePost(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePost(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopePostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopePost")
@@ -3694,43 +3709,43 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	scopeId string
+	scopeId    string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDelete Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDelete
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param scopeId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param scopeId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDelete(ctx context.Context, realm string, clientUuid string, scopeId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDelete(ctx context.Context, realm string, clientUuid string, scopeId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
-		scopeId: scopeId,
+		scopeId:    scopeId,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdDelete")
@@ -3792,45 +3807,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	scopeId string
+	scopeId    string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest) Execute() (*ScopeRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest) Execute() (*ScopeRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param scopeId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param scopeId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGet(ctx context.Context, realm string, clientUuid string, scopeId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGet(ctx context.Context, realm string, clientUuid string, scopeId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
-		scopeId: scopeId,
+		scopeId:    scopeId,
 	}
 }
 
 // Execute executes the request
-//  @return ScopeRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest) (*ScopeRepresentation, *http.Response, error) {
+//
+//	@return ScopeRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGetRequest) (*ScopeRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ScopeRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ScopeRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdGet")
@@ -3901,45 +3917,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	scopeId string
+	scopeId    string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest) Execute() ([]PolicyRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest) Execute() ([]PolicyRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param scopeId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param scopeId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGet(ctx context.Context, realm string, clientUuid string, scopeId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGet(ctx context.Context, realm string, clientUuid string, scopeId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
-		scopeId: scopeId,
+		scopeId:    scopeId,
 	}
 }
 
 // Execute executes the request
-//  @return []PolicyRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest) ([]PolicyRepresentation, *http.Response, error) {
+//
+//	@return []PolicyRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGetRequest) ([]PolicyRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []PolicyRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []PolicyRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPermissionsGet")
@@ -4010,49 +4027,49 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest struct {
-	ctx context.Context
-	ApiService *DefaultAPIService
-	realm string
-	clientUuid string
-	scopeId string
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest struct {
+	ctx                 context.Context
+	ApiService          *DefaultAPIService
+	realm               string
+	clientUuid          string
+	scopeId             string
 	scopeRepresentation *ScopeRepresentation
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest) ScopeRepresentation(scopeRepresentation ScopeRepresentation) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest) ScopeRepresentation(scopeRepresentation ScopeRepresentation) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest {
 	r.scopeRepresentation = &scopeRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest) Execute() (*http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPut Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPut
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param scopeId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param scopeId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPut(ctx context.Context, realm string, clientUuid string, scopeId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPut(ctx context.Context, realm string, clientUuid string, scopeId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
-		scopeId: scopeId,
+		scopeId:    scopeId,
 	}
 }
 
 // Execute executes the request
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest) (*http.Response, error) {
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdPut")
@@ -4116,45 +4133,46 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	scopeId string
+	scopeId    string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest) Execute() ([]ResourceRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest) Execute() ([]ResourceRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @param scopeId
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@param scopeId
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGet(ctx context.Context, realm string, clientUuid string, scopeId string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGet(ctx context.Context, realm string, clientUuid string, scopeId string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
-		scopeId: scopeId,
+		scopeId:    scopeId,
 	}
 }
 
 // Execute executes the request
-//  @return []ResourceRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest) ([]ResourceRepresentation, *http.Response, error) {
+//
+//	@return []ResourceRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGetRequest) ([]ResourceRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ResourceRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ResourceRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeScopeIdResourcesGet")
@@ -4225,48 +4243,49 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
-	name *string
+	name       *string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest) Name(name string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest) Name(name string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest) Execute() ([]ScopeRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest) Execute() ([]ScopeRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return []ScopeRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest) ([]ScopeRepresentation, *http.Response, error) {
+//
+//	@return []ScopeRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGetRequest) ([]ScopeRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ScopeRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ScopeRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerScopeSearchGet")
@@ -4339,42 +4358,43 @@ func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest struct {
-	ctx context.Context
+type DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest struct {
+	ctx        context.Context
 	ApiService *DefaultAPIService
-	realm string
+	realm      string
 	clientUuid string
 }
 
-func (r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest) Execute() (*ResourceServerRepresentation, *http.Response, error) {
+func (r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest) Execute() (*ResourceServerRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetExecute(r)
 }
 
 /*
 AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGet Method for AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param clientUuid id of client (not client-id!)
+	@return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest
 */
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGet(ctx context.Context, realm string, clientUuid string) ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest {
-	return ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest{
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGet(ctx context.Context, realm string, clientUuid string) DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest {
+	return DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//  @return ResourceServerRepresentation
-func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetExecute(r ApiAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest) (*ResourceServerRepresentation, *http.Response, error) {
+//
+//	@return ResourceServerRepresentation
+func (a *DefaultAPIService) AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetExecute(r DefaultAPIAdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGetRequest) (*ResourceServerRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ResourceServerRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ResourceServerRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DefaultAPIService.AdminRealmsRealmClientsClientUuidAuthzResourceServerSettingsGet")

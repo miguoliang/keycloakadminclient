@@ -20,8 +20,8 @@ type KeyUse string
 
 // List of KeyUse
 const (
-	SIG KeyUse = "SIG"
-	ENC KeyUse = "ENC"
+	KEYUSE_SIG KeyUse = "SIG"
+	KEYUSE_ENC KeyUse = "ENC"
 )
 
 // All allowed values of KeyUse enum
@@ -108,4 +108,3 @@ func (v *NullableKeyUse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

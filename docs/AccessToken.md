@@ -40,7 +40,6 @@ Name | Type | Description | Notes
 **ClaimsLocales** | Pointer to **string** |  | [optional] 
 **Acr** | Pointer to **string** |  | [optional] 
 **SHash** | Pointer to **string** |  | [optional] 
-**AuthTime** | Pointer to **int32** |  | [optional] 
 **Sid** | Pointer to **string** |  | [optional] 
 **TrustedCerts** | Pointer to **[]string** |  | [optional] 
 **AllowedOrigins** | Pointer to **[]string** |  | [optional] 
@@ -968,31 +967,6 @@ SetSHash sets SHash field to given value.
 `func (o *AccessToken) HasSHash() bool`
 
 HasSHash returns a boolean if a field has been set.
-
-### GetAuthTime
-
-`func (o *AccessToken) GetAuthTime() int32`
-
-GetAuthTime returns the AuthTime field if non-nil, zero value otherwise.
-
-### GetAuthTimeOk
-
-`func (o *AccessToken) GetAuthTimeOk() (*int32, bool)`
-
-GetAuthTimeOk returns a tuple with the AuthTime field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuthTime
-
-`func (o *AccessToken) SetAuthTime(v int32)`
-
-SetAuthTime sets AuthTime field to given value.
-
-### HasAuthTime
-
-`func (o *AccessToken) HasAuthTime() bool`
-
-HasAuthTime returns a boolean if a field has been set.
 
 ### GetSid
 

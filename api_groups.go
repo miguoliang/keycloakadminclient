@@ -19,55 +19,55 @@ import (
 	"strings"
 )
 
-
 // GroupsAPIService GroupsAPI service
 type GroupsAPIService service
 
-type ApiAdminRealmsRealmGroupsCountGetRequest struct {
-	ctx context.Context
+type GroupsAPIAdminRealmsRealmGroupsCountGetRequest struct {
+	ctx        context.Context
 	ApiService *GroupsAPIService
-	realm string
-	search *string
-	top *bool
+	realm      string
+	search     *string
+	top        *bool
 }
 
-func (r ApiAdminRealmsRealmGroupsCountGetRequest) Search(search string) ApiAdminRealmsRealmGroupsCountGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsCountGetRequest) Search(search string) GroupsAPIAdminRealmsRealmGroupsCountGetRequest {
 	r.search = &search
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsCountGetRequest) Top(top bool) ApiAdminRealmsRealmGroupsCountGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsCountGetRequest) Top(top bool) GroupsAPIAdminRealmsRealmGroupsCountGetRequest {
 	r.top = &top
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsCountGetRequest) Execute() (map[string]int64, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsCountGetRequest) Execute() (map[string]int64, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsCountGetExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsCountGet Returns the groups counts.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return ApiAdminRealmsRealmGroupsCountGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@return GroupsAPIAdminRealmsRealmGroupsCountGetRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsCountGet(ctx context.Context, realm string) ApiAdminRealmsRealmGroupsCountGetRequest {
-	return ApiAdminRealmsRealmGroupsCountGetRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsCountGet(ctx context.Context, realm string) GroupsAPIAdminRealmsRealmGroupsCountGetRequest {
+	return GroupsAPIAdminRealmsRealmGroupsCountGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]int64
-func (a *GroupsAPIService) AdminRealmsRealmGroupsCountGetExecute(r ApiAdminRealmsRealmGroupsCountGetRequest) (map[string]int64, *http.Response, error) {
+//
+//	@return map[string]int64
+func (a *GroupsAPIService) AdminRealmsRealmGroupsCountGetExecute(r GroupsAPIAdminRealmsRealmGroupsCountGetRequest) (map[string]int64, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]int64
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]int64
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsCountGet")
@@ -145,81 +145,82 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsCountGetExecute(r ApiAdminRealm
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGetRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
+type GroupsAPIAdminRealmsRealmGroupsGetRequest struct {
+	ctx                 context.Context
+	ApiService          *GroupsAPIService
+	realm               string
 	briefRepresentation *bool
-	exact *bool
-	first *int32
-	max *int32
-	populateHierarchy *bool
-	q *string
-	search *string
+	exact               *bool
+	first               *int32
+	max                 *int32
+	populateHierarchy   *bool
+	q                   *string
+	search              *string
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) BriefRepresentation(briefRepresentation bool) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) BriefRepresentation(briefRepresentation bool) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.briefRepresentation = &briefRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) Exact(exact bool) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) Exact(exact bool) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.exact = &exact
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) First(first int32) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) First(first int32) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) Max(max int32) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) Max(max int32) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) PopulateHierarchy(populateHierarchy bool) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) PopulateHierarchy(populateHierarchy bool) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.populateHierarchy = &populateHierarchy
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) Q(q string) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) Q(q string) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.q = &q
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) Search(search string) ApiAdminRealmsRealmGroupsGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) Search(search string) GroupsAPIAdminRealmsRealmGroupsGetRequest {
 	r.search = &search
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGetRequest) Execute() ([]GroupRepresentation, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGetRequest) Execute() ([]GroupRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGetExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGet Get group hierarchy.  Only name and ids are returned.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return ApiAdminRealmsRealmGroupsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@return GroupsAPIAdminRealmsRealmGroupsGetRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGet(ctx context.Context, realm string) ApiAdminRealmsRealmGroupsGetRequest {
-	return ApiAdminRealmsRealmGroupsGetRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGet(ctx context.Context, realm string) GroupsAPIAdminRealmsRealmGroupsGetRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 	}
 }
 
 // Execute executes the request
-//  @return []GroupRepresentation
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGetExecute(r ApiAdminRealmsRealmGroupsGetRequest) ([]GroupRepresentation, *http.Response, error) {
+//
+//	@return []GroupRepresentation
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGetExecute(r GroupsAPIAdminRealmsRealmGroupsGetRequest) ([]GroupRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []GroupRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []GroupRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGet")
@@ -318,60 +319,61 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGetExecute(r ApiAdminRealmsReal
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
-	groupId string
+type GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest struct {
+	ctx                 context.Context
+	ApiService          *GroupsAPIService
+	realm               string
+	groupId             string
 	briefRepresentation *bool
-	first *int32
-	max *int32
+	first               *int32
+	max                 *int32
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest) BriefRepresentation(briefRepresentation bool) ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest) BriefRepresentation(briefRepresentation bool) GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
 	r.briefRepresentation = &briefRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest) First(first int32) ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest) First(first int32) GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
 	r.first = &first
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest) Max(max int32) ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest) Max(max int32) GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest) Execute() ([]GroupRepresentation, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest) Execute() ([]GroupRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdChildrenGetExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdChildrenGet Return a paginated list of subgroups that have a parent group corresponding to the group on the URL
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenGet(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenGet(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return []GroupRepresentation
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenGetExecute(r ApiAdminRealmsRealmGroupsGroupIdChildrenGetRequest) ([]GroupRepresentation, *http.Response, error) {
+//
+//	@return []GroupRepresentation
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenGetExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenGetRequest) ([]GroupRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []GroupRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []GroupRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdChildrenGet")
@@ -453,20 +455,20 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenGetExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
-	groupId string
+type GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest struct {
+	ctx                 context.Context
+	ApiService          *GroupsAPIService
+	realm               string
+	groupId             string
 	groupRepresentation *GroupRepresentation
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest) GroupRepresentation(groupRepresentation GroupRepresentation) ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest) GroupRepresentation(groupRepresentation GroupRepresentation) GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest {
 	r.groupRepresentation = &groupRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdChildrenPostExecute(r)
 }
 
@@ -475,26 +477,26 @@ AdminRealmsRealmGroupsGroupIdChildrenPost Set or create child.
 
 This will just set the parent if it exists. Create it and set the parent if the group doesnâ€™t exist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenPost(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenPost(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenPostExecute(r ApiAdminRealmsRealmGroupsGroupIdChildrenPostRequest) (*http.Response, error) {
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenPostExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdChildrenPost")
@@ -557,40 +559,40 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdChildrenPostExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdDeleteRequest struct {
-	ctx context.Context
+type GroupsAPIAdminRealmsRealmGroupsGroupIdDeleteRequest struct {
+	ctx        context.Context
 	ApiService *GroupsAPIService
-	realm string
-	groupId string
+	realm      string
+	groupId    string
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdDeleteRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdDeleteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdDeleteExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdDelete Method for AdminRealmsRealmGroupsGroupIdDelete
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdDeleteRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdDelete(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdDeleteRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdDeleteRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdDelete(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdDeleteRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdDeleteExecute(r ApiAdminRealmsRealmGroupsGroupIdDeleteRequest) (*http.Response, error) {
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdDeleteExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdDelete")
@@ -651,42 +653,43 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdDeleteExecute(r ApiAdmin
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdGetRequest struct {
-	ctx context.Context
+type GroupsAPIAdminRealmsRealmGroupsGroupIdGetRequest struct {
+	ctx        context.Context
 	ApiService *GroupsAPIService
-	realm string
-	groupId string
+	realm      string
+	groupId    string
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdGetRequest) Execute() (*GroupRepresentation, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdGetRequest) Execute() (*GroupRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdGetExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdGet Method for AdminRealmsRealmGroupsGroupIdGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdGetRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdGet(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdGetRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdGetRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdGet(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdGetRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return GroupRepresentation
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdGetExecute(r ApiAdminRealmsRealmGroupsGroupIdGetRequest) (*GroupRepresentation, *http.Response, error) {
+//
+//	@return GroupRepresentation
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdGetExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdGetRequest) (*GroupRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GroupRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GroupRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdGet")
@@ -756,42 +759,43 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdGetExecute(r ApiAdminRea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest struct {
-	ctx context.Context
+type GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest struct {
+	ctx        context.Context
 	ApiService *GroupsAPIService
-	realm string
-	groupId string
+	realm      string
+	groupId    string
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest) Execute() (*ManagementPermissionReference, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest) Execute() (*ManagementPermissionReference, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdManagementPermissionsGetExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdManagementPermissionsGet Return object stating whether client Authorization permissions have been initialized or not and a reference
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsGet(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsGet(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return ManagementPermissionReference
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsGetExecute(r ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest) (*ManagementPermissionReference, *http.Response, error) {
+//
+//	@return ManagementPermissionReference
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsGetExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsGetRequest) (*ManagementPermissionReference, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ManagementPermissionReference
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ManagementPermissionReference
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdManagementPermissionsGet")
@@ -861,48 +865,49 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsGet
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
-	groupId string
+type GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest struct {
+	ctx                           context.Context
+	ApiService                    *GroupsAPIService
+	realm                         string
+	groupId                       string
 	managementPermissionReference *ManagementPermissionReference
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest) ManagementPermissionReference(managementPermissionReference ManagementPermissionReference) ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest) ManagementPermissionReference(managementPermissionReference ManagementPermissionReference) GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest {
 	r.managementPermissionReference = &managementPermissionReference
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest) Execute() (*ManagementPermissionReference, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest) Execute() (*ManagementPermissionReference, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdManagementPermissionsPutExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdManagementPermissionsPut Return object stating whether client Authorization permissions have been initialized or not and a reference
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsPut(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsPut(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return ManagementPermissionReference
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsPutExecute(r ApiAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest) (*ManagementPermissionReference, *http.Response, error) {
+//
+//	@return ManagementPermissionReference
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsPutExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdManagementPermissionsPutRequest) (*ManagementPermissionReference, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ManagementPermissionReference
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ManagementPermissionReference
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdManagementPermissionsPut")
@@ -974,63 +979,64 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdManagementPermissionsPut
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
-	groupId string
+type GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest struct {
+	ctx                 context.Context
+	ApiService          *GroupsAPIService
+	realm               string
+	groupId             string
 	briefRepresentation *bool
-	first *int32
-	max *int32
+	first               *int32
+	max                 *int32
 }
 
 // Only return basic information (only guaranteed to return id, username, created, first and last name, email, enabled state, email verification state, federation link, and access. Note that it means that namely user attributes, required actions, and not before are not returned.)
-func (r ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest) BriefRepresentation(briefRepresentation bool) ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest) BriefRepresentation(briefRepresentation bool) GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest {
 	r.briefRepresentation = &briefRepresentation
 	return r
 }
 
 // Pagination offset
-func (r ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest) First(first int32) ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest) First(first int32) GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest {
 	r.first = &first
 	return r
 }
 
 // Maximum results size (defaults to 100)
-func (r ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest) Max(max int32) ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest) Max(max int32) GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest {
 	r.max = &max
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest) Execute() ([]UserRepresentation, *http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest) Execute() ([]UserRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdMembersGetExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdMembersGet Get users Returns a stream of users, filtered according to query parameters
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdMembersGet(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdMembersGet(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-//  @return []UserRepresentation
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdMembersGetExecute(r ApiAdminRealmsRealmGroupsGroupIdMembersGetRequest) ([]UserRepresentation, *http.Response, error) {
+//
+//	@return []UserRepresentation
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdMembersGetExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdMembersGetRequest) ([]UserRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []UserRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []UserRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdMembersGet")
@@ -1109,46 +1115,46 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdMembersGetExecute(r ApiA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsGroupIdPutRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
-	groupId string
+type GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest struct {
+	ctx                 context.Context
+	ApiService          *GroupsAPIService
+	realm               string
+	groupId             string
 	groupRepresentation *GroupRepresentation
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdPutRequest) GroupRepresentation(groupRepresentation GroupRepresentation) ApiAdminRealmsRealmGroupsGroupIdPutRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest) GroupRepresentation(groupRepresentation GroupRepresentation) GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest {
 	r.groupRepresentation = &groupRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsGroupIdPutRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsGroupIdPutExecute(r)
 }
 
 /*
 AdminRealmsRealmGroupsGroupIdPut Update group, ignores subgroups.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param groupId
- @return ApiAdminRealmsRealmGroupsGroupIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param groupId
+	@return GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdPut(ctx context.Context, realm string, groupId string) ApiAdminRealmsRealmGroupsGroupIdPutRequest {
-	return ApiAdminRealmsRealmGroupsGroupIdPutRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdPut(ctx context.Context, realm string, groupId string) GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest {
+	return GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		groupId: groupId,
+		ctx:        ctx,
+		realm:      realm,
+		groupId:    groupId,
 	}
 }
 
 // Execute executes the request
-func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdPutExecute(r ApiAdminRealmsRealmGroupsGroupIdPutRequest) (*http.Response, error) {
+func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdPutExecute(r GroupsAPIAdminRealmsRealmGroupsGroupIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsGroupIdPut")
@@ -1211,19 +1217,19 @@ func (a *GroupsAPIService) AdminRealmsRealmGroupsGroupIdPutExecute(r ApiAdminRea
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmGroupsPostRequest struct {
-	ctx context.Context
-	ApiService *GroupsAPIService
-	realm string
+type GroupsAPIAdminRealmsRealmGroupsPostRequest struct {
+	ctx                 context.Context
+	ApiService          *GroupsAPIService
+	realm               string
 	groupRepresentation *GroupRepresentation
 }
 
-func (r ApiAdminRealmsRealmGroupsPostRequest) GroupRepresentation(groupRepresentation GroupRepresentation) ApiAdminRealmsRealmGroupsPostRequest {
+func (r GroupsAPIAdminRealmsRealmGroupsPostRequest) GroupRepresentation(groupRepresentation GroupRepresentation) GroupsAPIAdminRealmsRealmGroupsPostRequest {
 	r.groupRepresentation = &groupRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmGroupsPostRequest) Execute() (*http.Response, error) {
+func (r GroupsAPIAdminRealmsRealmGroupsPostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmGroupsPostExecute(r)
 }
 
@@ -1232,24 +1238,24 @@ AdminRealmsRealmGroupsPost create or add a top level realm groupSet or create ch
 
 This will update the group and set the parent if it exists. Create it and set the parent if the group doesnâ€™t exist.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return ApiAdminRealmsRealmGroupsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@return GroupsAPIAdminRealmsRealmGroupsPostRequest
 */
-func (a *GroupsAPIService) AdminRealmsRealmGroupsPost(ctx context.Context, realm string) ApiAdminRealmsRealmGroupsPostRequest {
-	return ApiAdminRealmsRealmGroupsPostRequest{
+func (a *GroupsAPIService) AdminRealmsRealmGroupsPost(ctx context.Context, realm string) GroupsAPIAdminRealmsRealmGroupsPostRequest {
+	return GroupsAPIAdminRealmsRealmGroupsPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 	}
 }
 
 // Execute executes the request
-func (a *GroupsAPIService) AdminRealmsRealmGroupsPostExecute(r ApiAdminRealmsRealmGroupsPostRequest) (*http.Response, error) {
+func (a *GroupsAPIService) AdminRealmsRealmGroupsPostExecute(r GroupsAPIAdminRealmsRealmGroupsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GroupsAPIService.AdminRealmsRealmGroupsPost")

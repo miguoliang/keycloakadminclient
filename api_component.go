@@ -19,61 +19,61 @@ import (
 	"strings"
 )
 
-
 // ComponentAPIService ComponentAPI service
 type ComponentAPIService service
 
-type ApiAdminRealmsRealmComponentsGetRequest struct {
-	ctx context.Context
+type ComponentAPIAdminRealmsRealmComponentsGetRequest struct {
+	ctx        context.Context
 	ApiService *ComponentAPIService
-	realm string
-	name *string
-	parent *string
-	type_ *string
+	realm      string
+	name       *string
+	parent     *string
+	type_      *string
 }
 
-func (r ApiAdminRealmsRealmComponentsGetRequest) Name(name string) ApiAdminRealmsRealmComponentsGetRequest {
+func (r ComponentAPIAdminRealmsRealmComponentsGetRequest) Name(name string) ComponentAPIAdminRealmsRealmComponentsGetRequest {
 	r.name = &name
 	return r
 }
 
-func (r ApiAdminRealmsRealmComponentsGetRequest) Parent(parent string) ApiAdminRealmsRealmComponentsGetRequest {
+func (r ComponentAPIAdminRealmsRealmComponentsGetRequest) Parent(parent string) ComponentAPIAdminRealmsRealmComponentsGetRequest {
 	r.parent = &parent
 	return r
 }
 
-func (r ApiAdminRealmsRealmComponentsGetRequest) Type_(type_ string) ApiAdminRealmsRealmComponentsGetRequest {
+func (r ComponentAPIAdminRealmsRealmComponentsGetRequest) Type_(type_ string) ComponentAPIAdminRealmsRealmComponentsGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmComponentsGetRequest) Execute() ([]ComponentRepresentation, *http.Response, error) {
+func (r ComponentAPIAdminRealmsRealmComponentsGetRequest) Execute() ([]ComponentRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmComponentsGetExecute(r)
 }
 
 /*
 AdminRealmsRealmComponentsGet Method for AdminRealmsRealmComponentsGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return ApiAdminRealmsRealmComponentsGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@return ComponentAPIAdminRealmsRealmComponentsGetRequest
 */
-func (a *ComponentAPIService) AdminRealmsRealmComponentsGet(ctx context.Context, realm string) ApiAdminRealmsRealmComponentsGetRequest {
-	return ApiAdminRealmsRealmComponentsGetRequest{
+func (a *ComponentAPIService) AdminRealmsRealmComponentsGet(ctx context.Context, realm string) ComponentAPIAdminRealmsRealmComponentsGetRequest {
+	return ComponentAPIAdminRealmsRealmComponentsGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 	}
 }
 
 // Execute executes the request
-//  @return []ComponentRepresentation
-func (a *ComponentAPIService) AdminRealmsRealmComponentsGetExecute(r ApiAdminRealmsRealmComponentsGetRequest) ([]ComponentRepresentation, *http.Response, error) {
+//
+//	@return []ComponentRepresentation
+func (a *ComponentAPIService) AdminRealmsRealmComponentsGetExecute(r ComponentAPIAdminRealmsRealmComponentsGetRequest) ([]ComponentRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ComponentRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ComponentRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentAPIService.AdminRealmsRealmComponentsGet")
@@ -151,40 +151,40 @@ func (a *ComponentAPIService) AdminRealmsRealmComponentsGetExecute(r ApiAdminRea
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmComponentsIdDeleteRequest struct {
-	ctx context.Context
+type ComponentAPIAdminRealmsRealmComponentsIdDeleteRequest struct {
+	ctx        context.Context
 	ApiService *ComponentAPIService
-	realm string
-	id string
+	realm      string
+	id         string
 }
 
-func (r ApiAdminRealmsRealmComponentsIdDeleteRequest) Execute() (*http.Response, error) {
+func (r ComponentAPIAdminRealmsRealmComponentsIdDeleteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmComponentsIdDeleteExecute(r)
 }
 
 /*
 AdminRealmsRealmComponentsIdDelete Method for AdminRealmsRealmComponentsIdDelete
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param id
- @return ApiAdminRealmsRealmComponentsIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param id
+	@return ComponentAPIAdminRealmsRealmComponentsIdDeleteRequest
 */
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdDelete(ctx context.Context, realm string, id string) ApiAdminRealmsRealmComponentsIdDeleteRequest {
-	return ApiAdminRealmsRealmComponentsIdDeleteRequest{
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdDelete(ctx context.Context, realm string, id string) ComponentAPIAdminRealmsRealmComponentsIdDeleteRequest {
+	return ComponentAPIAdminRealmsRealmComponentsIdDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		id: id,
+		ctx:        ctx,
+		realm:      realm,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdDeleteExecute(r ApiAdminRealmsRealmComponentsIdDeleteRequest) (*http.Response, error) {
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdDeleteExecute(r ComponentAPIAdminRealmsRealmComponentsIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentAPIService.AdminRealmsRealmComponentsIdDelete")
@@ -245,42 +245,43 @@ func (a *ComponentAPIService) AdminRealmsRealmComponentsIdDeleteExecute(r ApiAdm
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmComponentsIdGetRequest struct {
-	ctx context.Context
+type ComponentAPIAdminRealmsRealmComponentsIdGetRequest struct {
+	ctx        context.Context
 	ApiService *ComponentAPIService
-	realm string
-	id string
+	realm      string
+	id         string
 }
 
-func (r ApiAdminRealmsRealmComponentsIdGetRequest) Execute() (*ComponentRepresentation, *http.Response, error) {
+func (r ComponentAPIAdminRealmsRealmComponentsIdGetRequest) Execute() (*ComponentRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmComponentsIdGetExecute(r)
 }
 
 /*
 AdminRealmsRealmComponentsIdGet Method for AdminRealmsRealmComponentsIdGet
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param id
- @return ApiAdminRealmsRealmComponentsIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param id
+	@return ComponentAPIAdminRealmsRealmComponentsIdGetRequest
 */
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdGet(ctx context.Context, realm string, id string) ApiAdminRealmsRealmComponentsIdGetRequest {
-	return ApiAdminRealmsRealmComponentsIdGetRequest{
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdGet(ctx context.Context, realm string, id string) ComponentAPIAdminRealmsRealmComponentsIdGetRequest {
+	return ComponentAPIAdminRealmsRealmComponentsIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		id: id,
+		ctx:        ctx,
+		realm:      realm,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return ComponentRepresentation
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdGetExecute(r ApiAdminRealmsRealmComponentsIdGetRequest) (*ComponentRepresentation, *http.Response, error) {
+//
+//	@return ComponentRepresentation
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdGetExecute(r ComponentAPIAdminRealmsRealmComponentsIdGetRequest) (*ComponentRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *ComponentRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *ComponentRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentAPIService.AdminRealmsRealmComponentsIdGet")
@@ -350,46 +351,46 @@ func (a *ComponentAPIService) AdminRealmsRealmComponentsIdGetExecute(r ApiAdminR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmComponentsIdPutRequest struct {
-	ctx context.Context
-	ApiService *ComponentAPIService
-	realm string
-	id string
+type ComponentAPIAdminRealmsRealmComponentsIdPutRequest struct {
+	ctx                     context.Context
+	ApiService              *ComponentAPIService
+	realm                   string
+	id                      string
 	componentRepresentation *ComponentRepresentation
 }
 
-func (r ApiAdminRealmsRealmComponentsIdPutRequest) ComponentRepresentation(componentRepresentation ComponentRepresentation) ApiAdminRealmsRealmComponentsIdPutRequest {
+func (r ComponentAPIAdminRealmsRealmComponentsIdPutRequest) ComponentRepresentation(componentRepresentation ComponentRepresentation) ComponentAPIAdminRealmsRealmComponentsIdPutRequest {
 	r.componentRepresentation = &componentRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmComponentsIdPutRequest) Execute() (*http.Response, error) {
+func (r ComponentAPIAdminRealmsRealmComponentsIdPutRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmComponentsIdPutExecute(r)
 }
 
 /*
 AdminRealmsRealmComponentsIdPut Method for AdminRealmsRealmComponentsIdPut
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param id
- @return ApiAdminRealmsRealmComponentsIdPutRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param id
+	@return ComponentAPIAdminRealmsRealmComponentsIdPutRequest
 */
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdPut(ctx context.Context, realm string, id string) ApiAdminRealmsRealmComponentsIdPutRequest {
-	return ApiAdminRealmsRealmComponentsIdPutRequest{
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdPut(ctx context.Context, realm string, id string) ComponentAPIAdminRealmsRealmComponentsIdPutRequest {
+	return ComponentAPIAdminRealmsRealmComponentsIdPutRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		id: id,
+		ctx:        ctx,
+		realm:      realm,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdPutExecute(r ApiAdminRealmsRealmComponentsIdPutRequest) (*http.Response, error) {
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdPutExecute(r ComponentAPIAdminRealmsRealmComponentsIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentAPIService.AdminRealmsRealmComponentsIdPut")
@@ -452,48 +453,49 @@ func (a *ComponentAPIService) AdminRealmsRealmComponentsIdPutExecute(r ApiAdminR
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest struct {
-	ctx context.Context
+type ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest struct {
+	ctx        context.Context
 	ApiService *ComponentAPIService
-	realm string
-	id string
-	type_ *string
+	realm      string
+	id         string
+	type_      *string
 }
 
-func (r ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest) Type_(type_ string) ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest {
+func (r ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest) Type_(type_ string) ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest {
 	r.type_ = &type_
 	return r
 }
 
-func (r ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest) Execute() ([]ComponentTypeRepresentation, *http.Response, error) {
+func (r ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest) Execute() ([]ComponentTypeRepresentation, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmComponentsIdSubComponentTypesGetExecute(r)
 }
 
 /*
 AdminRealmsRealmComponentsIdSubComponentTypesGet List of subcomponent types that are available to configure for a particular parent component.
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param id
- @return ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param id
+	@return ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest
 */
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdSubComponentTypesGet(ctx context.Context, realm string, id string) ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest {
-	return ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest{
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdSubComponentTypesGet(ctx context.Context, realm string, id string) ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest {
+	return ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		id: id,
+		ctx:        ctx,
+		realm:      realm,
+		id:         id,
 	}
 }
 
 // Execute executes the request
-//  @return []ComponentTypeRepresentation
-func (a *ComponentAPIService) AdminRealmsRealmComponentsIdSubComponentTypesGetExecute(r ApiAdminRealmsRealmComponentsIdSubComponentTypesGetRequest) ([]ComponentTypeRepresentation, *http.Response, error) {
+//
+//	@return []ComponentTypeRepresentation
+func (a *ComponentAPIService) AdminRealmsRealmComponentsIdSubComponentTypesGetExecute(r ComponentAPIAdminRealmsRealmComponentsIdSubComponentTypesGetRequest) ([]ComponentTypeRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  []ComponentTypeRepresentation
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []ComponentTypeRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentAPIService.AdminRealmsRealmComponentsIdSubComponentTypesGet")
@@ -566,43 +568,43 @@ func (a *ComponentAPIService) AdminRealmsRealmComponentsIdSubComponentTypesGetEx
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmComponentsPostRequest struct {
-	ctx context.Context
-	ApiService *ComponentAPIService
-	realm string
+type ComponentAPIAdminRealmsRealmComponentsPostRequest struct {
+	ctx                     context.Context
+	ApiService              *ComponentAPIService
+	realm                   string
 	componentRepresentation *ComponentRepresentation
 }
 
-func (r ApiAdminRealmsRealmComponentsPostRequest) ComponentRepresentation(componentRepresentation ComponentRepresentation) ApiAdminRealmsRealmComponentsPostRequest {
+func (r ComponentAPIAdminRealmsRealmComponentsPostRequest) ComponentRepresentation(componentRepresentation ComponentRepresentation) ComponentAPIAdminRealmsRealmComponentsPostRequest {
 	r.componentRepresentation = &componentRepresentation
 	return r
 }
 
-func (r ApiAdminRealmsRealmComponentsPostRequest) Execute() (*http.Response, error) {
+func (r ComponentAPIAdminRealmsRealmComponentsPostRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmComponentsPostExecute(r)
 }
 
 /*
 AdminRealmsRealmComponentsPost Method for AdminRealmsRealmComponentsPost
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return ApiAdminRealmsRealmComponentsPostRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@return ComponentAPIAdminRealmsRealmComponentsPostRequest
 */
-func (a *ComponentAPIService) AdminRealmsRealmComponentsPost(ctx context.Context, realm string) ApiAdminRealmsRealmComponentsPostRequest {
-	return ApiAdminRealmsRealmComponentsPostRequest{
+func (a *ComponentAPIService) AdminRealmsRealmComponentsPost(ctx context.Context, realm string) ComponentAPIAdminRealmsRealmComponentsPostRequest {
+	return ComponentAPIAdminRealmsRealmComponentsPostRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 	}
 }
 
 // Execute executes the request
-func (a *ComponentAPIService) AdminRealmsRealmComponentsPostExecute(r ApiAdminRealmsRealmComponentsPostRequest) (*http.Response, error) {
+func (a *ComponentAPIService) AdminRealmsRealmComponentsPostExecute(r ComponentAPIAdminRealmsRealmComponentsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPost
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentAPIService.AdminRealmsRealmComponentsPost")

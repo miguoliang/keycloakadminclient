@@ -19,41 +19,40 @@ import (
 	"strings"
 )
 
-
 // AttackDetectionAPIService AttackDetectionAPI service
 type AttackDetectionAPIService service
 
-type ApiAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest struct {
-	ctx context.Context
+type AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest struct {
+	ctx        context.Context
 	ApiService *AttackDetectionAPIService
-	realm string
+	realm      string
 }
 
-func (r ApiAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest) Execute() (*http.Response, error) {
+func (r AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmAttackDetectionBruteForceUsersDeleteExecute(r)
 }
 
 /*
 AdminRealmsRealmAttackDetectionBruteForceUsersDelete Clear any user login failures for all users This can release temporary disabled users
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return ApiAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@return AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest
 */
-func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersDelete(ctx context.Context, realm string) ApiAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest {
-	return ApiAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest{
+func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersDelete(ctx context.Context, realm string) AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest {
+	return AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
+		ctx:        ctx,
+		realm:      realm,
 	}
 }
 
 // Execute executes the request
-func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersDeleteExecute(r ApiAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest) (*http.Response, error) {
+func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersDeleteExecute(r AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttackDetectionAPIService.AdminRealmsRealmAttackDetectionBruteForceUsersDelete")
@@ -113,40 +112,40 @@ func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUse
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest struct {
-	ctx context.Context
+type AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest struct {
+	ctx        context.Context
 	ApiService *AttackDetectionAPIService
-	realm string
-	userId string
+	realm      string
+	userId     string
 }
 
-func (r ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest) Execute() (*http.Response, error) {
+func (r AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest) Execute() (*http.Response, error) {
 	return r.ApiService.AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteExecute(r)
 }
 
 /*
 AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDelete Clear any user login failures for the user This can release temporary disabled user
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param userId
- @return ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param userId
+	@return AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest
 */
-func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDelete(ctx context.Context, realm string, userId string) ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest {
-	return ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest{
+func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDelete(ctx context.Context, realm string, userId string) AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest {
+	return AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		userId: userId,
+		ctx:        ctx,
+		realm:      realm,
+		userId:     userId,
 	}
 }
 
 // Execute executes the request
-func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteExecute(r ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest) (*http.Response, error) {
+func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteExecute(r AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttackDetectionAPIService.AdminRealmsRealmAttackDetectionBruteForceUsersUserIdDelete")
@@ -207,42 +206,43 @@ func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUse
 	return localVarHTTPResponse, nil
 }
 
-type ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest struct {
-	ctx context.Context
+type AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest struct {
+	ctx        context.Context
 	ApiService *AttackDetectionAPIService
-	realm string
-	userId string
+	realm      string
+	userId     string
 }
 
-func (r ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest) Execute() (map[string]interface{}, *http.Response, error) {
+func (r AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.ApiService.AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetExecute(r)
 }
 
 /*
 AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGet Get status of a username in brute force detection
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param userId
- @return ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param realm realm name (not id!)
+	@param userId
+	@return AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest
 */
-func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGet(ctx context.Context, realm string, userId string) ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest {
-	return ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest{
+func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGet(ctx context.Context, realm string, userId string) AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest {
+	return AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest{
 		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		userId: userId,
+		ctx:        ctx,
+		realm:      realm,
+		userId:     userId,
 	}
 }
 
 // Execute executes the request
-//  @return map[string]interface{}
-func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetExecute(r ApiAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest) (map[string]interface{}, *http.Response, error) {
+//
+//	@return map[string]interface{}
+func (a *AttackDetectionAPIService) AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetExecute(r AttackDetectionAPIAdminRealmsRealmAttackDetectionBruteForceUsersUserIdGetRequest) (map[string]interface{}, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  map[string]interface{}
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttackDetectionAPIService.AdminRealmsRealmAttackDetectionBruteForceUsersUserIdGet")

@@ -9081,11 +9081,6 @@ components:
           type: string
         s_hash:
           type: string
-        authTime:
-          format: int32
-          type: integer
-          writeOnly: true
-          deprecated: true
         sid:
           type: string
         trusted-certs:
@@ -10067,11 +10062,6 @@ components:
           type: string
         s_hash:
           type: string
-        authTime:
-          format: int32
-          type: integer
-          writeOnly: true
-          deprecated: true
         sid:
           type: string
     IdentityProviderMapperRepresentation:

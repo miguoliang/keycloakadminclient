@@ -13026,7 +13026,6 @@ components:
         - trusted-certs
         - trusted-certs
         preferred_username: preferred_username
-        authTime: 2
         locale: locale
         sid: sid
         authorization:
@@ -13171,11 +13170,6 @@ components:
           type: string
         s_hash:
           type: string
-        authTime:
-          deprecated: true
-          format: int32
-          type: integer
-          writeOnly: true
         sid:
           type: string
         trusted-certs:
@@ -16576,7 +16570,6 @@ components:
         iss: iss
         typ: typ
         preferred_username: preferred_username
-        authTime: 2
         locale: locale
         sid: sid
         acr: acr
@@ -16692,11 +16685,6 @@ components:
           type: string
         s_hash:
           type: string
-        authTime:
-          deprecated: true
-          format: int32
-          type: integer
-          writeOnly: true
         sid:
           type: string
       type: object
@@ -18596,7 +18584,6 @@ components:
           - trusted-certs
           - trusted-certs
           preferred_username: preferred_username
-          authTime: 2
           locale: locale
           sid: sid
           authorization:

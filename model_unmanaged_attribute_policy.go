@@ -20,9 +20,9 @@ type UnmanagedAttributePolicy string
 
 // List of UnmanagedAttributePolicy
 const (
-	ENABLED UnmanagedAttributePolicy = "ENABLED"
-	ADMIN_VIEW UnmanagedAttributePolicy = "ADMIN_VIEW"
-	ADMIN_EDIT UnmanagedAttributePolicy = "ADMIN_EDIT"
+	UNMANAGEDATTRIBUTEPOLICY_ENABLED    UnmanagedAttributePolicy = "ENABLED"
+	UNMANAGEDATTRIBUTEPOLICY_ADMIN_VIEW UnmanagedAttributePolicy = "ADMIN_VIEW"
+	UNMANAGEDATTRIBUTEPOLICY_ADMIN_EDIT UnmanagedAttributePolicy = "ADMIN_EDIT"
 )
 
 // All allowed values of UnmanagedAttributePolicy enum
@@ -110,4 +110,3 @@ func (v *NullableUnmanagedAttributePolicy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

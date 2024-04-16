@@ -11,10 +11,10 @@ package keycloakadminclient
 
 import (
 	"context"
+	openapiclient "github.com/miguoliang/keycloakadminclient"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"testing"
-	openapiclient "github.com/miguoliang/keycloakadminclient"
 )
 
 func Test_keycloakadminclient_ClientRegistrationPolicyAPIService(t *testing.T) {
@@ -24,7 +24,7 @@ func Test_keycloakadminclient_ClientRegistrationPolicyAPIService(t *testing.T) {
 
 	t.Run("Test ClientRegistrationPolicyAPIService AdminRealmsRealmClientRegistrationPolicyProvidersGet", func(t *testing.T) {
 
-		t.Skip("skip test")  // remove to run test
+		t.Skip("skip test") // remove to run test
 
 		var realm string
 

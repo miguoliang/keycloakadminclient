@@ -20,8 +20,8 @@ type Logic string
 
 // List of Logic
 const (
-	POSITIVE Logic = "POSITIVE"
-	NEGATIVE Logic = "NEGATIVE"
+	LOGIC_POSITIVE Logic = "POSITIVE"
+	LOGIC_NEGATIVE Logic = "NEGATIVE"
 )
 
 // All allowed values of Logic enum
@@ -108,4 +108,3 @@ func (v *NullableLogic) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

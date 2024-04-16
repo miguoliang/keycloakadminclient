@@ -19,45 +19,43 @@ var _ MappedNullable = &IDToken{}
 
 // IDToken struct for IDToken
 type IDToken struct {
-	Jti *string `json:"jti,omitempty"`
-	Exp *int64 `json:"exp,omitempty"`
-	Nbf *int64 `json:"nbf,omitempty"`
-	Iat *int64 `json:"iat,omitempty"`
-	Iss *string `json:"iss,omitempty"`
-	Sub *string `json:"sub,omitempty"`
-	Typ *string `json:"typ,omitempty"`
-	Azp *string `json:"azp,omitempty"`
-	OtherClaims map[string]interface{} `json:"otherClaims,omitempty"`
-	Nonce *string `json:"nonce,omitempty"`
-	AuthTime *int64 `json:"auth_time,omitempty"`
-	SessionState *string `json:"session_state,omitempty"`
-	AtHash *string `json:"at_hash,omitempty"`
-	CHash *string `json:"c_hash,omitempty"`
-	Name *string `json:"name,omitempty"`
-	GivenName *string `json:"given_name,omitempty"`
-	FamilyName *string `json:"family_name,omitempty"`
-	MiddleName *string `json:"middle_name,omitempty"`
-	Nickname *string `json:"nickname,omitempty"`
-	PreferredUsername *string `json:"preferred_username,omitempty"`
-	Profile *string `json:"profile,omitempty"`
-	Picture *string `json:"picture,omitempty"`
-	Website *string `json:"website,omitempty"`
-	Email *string `json:"email,omitempty"`
-	EmailVerified *bool `json:"email_verified,omitempty"`
-	Gender *string `json:"gender,omitempty"`
-	Birthdate *string `json:"birthdate,omitempty"`
-	Zoneinfo *string `json:"zoneinfo,omitempty"`
-	Locale *string `json:"locale,omitempty"`
-	PhoneNumber *string `json:"phone_number,omitempty"`
-	PhoneNumberVerified *bool `json:"phone_number_verified,omitempty"`
-	Address *AddressClaimSet `json:"address,omitempty"`
-	UpdatedAt *int64 `json:"updated_at,omitempty"`
-	ClaimsLocales *string `json:"claims_locales,omitempty"`
-	Acr *string `json:"acr,omitempty"`
-	SHash *string `json:"s_hash,omitempty"`
-	// Deprecated
-	AuthTime *int32 `json:"authTime,omitempty"`
-	Sid *string `json:"sid,omitempty"`
+	Jti                 *string                `json:"jti,omitempty"`
+	Exp                 *int64                 `json:"exp,omitempty"`
+	Nbf                 *int64                 `json:"nbf,omitempty"`
+	Iat                 *int64                 `json:"iat,omitempty"`
+	Iss                 *string                `json:"iss,omitempty"`
+	Sub                 *string                `json:"sub,omitempty"`
+	Typ                 *string                `json:"typ,omitempty"`
+	Azp                 *string                `json:"azp,omitempty"`
+	OtherClaims         map[string]interface{} `json:"otherClaims,omitempty"`
+	Nonce               *string                `json:"nonce,omitempty"`
+	AuthTime            *int64                 `json:"auth_time,omitempty"`
+	SessionState        *string                `json:"session_state,omitempty"`
+	AtHash              *string                `json:"at_hash,omitempty"`
+	CHash               *string                `json:"c_hash,omitempty"`
+	Name                *string                `json:"name,omitempty"`
+	GivenName           *string                `json:"given_name,omitempty"`
+	FamilyName          *string                `json:"family_name,omitempty"`
+	MiddleName          *string                `json:"middle_name,omitempty"`
+	Nickname            *string                `json:"nickname,omitempty"`
+	PreferredUsername   *string                `json:"preferred_username,omitempty"`
+	Profile             *string                `json:"profile,omitempty"`
+	Picture             *string                `json:"picture,omitempty"`
+	Website             *string                `json:"website,omitempty"`
+	Email               *string                `json:"email,omitempty"`
+	EmailVerified       *bool                  `json:"email_verified,omitempty"`
+	Gender              *string                `json:"gender,omitempty"`
+	Birthdate           *string                `json:"birthdate,omitempty"`
+	Zoneinfo            *string                `json:"zoneinfo,omitempty"`
+	Locale              *string                `json:"locale,omitempty"`
+	PhoneNumber         *string                `json:"phone_number,omitempty"`
+	PhoneNumberVerified *bool                  `json:"phone_number_verified,omitempty"`
+	Address             *AddressClaimSet       `json:"address,omitempty"`
+	UpdatedAt           *int64                 `json:"updated_at,omitempty"`
+	ClaimsLocales       *string                `json:"claims_locales,omitempty"`
+	Acr                 *string                `json:"acr,omitempty"`
+	SHash               *string                `json:"s_hash,omitempty"`
+	Sid                 *string                `json:"sid,omitempty"`
 }
 
 // NewIDToken instantiates a new IDToken object
@@ -1229,41 +1227,6 @@ func (o *IDToken) SetSHash(v string) {
 	o.SHash = &v
 }
 
-// GetAuthTime returns the AuthTime field value if set, zero value otherwise.
-// Deprecated
-func (o *IDToken) GetAuthTime() int32 {
-	if o == nil || IsNil(o.AuthTime) {
-		var ret int32
-		return ret
-	}
-	return *o.AuthTime
-}
-
-// GetAuthTimeOk returns a tuple with the AuthTime field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *IDToken) GetAuthTimeOk() (*int32, bool) {
-	if o == nil || IsNil(o.AuthTime) {
-		return nil, false
-	}
-	return o.AuthTime, true
-}
-
-// HasAuthTime returns a boolean if a field has been set.
-func (o *IDToken) HasAuthTime() bool {
-	if o != nil && !IsNil(o.AuthTime) {
-		return true
-	}
-
-	return false
-}
-
-// SetAuthTime gets a reference to the given int32 and assigns it to the AuthTime field.
-// Deprecated
-func (o *IDToken) SetAuthTime(v int32) {
-	o.AuthTime = &v
-}
-
 // GetSid returns the Sid field value if set, zero value otherwise.
 func (o *IDToken) GetSid() string {
 	if o == nil || IsNil(o.Sid) {
@@ -1297,7 +1260,7 @@ func (o *IDToken) SetSid(v string) {
 }
 
 func (o IDToken) MarshalJSON() ([]byte, error) {
-	toSerialize,err := o.ToMap()
+	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
 	}
@@ -1414,9 +1377,6 @@ func (o IDToken) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SHash) {
 		toSerialize["s_hash"] = o.SHash
 	}
-	if !IsNil(o.AuthTime) {
-		toSerialize["authTime"] = o.AuthTime
-	}
 	if !IsNil(o.Sid) {
 		toSerialize["sid"] = o.Sid
 	}
@@ -1458,5 +1418,3 @@ func (v *NullableIDToken) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

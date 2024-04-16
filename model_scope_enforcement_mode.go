@@ -20,9 +20,9 @@ type ScopeEnforcementMode string
 
 // List of ScopeEnforcementMode
 const (
-	ALL ScopeEnforcementMode = "ALL"
-	ANY ScopeEnforcementMode = "ANY"
-	DISABLED ScopeEnforcementMode = "DISABLED"
+	SCOPEENFORCEMENTMODE_ALL      ScopeEnforcementMode = "ALL"
+	SCOPEENFORCEMENTMODE_ANY      ScopeEnforcementMode = "ANY"
+	SCOPEENFORCEMENTMODE_DISABLED ScopeEnforcementMode = "DISABLED"
 )
 
 // All allowed values of ScopeEnforcementMode enum
@@ -110,4 +110,3 @@ func (v *NullableScopeEnforcementMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

@@ -20,8 +20,8 @@ type DecisionEffect string
 
 // List of DecisionEffect
 const (
-	PERMIT DecisionEffect = "PERMIT"
-	DENY DecisionEffect = "DENY"
+	DECISIONEFFECT_PERMIT DecisionEffect = "PERMIT"
+	DECISIONEFFECT_DENY   DecisionEffect = "DENY"
 )
 
 // All allowed values of DecisionEffect enum
@@ -108,4 +108,3 @@ func (v *NullableDecisionEffect) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-

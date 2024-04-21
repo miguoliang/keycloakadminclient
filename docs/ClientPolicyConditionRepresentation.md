@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Condition** | Pointer to **string** |  | [optional] 
-**Configuration** | Pointer to [**Array**](array.md) |  | [optional] 
+**Configuration** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasCondition returns a boolean if a field has been set.
 
 ### GetConfiguration
 
-`func (o *ClientPolicyConditionRepresentation) GetConfiguration() Array`
+`func (o *ClientPolicyConditionRepresentation) GetConfiguration() []string`
 
 GetConfiguration returns the Configuration field if non-nil, zero value otherwise.
 
 ### GetConfigurationOk
 
-`func (o *ClientPolicyConditionRepresentation) GetConfigurationOk() (*Array, bool)`
+`func (o *ClientPolicyConditionRepresentation) GetConfigurationOk() (*[]string, bool)`
 
 GetConfigurationOk returns a tuple with the Configuration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetConfiguration
 
-`func (o *ClientPolicyConditionRepresentation) SetConfiguration(v Array)`
+`func (o *ClientPolicyConditionRepresentation) SetConfiguration(v []string)`
 
 SetConfiguration sets Configuration field to given value.
 

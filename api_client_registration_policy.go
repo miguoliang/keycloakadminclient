@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // ClientRegistrationPolicyAPIService ClientRegistrationPolicyAPI service
 type ClientRegistrationPolicyAPIService service
 
 type ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientRegistrationPolicyAPIService
-	realm      string
+	realm string
 }
 
 func (r ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest) Execute() ([]ComponentTypeRepresentation, *http.Response, error) {
@@ -35,27 +36,26 @@ func (r ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvi
 /*
 AdminRealmsRealmClientRegistrationPolicyProvidersGet Base path for retrieve providers with the configProperties properly filled
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@return ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @return ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest
 */
 func (a *ClientRegistrationPolicyAPIService) AdminRealmsRealmClientRegistrationPolicyProvidersGet(ctx context.Context, realm string) ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest {
 	return ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ComponentTypeRepresentation
+//  @return []ComponentTypeRepresentation
 func (a *ClientRegistrationPolicyAPIService) AdminRealmsRealmClientRegistrationPolicyProvidersGetExecute(r ClientRegistrationPolicyAPIAdminRealmsRealmClientRegistrationPolicyProvidersGetRequest) ([]ComponentTypeRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ComponentTypeRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ComponentTypeRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientRegistrationPolicyAPIService.AdminRealmsRealmClientRegistrationPolicyProvidersGet")

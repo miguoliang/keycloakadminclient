@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // KeyAPIService KeyAPI service
 type KeyAPIService service
 
 type KeyAPIAdminRealmsRealmKeysGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *KeyAPIService
-	realm      string
+	realm string
 }
 
 func (r KeyAPIAdminRealmsRealmKeysGetRequest) Execute() (*KeysMetadataRepresentation, *http.Response, error) {
@@ -35,27 +36,26 @@ func (r KeyAPIAdminRealmsRealmKeysGetRequest) Execute() (*KeysMetadataRepresenta
 /*
 AdminRealmsRealmKeysGet Method for AdminRealmsRealmKeysGet
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@return KeyAPIAdminRealmsRealmKeysGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @return KeyAPIAdminRealmsRealmKeysGetRequest
 */
 func (a *KeyAPIService) AdminRealmsRealmKeysGet(ctx context.Context, realm string) KeyAPIAdminRealmsRealmKeysGetRequest {
 	return KeyAPIAdminRealmsRealmKeysGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 	}
 }
 
 // Execute executes the request
-//
-//	@return KeysMetadataRepresentation
+//  @return KeysMetadataRepresentation
 func (a *KeyAPIService) AdminRealmsRealmKeysGetExecute(r KeyAPIAdminRealmsRealmKeysGetRequest) (*KeysMetadataRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *KeysMetadataRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *KeysMetadataRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KeyAPIService.AdminRealmsRealmKeysGet")

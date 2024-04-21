@@ -19,13 +19,14 @@ import (
 	"strings"
 )
 
+
 // ClientInitialAccessAPIService ClientInitialAccessAPI service
 type ClientInitialAccessAPIService service
 
 type ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientInitialAccessAPIService
-	realm      string
+	realm string
 }
 
 func (r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest) Execute() ([]ClientInitialAccessPresentation, *http.Response, error) {
@@ -35,27 +36,26 @@ func (r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest) Ex
 /*
 AdminRealmsRealmClientsInitialAccessGet Method for AdminRealmsRealmClientsInitialAccessGet
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest
 */
 func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessGet(ctx context.Context, realm string) ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest {
 	return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ClientInitialAccessPresentation
+//  @return []ClientInitialAccessPresentation
 func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessGetExecute(r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessGetRequest) ([]ClientInitialAccessPresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ClientInitialAccessPresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ClientInitialAccessPresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientInitialAccessAPIService.AdminRealmsRealmClientsInitialAccessGet")
@@ -125,10 +125,10 @@ func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessGetE
 }
 
 type ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientInitialAccessAPIService
-	realm      string
-	id         string
+	realm string
+	id string
 }
 
 func (r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest) Execute() (*http.Response, error) {
@@ -138,26 +138,26 @@ func (r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteReques
 /*
 AdminRealmsRealmClientsInitialAccessIdDelete Method for AdminRealmsRealmClientsInitialAccessIdDelete
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param id
-	@return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param id
+ @return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest
 */
 func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessIdDelete(ctx context.Context, realm string, id string) ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest {
 	return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		id:         id,
+		ctx: ctx,
+		realm: realm,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessIdDeleteExecute(r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientInitialAccessAPIService.AdminRealmsRealmClientsInitialAccessIdDelete")
@@ -219,9 +219,9 @@ func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessIdDe
 }
 
 type ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest struct {
-	ctx                                   context.Context
-	ApiService                            *ClientInitialAccessAPIService
-	realm                                 string
+	ctx context.Context
+	ApiService *ClientInitialAccessAPIService
+	realm string
 	clientInitialAccessCreatePresentation *ClientInitialAccessCreatePresentation
 }
 
@@ -237,27 +237,26 @@ func (r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest) E
 /*
 AdminRealmsRealmClientsInitialAccessPost Create a new initial access token.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest
 */
 func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessPost(ctx context.Context, realm string) ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest {
 	return ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ClientInitialAccessCreatePresentation
+//  @return ClientInitialAccessCreatePresentation
 func (a *ClientInitialAccessAPIService) AdminRealmsRealmClientsInitialAccessPostExecute(r ClientInitialAccessAPIAdminRealmsRealmClientsInitialAccessPostRequest) (*ClientInitialAccessCreatePresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ClientInitialAccessCreatePresentation
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ClientInitialAccessCreatePresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientInitialAccessAPIService.AdminRealmsRealmClientsInitialAccessPost")

@@ -21,8 +21,8 @@ type DecisionStrategy string
 // List of DecisionStrategy
 const (
 	DECISIONSTRATEGY_AFFIRMATIVE DecisionStrategy = "AFFIRMATIVE"
-	DECISIONSTRATEGY_UNANIMOUS   DecisionStrategy = "UNANIMOUS"
-	DECISIONSTRATEGY_CONSENSUS   DecisionStrategy = "CONSENSUS"
+	DECISIONSTRATEGY_UNANIMOUS DecisionStrategy = "UNANIMOUS"
+	DECISIONSTRATEGY_CONSENSUS DecisionStrategy = "CONSENSUS"
 )
 
 // All allowed values of DecisionStrategy enum
@@ -110,3 +110,4 @@ func (v *NullableDecisionStrategy) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

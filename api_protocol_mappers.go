@@ -19,14 +19,15 @@ import (
 	"strings"
 )
 
+
 // ProtocolMappersAPIService ProtocolMappersAPI service
 type ProtocolMappersAPIService service
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientScopeId                string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientScopeId string
 	protocolMapperRepresentation *[]ProtocolMapperRepresentation
 }
 
@@ -42,16 +43,16 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPost Create multiple mappers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPost(ctx context.Context, realm string, clientScopeId string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
 	}
 }
@@ -59,9 +60,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersAddModelsPost")
@@ -125,9 +126,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
 }
 
@@ -138,29 +139,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGet Get mappers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGet(ctx context.Context, realm string, clientScopeId string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ProtocolMapperRepresentation
+//  @return []ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGetRequest) ([]ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsGet")
@@ -231,11 +231,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
-	id            string
+	id string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest) Execute() (*http.Response, error) {
@@ -245,28 +245,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDelete Delete the mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDelete(ctx context.Context, realm string, clientScopeId string, id string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		id:            id,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdDelete")
@@ -329,11 +329,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
-	id            string
+	id string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest) Execute() (*ProtocolMapperRepresentation, *http.Response, error) {
@@ -343,31 +343,30 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGet Get mapper by id
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGet(ctx context.Context, realm string, clientScopeId string, id string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		id:            id,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ProtocolMapperRepresentation
+//  @return ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGetRequest) (*ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdGet")
@@ -439,11 +438,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientScopeId                string
-	id                           string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientScopeId string
+	id string
 	protocolMapperRepresentation *ProtocolMapperRepresentation
 }
 
@@ -459,28 +458,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPut Update the mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPut(ctx context.Context, realm string, clientScopeId string, id string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		id:            id,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsIdPut")
@@ -545,10 +544,10 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientScopeId                string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientScopeId string
 	protocolMapperRepresentation *ProtocolMapperRepresentation
 }
 
@@ -564,16 +563,16 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPost Create a mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPost(ctx context.Context, realm string, clientScopeId string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
 	}
 }
@@ -581,9 +580,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersModelsPost")
@@ -647,11 +646,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
-	protocol      string
+	protocol string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest) Execute() ([]ProtocolMapperRepresentation, *http.Response, error) {
@@ -661,31 +660,30 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappe
 /*
 AdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGet Get mappers by name for a specific protocol
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param protocol
-	@return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param protocol
+ @return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGet(ctx context.Context, realm string, clientScopeId string, protocol string) ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		protocol:      protocol,
+		protocol: protocol,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ProtocolMapperRepresentation
+//  @return []ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGetRequest) ([]ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientScopesClientScopeIdProtocolMappersProtocolProtocolGet")
@@ -757,10 +755,10 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientScopesClientScopeIdPro
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientScopeId                string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientScopeId string
 	protocolMapperRepresentation *[]ProtocolMapperRepresentation
 }
 
@@ -776,16 +774,16 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPost Create multiple mappers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPost(ctx context.Context, realm string, clientScopeId string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
 	}
 }
@@ -793,9 +791,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersAddModelsPost")
@@ -859,9 +857,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
 }
 
@@ -872,29 +870,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGet Get mappers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGet(ctx context.Context, realm string, clientScopeId string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ProtocolMapperRepresentation
+//  @return []ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGetRequest) ([]ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsGet")
@@ -965,11 +962,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
-	id            string
+	id string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest) Execute() (*http.Response, error) {
@@ -979,28 +976,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDelete Delete the mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDelete(ctx context.Context, realm string, clientScopeId string, id string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		id:            id,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdDelete")
@@ -1063,11 +1060,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
-	id            string
+	id string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest) Execute() (*ProtocolMapperRepresentation, *http.Response, error) {
@@ -1077,31 +1074,30 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGet Get mapper by id
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGet(ctx context.Context, realm string, clientScopeId string, id string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		id:            id,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ProtocolMapperRepresentation
+//  @return ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGetRequest) (*ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdGet")
@@ -1173,11 +1169,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientScopeId                string
-	id                           string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientScopeId string
+	id string
 	protocolMapperRepresentation *ProtocolMapperRepresentation
 }
 
@@ -1193,28 +1189,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPut Update the mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPut(ctx context.Context, realm string, clientScopeId string, id string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		id:            id,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsIdPut")
@@ -1279,10 +1275,10 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientScopeId                string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientScopeId string
 	protocolMapperRepresentation *ProtocolMapperRepresentation
 }
 
@@ -1298,16 +1294,16 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPost Create a mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPost(ctx context.Context, realm string, clientScopeId string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
 	}
 }
@@ -1315,9 +1311,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersModelsPost")
@@ -1381,11 +1377,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest struct {
-	ctx           context.Context
-	ApiService    *ProtocolMappersAPIService
-	realm         string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
 	clientScopeId string
-	protocol      string
+	protocol string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest) Execute() ([]ProtocolMapperRepresentation, *http.Response, error) {
@@ -1395,31 +1391,30 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMa
 /*
 AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGet Get mappers by name for a specific protocol
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientScopeId
-	@param protocol
-	@return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientScopeId
+ @param protocol
+ @return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGet(ctx context.Context, realm string, clientScopeId string, protocol string) ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest{
-		ApiService:    a,
-		ctx:           ctx,
-		realm:         realm,
+		ApiService: a,
+		ctx: ctx,
+		realm: realm,
 		clientScopeId: clientScopeId,
-		protocol:      protocol,
+		protocol: protocol,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ProtocolMapperRepresentation
+//  @return []ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGetRequest) ([]ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientTemplatesClientScopeIdProtocolMappersProtocolProtocolGet")
@@ -1491,10 +1486,10 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientTemplatesClientScopeId
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientUuid                   string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientUuid string
 	protocolMapperRepresentation *[]ProtocolMapperRepresentation
 }
 
@@ -1510,16 +1505,16 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddMod
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPost Create multiple mappers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPost(ctx context.Context, realm string, clientUuid string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
 	}
 }
@@ -1527,9 +1522,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersAddModelsPost")
@@ -1593,9 +1588,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProtocolMappersAPIService
-	realm      string
+	realm string
 	clientUuid string
 }
 
@@ -1606,29 +1601,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModels
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersModelsGet Get mappers
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsGet(ctx context.Context, realm string, clientUuid string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ProtocolMapperRepresentation
+//  @return []ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsGetRequest) ([]ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersModelsGet")
@@ -1699,11 +1693,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProtocolMappersAPIService
-	realm      string
+	realm string
 	clientUuid string
-	id         string
+	id string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest) Execute() (*http.Response, error) {
@@ -1713,28 +1707,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModels
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDelete Delete the mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDelete(ctx context.Context, realm string, clientUuid string, id string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		id:         id,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdDelete")
@@ -1797,11 +1791,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProtocolMappersAPIService
-	realm      string
+	realm string
 	clientUuid string
-	id         string
+	id string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest) Execute() (*ProtocolMapperRepresentation, *http.Response, error) {
@@ -1811,31 +1805,30 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModels
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGet Get mapper by id
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGet(ctx context.Context, realm string, clientUuid string, id string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		id:         id,
+		id: id,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ProtocolMapperRepresentation
+//  @return ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGetRequest) (*ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdGet")
@@ -1907,11 +1900,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientUuid                   string
-	id                           string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientUuid string
+	id string
 	protocolMapperRepresentation *ProtocolMapperRepresentation
 }
 
@@ -1927,28 +1920,28 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModels
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPut Update the mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param id Mapper id
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param id Mapper id
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPut(ctx context.Context, realm string, clientUuid string, id string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		id:         id,
+		id: id,
 	}
 }
 
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersModelsIdPut")
@@ -2013,10 +2006,10 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsPostRequest struct {
-	ctx                          context.Context
-	ApiService                   *ProtocolMappersAPIService
-	realm                        string
-	clientUuid                   string
+	ctx context.Context
+	ApiService *ProtocolMappersAPIService
+	realm string
+	clientUuid string
 	protocolMapperRepresentation *ProtocolMapperRepresentation
 }
 
@@ -2032,16 +2025,16 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModels
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersModelsPost Create a mapper
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsPostRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsPost(ctx context.Context, realm string, clientUuid string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsPostRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
 	}
 }
@@ -2049,9 +2042,9 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 // Execute executes the request
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersModelsPostExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersModelsPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersModelsPost")
@@ -2115,11 +2108,11 @@ func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMap
 }
 
 type ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ProtocolMappersAPIService
-	realm      string
+	realm string
 	clientUuid string
-	protocol   string
+	protocol string
 }
 
 func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest) Execute() ([]ProtocolMapperRepresentation, *http.Response, error) {
@@ -2129,31 +2122,30 @@ func (r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtoc
 /*
 AdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGet Get mappers by name for a specific protocol
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param protocol
-	@return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param protocol
+ @return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest
 */
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGet(ctx context.Context, realm string, clientUuid string, protocol string) ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest {
 	return ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		protocol:   protocol,
+		protocol: protocol,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []ProtocolMapperRepresentation
+//  @return []ProtocolMapperRepresentation
 func (a *ProtocolMappersAPIService) AdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetExecute(r ProtocolMappersAPIAdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGetRequest) ([]ProtocolMapperRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []ProtocolMapperRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []ProtocolMapperRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProtocolMappersAPIService.AdminRealmsRealmClientsClientUuidProtocolMappersProtocolProtocolGet")

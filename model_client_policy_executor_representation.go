@@ -20,7 +20,7 @@ var _ MappedNullable = &ClientPolicyExecutorRepresentation{}
 // ClientPolicyExecutorRepresentation struct for ClientPolicyExecutorRepresentation
 type ClientPolicyExecutorRepresentation struct {
 	Executor *string `json:"executor,omitempty"`
-	Configuration *Array `json:"configuration,omitempty"`
+	Configuration []string `json:"configuration,omitempty"`
 }
 
 // NewClientPolicyExecutorRepresentation instantiates a new ClientPolicyExecutorRepresentation object
@@ -73,17 +73,17 @@ func (o *ClientPolicyExecutorRepresentation) SetExecutor(v string) {
 }
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
-func (o *ClientPolicyExecutorRepresentation) GetConfiguration() Array {
+func (o *ClientPolicyExecutorRepresentation) GetConfiguration() []string {
 	if o == nil || IsNil(o.Configuration) {
-		var ret Array
+		var ret []string
 		return ret
 	}
-	return *o.Configuration
+	return o.Configuration
 }
 
 // GetConfigurationOk returns a tuple with the Configuration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ClientPolicyExecutorRepresentation) GetConfigurationOk() (*Array, bool) {
+func (o *ClientPolicyExecutorRepresentation) GetConfigurationOk() ([]string, bool) {
 	if o == nil || IsNil(o.Configuration) {
 		return nil, false
 	}
@@ -99,9 +99,9 @@ func (o *ClientPolicyExecutorRepresentation) HasConfiguration() bool {
 	return false
 }
 
-// SetConfiguration gets a reference to the given Array and assigns it to the Configuration field.
-func (o *ClientPolicyExecutorRepresentation) SetConfiguration(v Array) {
-	o.Configuration = &v
+// SetConfiguration gets a reference to the given []string and assigns it to the Configuration field.
+func (o *ClientPolicyExecutorRepresentation) SetConfiguration(v []string) {
+	o.Configuration = v
 }
 
 func (o ClientPolicyExecutorRepresentation) MarshalJSON() ([]byte, error) {

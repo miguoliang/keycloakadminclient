@@ -14507,9 +14507,13 @@ components:
           description: description
           conditions:
           - condition: condition
-            configuration: ""
+            configuration:
+            - configuration
+            - configuration
           - condition: condition
-            configuration: ""
+            configuration:
+            - configuration
+            - configuration
           enabled: true
         - name: name
           profiles:
@@ -14518,9 +14522,13 @@ components:
           description: description
           conditions:
           - condition: condition
-            configuration: ""
+            configuration:
+            - configuration
+            - configuration
           - condition: condition
-            configuration: ""
+            configuration:
+            - configuration
+            - configuration
           enabled: true
       properties:
         policies:
@@ -14531,21 +14539,31 @@ components:
     ClientPolicyConditionRepresentation:
       example:
         condition: condition
-        configuration: ""
+        configuration:
+        - configuration
+        - configuration
       properties:
         condition:
           type: string
         configuration:
+          items:
+            description: TODO default missing array inner type to string
+            type: string
           type: array
       type: object
     ClientPolicyExecutorRepresentation:
       example:
-        configuration: ""
+        configuration:
+        - configuration
+        - configuration
         executor: executor
       properties:
         executor:
           type: string
         configuration:
+          items:
+            description: TODO default missing array inner type to string
+            type: string
           type: array
       type: object
     ClientPolicyRepresentation:
@@ -14557,9 +14575,13 @@ components:
         description: description
         conditions:
         - condition: condition
-          configuration: ""
+          configuration:
+          - configuration
+          - configuration
         - condition: condition
-          configuration: ""
+          configuration:
+          - configuration
+          - configuration
         enabled: true
       properties:
         name:
@@ -14582,9 +14604,13 @@ components:
         name: name
         description: description
         executors:
-        - configuration: ""
+        - configuration:
+          - configuration
+          - configuration
           executor: executor
-        - configuration: ""
+        - configuration:
+          - configuration
+          - configuration
           executor: executor
       properties:
         name:
@@ -14602,31 +14628,47 @@ components:
         - name: name
           description: description
           executors:
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
         - name: name
           description: description
           executors:
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
         globalProfiles:
         - name: name
           description: description
           executors:
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
         - name: name
           description: description
           executors:
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
-          - configuration: ""
+          - configuration:
+            - configuration
+            - configuration
             executor: executor
       properties:
         profiles:
@@ -19978,31 +20020,47 @@ components:
           - name: name
             description: description
             executors:
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
           - name: name
             description: description
             executors:
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
           globalProfiles:
           - name: name
             description: description
             executors:
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
           - name: name
             description: description
             executors:
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
-            - configuration: ""
+            - configuration:
+              - configuration
+              - configuration
               executor: executor
         defaultGroups:
         - defaultGroups
@@ -20031,9 +20089,13 @@ components:
             description: description
             conditions:
             - condition: condition
-              configuration: ""
+              configuration:
+              - configuration
+              - configuration
             - condition: condition
-              configuration: ""
+              configuration:
+              - configuration
+              - configuration
             enabled: true
           - name: name
             profiles:
@@ -20042,9 +20104,13 @@ components:
             description: description
             conditions:
             - condition: condition
-              configuration: ""
+              configuration:
+              - configuration
+              - configuration
             - condition: condition
-              configuration: ""
+              configuration:
+              - configuration
+              - configuration
             enabled: true
         ssoSessionIdleTimeoutRememberMe: 7
         adminEventsDetailsEnabled: true

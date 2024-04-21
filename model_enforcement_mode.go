@@ -21,8 +21,8 @@ type EnforcementMode string
 // List of EnforcementMode
 const (
 	ENFORCEMENTMODE_PERMISSIVE EnforcementMode = "PERMISSIVE"
-	ENFORCEMENTMODE_ENFORCING  EnforcementMode = "ENFORCING"
-	ENFORCEMENTMODE_DISABLED   EnforcementMode = "DISABLED"
+	ENFORCEMENTMODE_ENFORCING EnforcementMode = "ENFORCING"
+	ENFORCEMENTMODE_DISABLED EnforcementMode = "DISABLED"
 )
 
 // All allowed values of EnforcementMode enum
@@ -110,3 +110,4 @@ func (v *NullableEnforcementMode) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+

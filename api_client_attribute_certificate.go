@@ -16,19 +16,20 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"os"
 	"strings"
+	"os"
 )
+
 
 // ClientAttributeCertificateAPIService ClientAttributeCertificateAPI service
 type ClientAttributeCertificateAPIService service
 
 type ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostRequest struct {
-	ctx            context.Context
-	ApiService     *ClientAttributeCertificateAPIService
-	realm          string
-	clientUuid     string
-	attr           string
+	ctx context.Context
+	ApiService *ClientAttributeCertificateAPIService
+	realm string
+	clientUuid string
+	attr string
 	keyStoreConfig *KeyStoreConfig
 }
 
@@ -44,31 +45,30 @@ func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificat
 /*
 AdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPost Get a keystore file for the client, containing private key and public certificate
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param attr
-	@return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param attr
+ @return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostRequest
 */
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPost(ctx context.Context, realm string, clientUuid string, attr string) ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostRequest {
 	return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		attr:       attr,
+		attr: attr,
 	}
 }
 
 // Execute executes the request
-//
-//	@return *os.File
+//  @return *os.File
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostExecute(r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPostRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *os.File
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAttributeCertificateAPIService.AdminRealmsRealmClientsClientUuidCertificatesAttrDownloadPost")
@@ -142,11 +142,11 @@ func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuid
 }
 
 type ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostRequest struct {
-	ctx            context.Context
-	ApiService     *ClientAttributeCertificateAPIService
-	realm          string
-	clientUuid     string
-	attr           string
+	ctx context.Context
+	ApiService *ClientAttributeCertificateAPIService
+	realm string
+	clientUuid string
+	attr string
 	keyStoreConfig *KeyStoreConfig
 }
 
@@ -162,31 +162,30 @@ func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificat
 /*
 AdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPost Generate a new keypair and certificate, and get the private key file  Generates a keypair and certificate and serves the private key in a specified keystore format. Only generated public certificate is saved in Keycloak DB - the private key is not.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param attr
-	@return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param attr
+ @return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostRequest
 */
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPost(ctx context.Context, realm string, clientUuid string, attr string) ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostRequest {
 	return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		attr:       attr,
+		attr: attr,
 	}
 }
 
 // Execute executes the request
-//
-//	@return *os.File
+//  @return *os.File
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostExecute(r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPostRequest) (*os.File, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *os.File
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *os.File
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAttributeCertificateAPIService.AdminRealmsRealmClientsClientUuidCertificatesAttrGenerateAndDownloadPost")
@@ -260,11 +259,11 @@ func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuid
 }
 
 type ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientAttributeCertificateAPIService
-	realm      string
+	realm string
 	clientUuid string
-	attr       string
+	attr string
 }
 
 func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest) Execute() (*CertificateRepresentation, *http.Response, error) {
@@ -274,31 +273,30 @@ func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificat
 /*
 AdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePost Generate a new certificate with new key pair
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param attr
-	@return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param attr
+ @return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest
 */
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePost(ctx context.Context, realm string, clientUuid string, attr string) ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest {
 	return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		attr:       attr,
+		attr: attr,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CertificateRepresentation
+//  @return CertificateRepresentation
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostExecute(r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePostRequest) (*CertificateRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CertificateRepresentation
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CertificateRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAttributeCertificateAPIService.AdminRealmsRealmClientsClientUuidCertificatesAttrGeneratePost")
@@ -370,11 +368,11 @@ func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuid
 }
 
 type ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientAttributeCertificateAPIService
-	realm      string
+	realm string
 	clientUuid string
-	attr       string
+	attr string
 }
 
 func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest) Execute() (*CertificateRepresentation, *http.Response, error) {
@@ -384,31 +382,30 @@ func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificat
 /*
 AdminRealmsRealmClientsClientUuidCertificatesAttrGet Get key info
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param attr
-	@return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param attr
+ @return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest
 */
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrGet(ctx context.Context, realm string, clientUuid string, attr string) ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest {
 	return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		attr:       attr,
+		attr: attr,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CertificateRepresentation
+//  @return CertificateRepresentation
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrGetExecute(r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrGetRequest) (*CertificateRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CertificateRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CertificateRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAttributeCertificateAPIService.AdminRealmsRealmClientsClientUuidCertificatesAttrGet")
@@ -480,11 +477,11 @@ func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuid
 }
 
 type ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientAttributeCertificateAPIService
-	realm      string
+	realm string
 	clientUuid string
-	attr       string
+	attr string
 }
 
 func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest) Execute() (*CertificateRepresentation, *http.Response, error) {
@@ -494,31 +491,30 @@ func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificat
 /*
 AdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePost Upload only certificate, not private key
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param attr
-	@return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param attr
+ @return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest
 */
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePost(ctx context.Context, realm string, clientUuid string, attr string) ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest {
 	return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		attr:       attr,
+		attr: attr,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CertificateRepresentation
+//  @return CertificateRepresentation
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostExecute(r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePostRequest) (*CertificateRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CertificateRepresentation
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CertificateRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAttributeCertificateAPIService.AdminRealmsRealmClientsClientUuidCertificatesAttrUploadCertificatePost")
@@ -590,11 +586,11 @@ func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuid
 }
 
 type ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ClientAttributeCertificateAPIService
-	realm      string
+	realm string
 	clientUuid string
-	attr       string
+	attr string
 }
 
 func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest) Execute() (*CertificateRepresentation, *http.Response, error) {
@@ -604,31 +600,30 @@ func (r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificat
 /*
 AdminRealmsRealmClientsClientUuidCertificatesAttrUploadPost Upload certificate and eventually private key
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param attr
-	@return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param attr
+ @return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest
 */
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrUploadPost(ctx context.Context, realm string, clientUuid string, attr string) ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest {
 	return ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		attr:       attr,
+		attr: attr,
 	}
 }
 
 // Execute executes the request
-//
-//	@return CertificateRepresentation
+//  @return CertificateRepresentation
 func (a *ClientAttributeCertificateAPIService) AdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostExecute(r ClientAttributeCertificateAPIAdminRealmsRealmClientsClientUuidCertificatesAttrUploadPostRequest) (*CertificateRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *CertificateRepresentation
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *CertificateRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ClientAttributeCertificateAPIService.AdminRealmsRealmClientsClientUuidCertificatesAttrUploadPost")

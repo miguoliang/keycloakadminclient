@@ -19,18 +19,19 @@ import (
 	"strings"
 )
 
+
 // RolesAPIService RolesAPI service
 type RolesAPIService service
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest struct {
-	ctx                 context.Context
-	ApiService          *RolesAPIService
-	realm               string
-	clientUuid          string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
 	briefRepresentation *bool
-	first               *int32
-	max                 *int32
-	search              *string
+	first *int32
+	max *int32
+	search *string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest) BriefRepresentation(briefRepresentation bool) RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest {
@@ -60,29 +61,28 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest) Execute() ([]R
 /*
 AdminRealmsRealmClientsClientUuidRolesGet Get all roles for the realm or client
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesGet(ctx context.Context, realm string, clientUuid string) RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesGet")
@@ -171,10 +171,10 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesGetExecute(r Rol
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	clientUuid         string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
 	roleRepresentation *RoleRepresentation
 }
 
@@ -190,16 +190,16 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest) Execute() (*h
 /*
 AdminRealmsRealmClientsClientUuidRolesPost Create a new role for the realm or client
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesPost(ctx context.Context, realm string, clientUuid string) RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
 	}
 }
@@ -207,9 +207,9 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesPost(ctx context
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesPostExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesPost")
@@ -273,11 +273,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesPostExecute(r Ro
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest) Execute() ([]RoleRepresentation, *http.Response, error) {
@@ -287,31 +287,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsC
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGet Get client-level roles for the client that are in the role's composite
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesClientsClientUuidGet")
@@ -383,11 +382,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameComposit
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	clientUuid         string
-	roleName           string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
+	roleName string
 	roleRepresentation *[]RoleRepresentation
 }
 
@@ -403,28 +402,28 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRe
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDelete Remove roles from the role's composite
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDelete(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesDelete")
@@ -489,11 +488,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameComposit
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest) Execute() ([]RoleRepresentation, *http.Response, error) {
@@ -503,31 +502,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetReque
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGet Get composites of the role
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesGet")
@@ -599,11 +597,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameComposit
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	clientUuid         string
-	roleName           string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
+	roleName string
 	roleRepresentation *[]RoleRepresentation
 }
 
@@ -619,28 +617,28 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequ
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPost Add a composite to the role
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPost(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesPost")
@@ -705,11 +703,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameComposit
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest) Execute() ([]RoleRepresentation, *http.Response, error) {
@@ -719,31 +717,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGet
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGet Get realm-level roles of the role's composite
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameCompositesRealmGet")
@@ -815,11 +812,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameComposit
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest) Execute() (*http.Response, error) {
@@ -829,28 +826,28 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest) Exe
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameDelete Delete a role by name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameDelete(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameDeleteExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameDelete")
@@ -913,11 +910,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameDeleteEx
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest) Execute() (*RoleRepresentation, *http.Response, error) {
@@ -927,31 +924,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest) Execut
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameGet Get a role by name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return RoleRepresentation
+//  @return RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGetRequest) (*RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameGet")
@@ -1023,14 +1019,14 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameGetExecu
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest struct {
-	ctx                 context.Context
-	ApiService          *RolesAPIService
-	realm               string
-	clientUuid          string
-	roleName            string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
+	roleName string
 	briefRepresentation *bool
-	first               *int32
-	max                 *int32
+	first *int32
+	max *int32
 }
 
 // if false, return a full representation of the {@code GroupRepresentation} objects.
@@ -1058,31 +1054,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest) 
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGet Returns a stream of groups that have the specified role name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName the role name.
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName the role name.
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []GroupRepresentation
+//  @return []GroupRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGetRequest) ([]GroupRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []GroupRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []GroupRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGet")
@@ -1166,11 +1161,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameGroupsGe
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest) Execute() (*ManagementPermissionReference, *http.Response, error) {
@@ -1180,31 +1175,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissi
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGet Return object stating whether role Authorization permissions have been initialized or not and a reference
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ManagementPermissionReference
+//  @return ManagementPermissionReference
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGetRequest) (*ManagementPermissionReference, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ManagementPermissionReference
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ManagementPermissionReference
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsGet")
@@ -1276,11 +1270,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameManageme
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutRequest struct {
-	ctx                           context.Context
-	ApiService                    *RolesAPIService
-	realm                         string
-	clientUuid                    string
-	roleName                      string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
+	roleName string
 	managementPermissionReference *ManagementPermissionReference
 }
 
@@ -1296,31 +1290,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissi
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPut Return object stating whether role Authorization permissions have been initialized or not and a reference
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPut(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ManagementPermissionReference
+//  @return ManagementPermissionReference
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPutRequest) (*ManagementPermissionReference, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ManagementPermissionReference
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ManagementPermissionReference
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameManagementPermissionsPut")
@@ -1394,11 +1387,11 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameManageme
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	clientUuid         string
-	roleName           string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	clientUuid string
+	roleName string
 	roleRepresentation *RoleRepresentation
 }
 
@@ -1414,28 +1407,28 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest) Execut
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNamePut Update a role by name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNamePut(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNamePutExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNamePutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNamePut")
@@ -1500,13 +1493,13 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNamePutExecu
 }
 
 type RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
-	first      *int32
-	max        *int32
+	roleName string
+	first *int32
+	max *int32
 }
 
 // first result to return. Ignored if negative or {@code null}.
@@ -1528,31 +1521,30 @@ func (r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest) E
 /*
 AdminRealmsRealmClientsClientUuidRolesRoleNameUsersGet Returns a stream of users that have the specified role name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid id of client (not client-id!)
-	@param roleName the role name.
-	@return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid id of client (not client-id!)
+ @param roleName the role name.
+ @return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameUsersGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest {
 	return RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []UserRepresentation
+//  @return []UserRepresentation
 func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetExecute(r RolesAPIAdminRealmsRealmClientsClientUuidRolesRoleNameUsersGetRequest) ([]UserRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []UserRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []UserRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmClientsClientUuidRolesRoleNameUsersGet")
@@ -1630,13 +1622,13 @@ func (a *RolesAPIService) AdminRealmsRealmClientsClientUuidRolesRoleNameUsersGet
 }
 
 type RolesAPIAdminRealmsRealmRolesGetRequest struct {
-	ctx                 context.Context
-	ApiService          *RolesAPIService
-	realm               string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
 	briefRepresentation *bool
-	first               *int32
-	max                 *int32
-	search              *string
+	first *int32
+	max *int32
+	search *string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesGetRequest) BriefRepresentation(briefRepresentation bool) RolesAPIAdminRealmsRealmRolesGetRequest {
@@ -1666,27 +1658,26 @@ func (r RolesAPIAdminRealmsRealmRolesGetRequest) Execute() ([]RoleRepresentation
 /*
 AdminRealmsRealmRolesGet Get all roles for the realm or client
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesGet(ctx context.Context, realm string) RolesAPIAdminRealmsRealmRolesGetRequest {
 	return RolesAPIAdminRealmsRealmRolesGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesGetExecute(r RolesAPIAdminRealmsRealmRolesGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesGet")
@@ -1774,9 +1765,9 @@ func (a *RolesAPIService) AdminRealmsRealmRolesGetExecute(r RolesAPIAdminRealmsR
 }
 
 type RolesAPIAdminRealmsRealmRolesPostRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
 	roleRepresentation *RoleRepresentation
 }
 
@@ -1792,24 +1783,24 @@ func (r RolesAPIAdminRealmsRealmRolesPostRequest) Execute() (*http.Response, err
 /*
 AdminRealmsRealmRolesPost Create a new role for the realm or client
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesPostRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesPost(ctx context.Context, realm string) RolesAPIAdminRealmsRealmRolesPostRequest {
 	return RolesAPIAdminRealmsRealmRolesPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmRolesPostExecute(r RolesAPIAdminRealmsRealmRolesPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesPost")
@@ -1872,11 +1863,11 @@ func (a *RolesAPIService) AdminRealmsRealmRolesPostExecute(r RolesAPIAdminRealms
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
+	realm string
 	clientUuid string
-	roleName   string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest) Execute() ([]RoleRepresentation, *http.Response, error) {
@@ -1886,31 +1877,30 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetReque
 /*
 AdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGet Get client-level roles for the client that are in the role's composite
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param clientUuid
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param clientUuid
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGet(ctx context.Context, realm string, clientUuid string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
+		ctx: ctx,
+		realm: realm,
 		clientUuid: clientUuid,
-		roleName:   roleName,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameCompositesClientsClientUuidGet")
@@ -1982,10 +1972,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesClientsClientUu
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	roleName           string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	roleName string
 	roleRepresentation *[]RoleRepresentation
 }
 
@@ -2001,26 +1991,26 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest) Execute() 
 /*
 AdminRealmsRealmRolesRoleNameCompositesDelete Remove roles from the role's composite
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesDelete(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesDeleteExecute(r RolesAPIAdminRealmsRealmRolesRoleNameCompositesDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameCompositesDelete")
@@ -2084,10 +2074,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesDeleteExecute(r
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
-	roleName   string
+	realm string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest) Execute() ([]RoleRepresentation, *http.Response, error) {
@@ -2097,29 +2087,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest) Execute() ([]
 /*
 AdminRealmsRealmRolesRoleNameCompositesGet Get composites of the role
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesGet(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameCompositesGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameCompositesGet")
@@ -2190,10 +2179,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesGetExecute(r Ro
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	roleName           string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	roleName string
 	roleRepresentation *[]RoleRepresentation
 }
 
@@ -2209,26 +2198,26 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest) Execute() (*
 /*
 AdminRealmsRealmRolesRoleNameCompositesPost Add a composite to the role
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesPost(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesPostExecute(r RolesAPIAdminRealmsRealmRolesRoleNameCompositesPostRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameCompositesPost")
@@ -2292,10 +2281,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesPostExecute(r R
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
-	roleName   string
+	realm string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest) Execute() ([]RoleRepresentation, *http.Response, error) {
@@ -2305,29 +2294,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest) Execute(
 /*
 AdminRealmsRealmRolesRoleNameCompositesRealmGet Get realm-level roles of the role's composite
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesRealmGet(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []RoleRepresentation
+//  @return []RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesRealmGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameCompositesRealmGetRequest) ([]RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameCompositesRealmGet")
@@ -2398,10 +2386,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameCompositesRealmGetExecute
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
-	roleName   string
+	realm string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest) Execute() (*http.Response, error) {
@@ -2411,26 +2399,26 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest) Execute() (*http.Res
 /*
 AdminRealmsRealmRolesRoleNameDelete Delete a role by name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameDelete(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameDeleteExecute(r RolesAPIAdminRealmsRealmRolesRoleNameDeleteRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameDelete")
@@ -2492,10 +2480,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameDeleteExecute(r RolesAPIA
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
-	roleName   string
+	realm string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesRoleNameGetRequest) Execute() (*RoleRepresentation, *http.Response, error) {
@@ -2505,29 +2493,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameGetRequest) Execute() (*RoleReprese
 /*
 AdminRealmsRealmRolesRoleNameGet Get a role by name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNameGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNameGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameGet(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return RoleRepresentation
+//  @return RoleRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameGetRequest) (*RoleRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *RoleRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *RoleRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameGet")
@@ -2598,13 +2585,13 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameGetExecute(r RolesAPIAdmi
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest struct {
-	ctx                 context.Context
-	ApiService          *RolesAPIService
-	realm               string
-	roleName            string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	roleName string
 	briefRepresentation *bool
-	first               *int32
-	max                 *int32
+	first *int32
+	max *int32
 }
 
 // if false, return a full representation of the {@code GroupRepresentation} objects.
@@ -2632,29 +2619,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest) Execute() ([]Grou
 /*
 AdminRealmsRealmRolesRoleNameGroupsGet Returns a stream of groups that have the specified role name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName the role name.
-	@return RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName the role name.
+ @return RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameGroupsGet(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []GroupRepresentation
+//  @return []GroupRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameGroupsGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameGroupsGetRequest) ([]GroupRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []GroupRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []GroupRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameGroupsGet")
@@ -2737,10 +2723,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameGroupsGetExecute(r RolesA
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
-	roleName   string
+	realm string
+	roleName string
 }
 
 func (r RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest) Execute() (*ManagementPermissionReference, *http.Response, error) {
@@ -2750,29 +2736,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest) Ex
 /*
 AdminRealmsRealmRolesRoleNameManagementPermissionsGet Return object stating whether role Authorization permissions have been initialized or not and a reference
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName
-	@return RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName
+ @return RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameManagementPermissionsGet(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ManagementPermissionReference
+//  @return ManagementPermissionReference
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameManagementPermissionsGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsGetRequest) (*ManagementPermissionReference, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ManagementPermissionReference
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ManagementPermissionReference
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameManagementPermissionsGet")
@@ -2843,10 +2828,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameManagementPermissionsGetE
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest struct {
-	ctx                           context.Context
-	ApiService                    *RolesAPIService
-	realm                         string
-	roleName                      string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	roleName string
 	managementPermissionReference *ManagementPermissionReference
 }
 
@@ -2862,29 +2847,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest) Ex
 /*
 AdminRealmsRealmRolesRoleNameManagementPermissionsPut Return object stating whether role Authorization permissions have been initialized or not and a reference
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName
-	@return RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName
+ @return RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameManagementPermissionsPut(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return ManagementPermissionReference
+//  @return ManagementPermissionReference
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameManagementPermissionsPutExecute(r RolesAPIAdminRealmsRealmRolesRoleNameManagementPermissionsPutRequest) (*ManagementPermissionReference, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPut
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *ManagementPermissionReference
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *ManagementPermissionReference
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameManagementPermissionsPut")
@@ -2957,10 +2941,10 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameManagementPermissionsPutE
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNamePutRequest struct {
-	ctx                context.Context
-	ApiService         *RolesAPIService
-	realm              string
-	roleName           string
+	ctx context.Context
+	ApiService *RolesAPIService
+	realm string
+	roleName string
 	roleRepresentation *RoleRepresentation
 }
 
@@ -2976,26 +2960,26 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNamePutRequest) Execute() (*http.Respon
 /*
 AdminRealmsRealmRolesRoleNamePut Update a role by name
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName role's name (not id!)
-	@return RolesAPIAdminRealmsRealmRolesRoleNamePutRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName role's name (not id!)
+ @return RolesAPIAdminRealmsRealmRolesRoleNamePutRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNamePut(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNamePutRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNamePutRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNamePutExecute(r RolesAPIAdminRealmsRealmRolesRoleNamePutRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPut
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNamePut")
@@ -3059,12 +3043,12 @@ func (a *RolesAPIService) AdminRealmsRealmRolesRoleNamePutExecute(r RolesAPIAdmi
 }
 
 type RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RolesAPIService
-	realm      string
-	roleName   string
-	first      *int32
-	max        *int32
+	realm string
+	roleName string
+	first *int32
+	max *int32
 }
 
 // first result to return. Ignored if negative or {@code null}.
@@ -3086,29 +3070,28 @@ func (r RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest) Execute() ([]UserR
 /*
 AdminRealmsRealmRolesRoleNameUsersGet Returns a stream of users that have the specified role name.
 
-	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param realm realm name (not id!)
-	@param roleName the role name.
-	@return RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param realm realm name (not id!)
+ @param roleName the role name.
+ @return RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest
 */
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameUsersGet(ctx context.Context, realm string, roleName string) RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest {
 	return RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest{
 		ApiService: a,
-		ctx:        ctx,
-		realm:      realm,
-		roleName:   roleName,
+		ctx: ctx,
+		realm: realm,
+		roleName: roleName,
 	}
 }
 
 // Execute executes the request
-//
-//	@return []UserRepresentation
+//  @return []UserRepresentation
 func (a *RolesAPIService) AdminRealmsRealmRolesRoleNameUsersGetExecute(r RolesAPIAdminRealmsRealmRolesRoleNameUsersGetRequest) ([]UserRepresentation, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue []UserRepresentation
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  []UserRepresentation
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RolesAPIService.AdminRealmsRealmRolesRoleNameUsersGet")

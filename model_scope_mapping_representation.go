@@ -21,8 +21,6 @@ var _ MappedNullable = &ScopeMappingRepresentation{}
 type ScopeMappingRepresentation struct {
 	Self *string `json:"self,omitempty"`
 	Client *string `json:"client,omitempty"`
-	// Deprecated
-	ClientTemplate *string `json:"clientTemplate,omitempty"`
 	ClientScope *string `json:"clientScope,omitempty"`
 	Roles []string `json:"roles,omitempty"`
 }
@@ -108,41 +106,6 @@ func (o *ScopeMappingRepresentation) SetClient(v string) {
 	o.Client = &v
 }
 
-// GetClientTemplate returns the ClientTemplate field value if set, zero value otherwise.
-// Deprecated
-func (o *ScopeMappingRepresentation) GetClientTemplate() string {
-	if o == nil || IsNil(o.ClientTemplate) {
-		var ret string
-		return ret
-	}
-	return *o.ClientTemplate
-}
-
-// GetClientTemplateOk returns a tuple with the ClientTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ScopeMappingRepresentation) GetClientTemplateOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientTemplate) {
-		return nil, false
-	}
-	return o.ClientTemplate, true
-}
-
-// HasClientTemplate returns a boolean if a field has been set.
-func (o *ScopeMappingRepresentation) HasClientTemplate() bool {
-	if o != nil && !IsNil(o.ClientTemplate) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientTemplate gets a reference to the given string and assigns it to the ClientTemplate field.
-// Deprecated
-func (o *ScopeMappingRepresentation) SetClientTemplate(v string) {
-	o.ClientTemplate = &v
-}
-
 // GetClientScope returns the ClientScope field value if set, zero value otherwise.
 func (o *ScopeMappingRepresentation) GetClientScope() string {
 	if o == nil || IsNil(o.ClientScope) {
@@ -222,9 +185,6 @@ func (o ScopeMappingRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Client) {
 		toSerialize["client"] = o.Client
-	}
-	if !IsNil(o.ClientTemplate) {
-		toSerialize["clientTemplate"] = o.ClientTemplate
 	}
 	if !IsNil(o.ClientScope) {
 		toSerialize["clientScope"] = o.ClientScope

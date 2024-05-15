@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **ClientAuthenticatorType** | Pointer to **string** |  | [optional] 
 **Secret** | Pointer to **string** |  | [optional] 
 **RegistrationAccessToken** | Pointer to **string** |  | [optional] 
-**DefaultRoles** | Pointer to **[]string** |  | [optional] 
 **RedirectUris** | Pointer to **[]string** |  | [optional] 
 **WebOrigins** | Pointer to **[]string** |  | [optional] 
 **NotBefore** | Pointer to **int32** |  | [optional] 
@@ -28,7 +27,6 @@ Name | Type | Description | Notes
 **DirectAccessGrantsEnabled** | Pointer to **bool** |  | [optional] 
 **ServiceAccountsEnabled** | Pointer to **bool** |  | [optional] 
 **AuthorizationServicesEnabled** | Pointer to **bool** |  | [optional] 
-**DirectGrantsOnly** | Pointer to **bool** |  | [optional] 
 **PublicClient** | Pointer to **bool** |  | [optional] 
 **FrontchannelLogout** | Pointer to **bool** |  | [optional] 
 **Protocol** | Pointer to **string** |  | [optional] 
@@ -38,10 +36,6 @@ Name | Type | Description | Notes
 **NodeReRegistrationTimeout** | Pointer to **int32** |  | [optional] 
 **RegisteredNodes** | Pointer to **map[string]int32** |  | [optional] 
 **ProtocolMappers** | Pointer to [**[]ProtocolMapperRepresentation**](ProtocolMapperRepresentation.md) |  | [optional] 
-**ClientTemplate** | Pointer to **string** |  | [optional] 
-**UseTemplateConfig** | Pointer to **bool** |  | [optional] 
-**UseTemplateScope** | Pointer to **bool** |  | [optional] 
-**UseTemplateMappers** | Pointer to **bool** |  | [optional] 
 **DefaultClientScopes** | Pointer to **[]string** |  | [optional] 
 **OptionalClientScopes** | Pointer to **[]string** |  | [optional] 
 **AuthorizationSettings** | Pointer to [**ResourceServerRepresentation**](ResourceServerRepresentation.md) |  | [optional] 
@@ -392,31 +386,6 @@ SetRegistrationAccessToken sets RegistrationAccessToken field to given value.
 
 HasRegistrationAccessToken returns a boolean if a field has been set.
 
-### GetDefaultRoles
-
-`func (o *ClientRepresentation) GetDefaultRoles() []string`
-
-GetDefaultRoles returns the DefaultRoles field if non-nil, zero value otherwise.
-
-### GetDefaultRolesOk
-
-`func (o *ClientRepresentation) GetDefaultRolesOk() (*[]string, bool)`
-
-GetDefaultRolesOk returns a tuple with the DefaultRoles field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultRoles
-
-`func (o *ClientRepresentation) SetDefaultRoles(v []string)`
-
-SetDefaultRoles sets DefaultRoles field to given value.
-
-### HasDefaultRoles
-
-`func (o *ClientRepresentation) HasDefaultRoles() bool`
-
-HasDefaultRoles returns a boolean if a field has been set.
-
 ### GetRedirectUris
 
 `func (o *ClientRepresentation) GetRedirectUris() []string`
@@ -667,31 +636,6 @@ SetAuthorizationServicesEnabled sets AuthorizationServicesEnabled field to given
 
 HasAuthorizationServicesEnabled returns a boolean if a field has been set.
 
-### GetDirectGrantsOnly
-
-`func (o *ClientRepresentation) GetDirectGrantsOnly() bool`
-
-GetDirectGrantsOnly returns the DirectGrantsOnly field if non-nil, zero value otherwise.
-
-### GetDirectGrantsOnlyOk
-
-`func (o *ClientRepresentation) GetDirectGrantsOnlyOk() (*bool, bool)`
-
-GetDirectGrantsOnlyOk returns a tuple with the DirectGrantsOnly field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDirectGrantsOnly
-
-`func (o *ClientRepresentation) SetDirectGrantsOnly(v bool)`
-
-SetDirectGrantsOnly sets DirectGrantsOnly field to given value.
-
-### HasDirectGrantsOnly
-
-`func (o *ClientRepresentation) HasDirectGrantsOnly() bool`
-
-HasDirectGrantsOnly returns a boolean if a field has been set.
-
 ### GetPublicClient
 
 `func (o *ClientRepresentation) GetPublicClient() bool`
@@ -916,106 +860,6 @@ SetProtocolMappers sets ProtocolMappers field to given value.
 `func (o *ClientRepresentation) HasProtocolMappers() bool`
 
 HasProtocolMappers returns a boolean if a field has been set.
-
-### GetClientTemplate
-
-`func (o *ClientRepresentation) GetClientTemplate() string`
-
-GetClientTemplate returns the ClientTemplate field if non-nil, zero value otherwise.
-
-### GetClientTemplateOk
-
-`func (o *ClientRepresentation) GetClientTemplateOk() (*string, bool)`
-
-GetClientTemplateOk returns a tuple with the ClientTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientTemplate
-
-`func (o *ClientRepresentation) SetClientTemplate(v string)`
-
-SetClientTemplate sets ClientTemplate field to given value.
-
-### HasClientTemplate
-
-`func (o *ClientRepresentation) HasClientTemplate() bool`
-
-HasClientTemplate returns a boolean if a field has been set.
-
-### GetUseTemplateConfig
-
-`func (o *ClientRepresentation) GetUseTemplateConfig() bool`
-
-GetUseTemplateConfig returns the UseTemplateConfig field if non-nil, zero value otherwise.
-
-### GetUseTemplateConfigOk
-
-`func (o *ClientRepresentation) GetUseTemplateConfigOk() (*bool, bool)`
-
-GetUseTemplateConfigOk returns a tuple with the UseTemplateConfig field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseTemplateConfig
-
-`func (o *ClientRepresentation) SetUseTemplateConfig(v bool)`
-
-SetUseTemplateConfig sets UseTemplateConfig field to given value.
-
-### HasUseTemplateConfig
-
-`func (o *ClientRepresentation) HasUseTemplateConfig() bool`
-
-HasUseTemplateConfig returns a boolean if a field has been set.
-
-### GetUseTemplateScope
-
-`func (o *ClientRepresentation) GetUseTemplateScope() bool`
-
-GetUseTemplateScope returns the UseTemplateScope field if non-nil, zero value otherwise.
-
-### GetUseTemplateScopeOk
-
-`func (o *ClientRepresentation) GetUseTemplateScopeOk() (*bool, bool)`
-
-GetUseTemplateScopeOk returns a tuple with the UseTemplateScope field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseTemplateScope
-
-`func (o *ClientRepresentation) SetUseTemplateScope(v bool)`
-
-SetUseTemplateScope sets UseTemplateScope field to given value.
-
-### HasUseTemplateScope
-
-`func (o *ClientRepresentation) HasUseTemplateScope() bool`
-
-HasUseTemplateScope returns a boolean if a field has been set.
-
-### GetUseTemplateMappers
-
-`func (o *ClientRepresentation) GetUseTemplateMappers() bool`
-
-GetUseTemplateMappers returns the UseTemplateMappers field if non-nil, zero value otherwise.
-
-### GetUseTemplateMappersOk
-
-`func (o *ClientRepresentation) GetUseTemplateMappersOk() (*bool, bool)`
-
-GetUseTemplateMappersOk returns a tuple with the UseTemplateMappers field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUseTemplateMappers
-
-`func (o *ClientRepresentation) SetUseTemplateMappers(v bool)`
-
-SetUseTemplateMappers sets UseTemplateMappers field to given value.
-
-### HasUseTemplateMappers
-
-`func (o *ClientRepresentation) HasUseTemplateMappers() bool`
-
-HasUseTemplateMappers returns a boolean if a field has been set.
 
 ### GetDefaultClientScopes
 

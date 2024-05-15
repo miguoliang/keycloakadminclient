@@ -575,114 +575,6 @@ func (a *ScopeMappingsAPIService) AdminRealmsRealmClientScopesClientScopeIdScope
 	return localVarHTTPResponse, nil
 }
 
-type ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest struct {
-	ctx context.Context
-	ApiService *ScopeMappingsAPIService
-	realm string
-	clientScopeId string
-}
-
-func (r ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest) Execute() (*MappingsRepresentation, *http.Response, error) {
-	return r.ApiService.AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetExecute(r)
-}
-
-/*
-AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet Get all scope mappings for the client
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientScopeId
- @return ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest
-
-Deprecated
-*/
-func (a *ScopeMappingsAPIService) AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet(ctx context.Context, realm string, clientScopeId string) ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest {
-	return ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest{
-		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		clientScopeId: clientScopeId,
-	}
-}
-
-// Execute executes the request
-//  @return MappingsRepresentation
-// Deprecated
-func (a *ScopeMappingsAPIService) AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetExecute(r ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest) (*MappingsRepresentation, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MappingsRepresentation
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeMappingsAPIService.AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings"
-	localVarPath = strings.Replace(localVarPath, "{"+"realm"+"}", url.PathEscape(parameterValueToString(r.realm, "realm")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"client-scope-id"+"}", url.PathEscape(parameterValueToString(r.clientScopeId, "clientScopeId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmAvailableGetRequest struct {
 	ctx context.Context
 	ApiService *ScopeMappingsAPIService
@@ -807,7 +699,7 @@ func (r ScopeMappingsAPIAdminRealmsRealmClientScopesClientScopeIdScopeMappingsRe
 }
 
 /*
-AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 
 The method is really to show a comprehensive total view of realm-level roles associated with the client.
 
@@ -1769,114 +1661,6 @@ func (a *ScopeMappingsAPIService) AdminRealmsRealmClientTemplatesClientScopeIdSc
 	return localVarHTTPResponse, nil
 }
 
-type ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest struct {
-	ctx context.Context
-	ApiService *ScopeMappingsAPIService
-	realm string
-	clientScopeId string
-}
-
-func (r ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest) Execute() (*MappingsRepresentation, *http.Response, error) {
-	return r.ApiService.AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetExecute(r)
-}
-
-/*
-AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet Get all scope mappings for the client
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientScopeId
- @return ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest
-
-Deprecated
-*/
-func (a *ScopeMappingsAPIService) AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet(ctx context.Context, realm string, clientScopeId string) ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest {
-	return ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest{
-		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		clientScopeId: clientScopeId,
-	}
-}
-
-// Execute executes the request
-//  @return MappingsRepresentation
-// Deprecated
-func (a *ScopeMappingsAPIService) AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetExecute(r ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest) (*MappingsRepresentation, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MappingsRepresentation
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeMappingsAPIService.AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings"
-	localVarPath = strings.Replace(localVarPath, "{"+"realm"+"}", url.PathEscape(parameterValueToString(r.realm, "realm")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"client-scope-id"+"}", url.PathEscape(parameterValueToString(r.clientScopeId, "clientScopeId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmAvailableGetRequest struct {
 	ctx context.Context
 	ApiService *ScopeMappingsAPIService
@@ -2001,7 +1785,7 @@ func (r ScopeMappingsAPIAdminRealmsRealmClientTemplatesClientScopeIdScopeMapping
 }
 
 /*
-AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 
 The method is really to show a comprehensive total view of realm-level roles associated with the client.
 
@@ -2963,114 +2747,6 @@ func (a *ScopeMappingsAPIService) AdminRealmsRealmClientsClientUuidScopeMappings
 	return localVarHTTPResponse, nil
 }
 
-type ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest struct {
-	ctx context.Context
-	ApiService *ScopeMappingsAPIService
-	realm string
-	clientUuid string
-}
-
-func (r ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest) Execute() (*MappingsRepresentation, *http.Response, error) {
-	return r.ApiService.AdminRealmsRealmClientsClientUuidScopeMappingsGetExecute(r)
-}
-
-/*
-AdminRealmsRealmClientsClientUuidScopeMappingsGet Get all scope mappings for the client
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param clientUuid id of client (not client-id!)
- @return ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest
-
-Deprecated
-*/
-func (a *ScopeMappingsAPIService) AdminRealmsRealmClientsClientUuidScopeMappingsGet(ctx context.Context, realm string, clientUuid string) ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest {
-	return ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest{
-		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		clientUuid: clientUuid,
-	}
-}
-
-// Execute executes the request
-//  @return MappingsRepresentation
-// Deprecated
-func (a *ScopeMappingsAPIService) AdminRealmsRealmClientsClientUuidScopeMappingsGetExecute(r ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest) (*MappingsRepresentation, *http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *MappingsRepresentation
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ScopeMappingsAPIService.AdminRealmsRealmClientsClientUuidScopeMappingsGet")
-	if err != nil {
-		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/admin/realms/{realm}/clients/{client-uuid}/scope-mappings"
-	localVarPath = strings.Replace(localVarPath, "{"+"realm"+"}", url.PathEscape(parameterValueToString(r.realm, "realm")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"client-uuid"+"}", url.PathEscape(parameterValueToString(r.clientUuid, "clientUuid")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return localVarReturnValue, nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarReturnValue, localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-	if err != nil {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: err.Error(),
-		}
-		return localVarReturnValue, localVarHTTPResponse, newErr
-	}
-
-	return localVarReturnValue, localVarHTTPResponse, nil
-}
-
 type ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsRealmAvailableGetRequest struct {
 	ctx context.Context
 	ApiService *ScopeMappingsAPIService
@@ -3195,7 +2871,7 @@ func (r ScopeMappingsAPIAdminRealmsRealmClientsClientUuidScopeMappingsRealmCompo
 }
 
 /*
-AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 
 The method is really to show a comprehensive total view of realm-level roles associated with the client.
 

@@ -33,7 +33,6 @@ Method | HTTP request | Description
 [**AdminRealmsRealmUsersUserIdLogoutPost**](UsersAPI.md#AdminRealmsRealmUsersUserIdLogoutPost) | **Post** /admin/realms/{realm}/users/{user-id}/logout | Remove all user sessions associated with the user Also send notification to all clients that have an admin URL to invalidate the sessions for the particular user.
 [**AdminRealmsRealmUsersUserIdOfflineSessionsClientUuidGet**](UsersAPI.md#AdminRealmsRealmUsersUserIdOfflineSessionsClientUuidGet) | **Get** /admin/realms/{realm}/users/{user-id}/offline-sessions/{clientUuid} | Get offline sessions associated with the user and client
 [**AdminRealmsRealmUsersUserIdPut**](UsersAPI.md#AdminRealmsRealmUsersUserIdPut) | **Put** /admin/realms/{realm}/users/{user-id} | Update the user
-[**AdminRealmsRealmUsersUserIdResetPasswordEmailPut**](UsersAPI.md#AdminRealmsRealmUsersUserIdResetPasswordEmailPut) | **Put** /admin/realms/{realm}/users/{user-id}/reset-password-email | Send an email to the user with a link they can click to reset their password.
 [**AdminRealmsRealmUsersUserIdResetPasswordPut**](UsersAPI.md#AdminRealmsRealmUsersUserIdResetPasswordPut) | **Put** /admin/realms/{realm}/users/{user-id}/reset-password | Set up a new password for the user.
 [**AdminRealmsRealmUsersUserIdSendVerifyEmailPut**](UsersAPI.md#AdminRealmsRealmUsersUserIdSendVerifyEmailPut) | **Put** /admin/realms/{realm}/users/{user-id}/send-verify-email | Send an email-verification email to the user An email contains a link the user can click to verify their email address.
 [**AdminRealmsRealmUsersUserIdSessionsGet**](UsersAPI.md#AdminRealmsRealmUsersUserIdSessionsGet) | **Get** /admin/realms/{realm}/users/{user-id}/sessions | Get sessions associated with the user
@@ -2163,81 +2162,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AdminRealmsRealmUsersUserIdResetPasswordEmailPut
-
-> AdminRealmsRealmUsersUserIdResetPasswordEmailPut(ctx, realm, userId).ClientId(clientId).RedirectUri(redirectUri).Execute()
-
-Send an email to the user with a link they can click to reset their password.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/miguoliang/keycloakadminclient"
-)
-
-func main() {
-	realm := "realm_example" // string | realm name (not id!)
-	userId := "userId_example" // string | 
-	clientId := "clientId_example" // string | client id (optional)
-	redirectUri := "redirectUri_example" // string | redirect uri (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.UsersAPI.AdminRealmsRealmUsersUserIdResetPasswordEmailPut(context.Background(), realm, userId).ClientId(clientId).RedirectUri(redirectUri).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.AdminRealmsRealmUsersUserIdResetPasswordEmailPut``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**realm** | **string** | realm name (not id!) | 
-**userId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
- **clientId** | **string** | client id | 
- **redirectUri** | **string** | redirect uri | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

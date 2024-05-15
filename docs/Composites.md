@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Realm** | Pointer to **[]string** |  | [optional] 
 **Client** | Pointer to **map[string][]string** |  | [optional] 
-**Application** | Pointer to **map[string][]string** |  | [optional] 
 
 ## Methods
 
@@ -76,31 +75,6 @@ SetClient sets Client field to given value.
 `func (o *Composites) HasClient() bool`
 
 HasClient returns a boolean if a field has been set.
-
-### GetApplication
-
-`func (o *Composites) GetApplication() map[string][]string`
-
-GetApplication returns the Application field if non-nil, zero value otherwise.
-
-### GetApplicationOk
-
-`func (o *Composites) GetApplicationOk() (*map[string][]string, bool)`
-
-GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplication
-
-`func (o *Composites) SetApplication(v map[string][]string)`
-
-SetApplication sets Application field to given value.
-
-### HasApplication
-
-`func (o *Composites) HasApplication() bool`
-
-HasApplication returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

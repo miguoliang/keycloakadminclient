@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **AuthenticatorFlow** | Pointer to **bool** |  | [optional] 
 **Requirement** | Pointer to **string** |  | [optional] 
 **Priority** | Pointer to **int32** |  | [optional] 
-**AutheticatorFlow** | Pointer to **bool** |  | [optional] 
 **FlowAlias** | Pointer to **string** |  | [optional] 
 **UserSetupAllowed** | Pointer to **bool** |  | [optional] 
 
@@ -156,31 +155,6 @@ SetPriority sets Priority field to given value.
 `func (o *AuthenticationExecutionExportRepresentation) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
-
-### GetAutheticatorFlow
-
-`func (o *AuthenticationExecutionExportRepresentation) GetAutheticatorFlow() bool`
-
-GetAutheticatorFlow returns the AutheticatorFlow field if non-nil, zero value otherwise.
-
-### GetAutheticatorFlowOk
-
-`func (o *AuthenticationExecutionExportRepresentation) GetAutheticatorFlowOk() (*bool, bool)`
-
-GetAutheticatorFlowOk returns a tuple with the AutheticatorFlow field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAutheticatorFlow
-
-`func (o *AuthenticationExecutionExportRepresentation) SetAutheticatorFlow(v bool)`
-
-SetAutheticatorFlow sets AutheticatorFlow field to given value.
-
-### HasAutheticatorFlow
-
-`func (o *AuthenticationExecutionExportRepresentation) HasAutheticatorFlow() bool`
-
-HasAutheticatorFlow returns a boolean if a field has been set.
 
 ### GetFlowAlias
 

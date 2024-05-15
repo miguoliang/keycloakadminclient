@@ -2089,7 +2089,7 @@ func (r ClientsAPIAdminRealmsRealmClientsClientUuidNodesPostRequest) Execute() (
 }
 
 /*
-AdminRealmsRealmClientsClientUuidNodesPost Register a cluster node with the client Manually register cluster node to this client - usually itâ€™s not needed to call this directly as adapter should handle by sending registration request to Keycloak
+AdminRealmsRealmClientsClientUuidNodesPost Register a cluster node with the client Manually register cluster node to this client - usually it’s not needed to call this directly as adapter should handle by sending registration request to Keycloak
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)
@@ -3510,7 +3510,7 @@ func (r ClientsAPIAdminRealmsRealmClientsGetRequest) Execute() ([]ClientRepresen
 /*
 AdminRealmsRealmClientsGet Get clients belonging to the realm.
 
-If a client canâ€™t be retrieved from the storage due to a problem with the underlying storage, it is silently removed from the returned list. This ensures that concurrent modifications to the list donâ€™t prevent callers from retrieving this list.
+If a client can’t be retrieved from the storage due to a problem with the underlying storage, it is silently removed from the returned list. This ensures that concurrent modifications to the list don’t prevent callers from retrieving this list.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)
@@ -3641,7 +3641,7 @@ func (r ClientsAPIAdminRealmsRealmClientsPostRequest) Execute() (*http.Response,
 }
 
 /*
-AdminRealmsRealmClientsPost Create a new client Clientâ€™s client_id must be unique!
+AdminRealmsRealmClientsPost Create a new client Client’s client_id must be unique!
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)

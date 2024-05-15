@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **InternalId** | Pointer to **string** |  | [optional] 
 **ProviderId** | Pointer to **string** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
-**UpdateProfileFirstLoginMode** | Pointer to **string** |  | [optional] 
 **TrustEmail** | Pointer to **bool** |  | [optional] 
 **StoreToken** | Pointer to **bool** |  | [optional] 
 **AddReadTokenRoleOnCreate** | Pointer to **bool** |  | [optional] 
@@ -18,7 +17,6 @@ Name | Type | Description | Notes
 **FirstBrokerLoginFlowAlias** | Pointer to **string** |  | [optional] 
 **PostBrokerLoginFlowAlias** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]string** |  | [optional] 
-**UpdateProfileFirstLogin** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -163,31 +161,6 @@ SetEnabled sets Enabled field to given value.
 `func (o *IdentityProviderRepresentation) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
-
-### GetUpdateProfileFirstLoginMode
-
-`func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLoginMode() string`
-
-GetUpdateProfileFirstLoginMode returns the UpdateProfileFirstLoginMode field if non-nil, zero value otherwise.
-
-### GetUpdateProfileFirstLoginModeOk
-
-`func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLoginModeOk() (*string, bool)`
-
-GetUpdateProfileFirstLoginModeOk returns a tuple with the UpdateProfileFirstLoginMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdateProfileFirstLoginMode
-
-`func (o *IdentityProviderRepresentation) SetUpdateProfileFirstLoginMode(v string)`
-
-SetUpdateProfileFirstLoginMode sets UpdateProfileFirstLoginMode field to given value.
-
-### HasUpdateProfileFirstLoginMode
-
-`func (o *IdentityProviderRepresentation) HasUpdateProfileFirstLoginMode() bool`
-
-HasUpdateProfileFirstLoginMode returns a boolean if a field has been set.
 
 ### GetTrustEmail
 
@@ -388,31 +361,6 @@ SetConfig sets Config field to given value.
 `func (o *IdentityProviderRepresentation) HasConfig() bool`
 
 HasConfig returns a boolean if a field has been set.
-
-### GetUpdateProfileFirstLogin
-
-`func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLogin() bool`
-
-GetUpdateProfileFirstLogin returns the UpdateProfileFirstLogin field if non-nil, zero value otherwise.
-
-### GetUpdateProfileFirstLoginOk
-
-`func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLoginOk() (*bool, bool)`
-
-GetUpdateProfileFirstLoginOk returns a tuple with the UpdateProfileFirstLogin field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdateProfileFirstLogin
-
-`func (o *IdentityProviderRepresentation) SetUpdateProfileFirstLogin(v bool)`
-
-SetUpdateProfileFirstLogin sets UpdateProfileFirstLogin field to given value.
-
-### HasUpdateProfileFirstLogin
-
-`func (o *IdentityProviderRepresentation) HasUpdateProfileFirstLogin() bool`
-
-HasUpdateProfileFirstLogin returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

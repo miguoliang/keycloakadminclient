@@ -473,7 +473,7 @@ func (r GroupsAPIAdminRealmsRealmGroupsGroupIdChildrenPostRequest) Execute() (*h
 /*
 AdminRealmsRealmGroupsGroupIdChildrenPost Set or create child.
 
-This will just set the parent if it exists. Create it and set the parent if the group doesnâ€™t exist.
+This will just set the parent if it exists. Create it and set the parent if the group doesn’t exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)
@@ -1230,7 +1230,7 @@ func (r GroupsAPIAdminRealmsRealmGroupsPostRequest) Execute() (*http.Response, e
 /*
 AdminRealmsRealmGroupsPost create or add a top level realm groupSet or create child.
 
-This will update the group and set the parent if it exists. Create it and set the parent if the group doesnâ€™t exist.
+This will update the group and set the parent if it exists. Create it and set the parent if the group doesn’t exist.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)

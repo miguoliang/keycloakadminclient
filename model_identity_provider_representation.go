@@ -24,8 +24,6 @@ type IdentityProviderRepresentation struct {
 	InternalId *string `json:"internalId,omitempty"`
 	ProviderId *string `json:"providerId,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
-	// Deprecated
-	UpdateProfileFirstLoginMode *string `json:"updateProfileFirstLoginMode,omitempty"`
 	TrustEmail *bool `json:"trustEmail,omitempty"`
 	StoreToken *bool `json:"storeToken,omitempty"`
 	AddReadTokenRoleOnCreate *bool `json:"addReadTokenRoleOnCreate,omitempty"`
@@ -34,8 +32,6 @@ type IdentityProviderRepresentation struct {
 	FirstBrokerLoginFlowAlias *string `json:"firstBrokerLoginFlowAlias,omitempty"`
 	PostBrokerLoginFlowAlias *string `json:"postBrokerLoginFlowAlias,omitempty"`
 	Config *map[string]string `json:"config,omitempty"`
-	// Deprecated
-	UpdateProfileFirstLogin *bool `json:"updateProfileFirstLogin,omitempty"`
 }
 
 // NewIdentityProviderRepresentation instantiates a new IdentityProviderRepresentation object
@@ -213,41 +209,6 @@ func (o *IdentityProviderRepresentation) HasEnabled() bool {
 // SetEnabled gets a reference to the given bool and assigns it to the Enabled field.
 func (o *IdentityProviderRepresentation) SetEnabled(v bool) {
 	o.Enabled = &v
-}
-
-// GetUpdateProfileFirstLoginMode returns the UpdateProfileFirstLoginMode field value if set, zero value otherwise.
-// Deprecated
-func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLoginMode() string {
-	if o == nil || IsNil(o.UpdateProfileFirstLoginMode) {
-		var ret string
-		return ret
-	}
-	return *o.UpdateProfileFirstLoginMode
-}
-
-// GetUpdateProfileFirstLoginModeOk returns a tuple with the UpdateProfileFirstLoginMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLoginModeOk() (*string, bool) {
-	if o == nil || IsNil(o.UpdateProfileFirstLoginMode) {
-		return nil, false
-	}
-	return o.UpdateProfileFirstLoginMode, true
-}
-
-// HasUpdateProfileFirstLoginMode returns a boolean if a field has been set.
-func (o *IdentityProviderRepresentation) HasUpdateProfileFirstLoginMode() bool {
-	if o != nil && !IsNil(o.UpdateProfileFirstLoginMode) {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdateProfileFirstLoginMode gets a reference to the given string and assigns it to the UpdateProfileFirstLoginMode field.
-// Deprecated
-func (o *IdentityProviderRepresentation) SetUpdateProfileFirstLoginMode(v string) {
-	o.UpdateProfileFirstLoginMode = &v
 }
 
 // GetTrustEmail returns the TrustEmail field value if set, zero value otherwise.
@@ -506,41 +467,6 @@ func (o *IdentityProviderRepresentation) SetConfig(v map[string]string) {
 	o.Config = &v
 }
 
-// GetUpdateProfileFirstLogin returns the UpdateProfileFirstLogin field value if set, zero value otherwise.
-// Deprecated
-func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLogin() bool {
-	if o == nil || IsNil(o.UpdateProfileFirstLogin) {
-		var ret bool
-		return ret
-	}
-	return *o.UpdateProfileFirstLogin
-}
-
-// GetUpdateProfileFirstLoginOk returns a tuple with the UpdateProfileFirstLogin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *IdentityProviderRepresentation) GetUpdateProfileFirstLoginOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpdateProfileFirstLogin) {
-		return nil, false
-	}
-	return o.UpdateProfileFirstLogin, true
-}
-
-// HasUpdateProfileFirstLogin returns a boolean if a field has been set.
-func (o *IdentityProviderRepresentation) HasUpdateProfileFirstLogin() bool {
-	if o != nil && !IsNil(o.UpdateProfileFirstLogin) {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdateProfileFirstLogin gets a reference to the given bool and assigns it to the UpdateProfileFirstLogin field.
-// Deprecated
-func (o *IdentityProviderRepresentation) SetUpdateProfileFirstLogin(v bool) {
-	o.UpdateProfileFirstLogin = &v
-}
-
 func (o IdentityProviderRepresentation) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -566,9 +492,6 @@ func (o IdentityProviderRepresentation) ToMap() (map[string]interface{}, error) 
 	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !IsNil(o.UpdateProfileFirstLoginMode) {
-		toSerialize["updateProfileFirstLoginMode"] = o.UpdateProfileFirstLoginMode
-	}
 	if !IsNil(o.TrustEmail) {
 		toSerialize["trustEmail"] = o.TrustEmail
 	}
@@ -592,9 +515,6 @@ func (o IdentityProviderRepresentation) ToMap() (map[string]interface{}, error) 
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config
-	}
-	if !IsNil(o.UpdateProfileFirstLogin) {
-		toSerialize["updateProfileFirstLogin"] = o.UpdateProfileFirstLogin
 	}
 	return toSerialize, nil
 }

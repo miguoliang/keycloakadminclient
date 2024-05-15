@@ -3101,13 +3101,6 @@ type RealmsAdminAPIAdminRealmsRealmLocalizationLocaleGetRequest struct {
 	ApiService *RealmsAdminAPIService
 	realm string
 	locale string
-	useRealmDefaultLocaleFallback *bool
-}
-
-// Deprecated
-func (r RealmsAdminAPIAdminRealmsRealmLocalizationLocaleGetRequest) UseRealmDefaultLocaleFallback(useRealmDefaultLocaleFallback bool) RealmsAdminAPIAdminRealmsRealmLocalizationLocaleGetRequest {
-	r.useRealmDefaultLocaleFallback = &useRealmDefaultLocaleFallback
-	return r
 }
 
 func (r RealmsAdminAPIAdminRealmsRealmLocalizationLocaleGetRequest) Execute() (map[string]string, *http.Response, error) {
@@ -3154,9 +3147,6 @@ func (a *RealmsAdminAPIService) AdminRealmsRealmLocalizationLocaleGetExecute(r R
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.useRealmDefaultLocaleFallback != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "useRealmDefaultLocaleFallback", r.useRealmDefaultLocaleFallback, "")
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -4216,107 +4206,6 @@ func (a *RealmsAdminAPIService) AdminRealmsRealmSessionsSessionDeleteExecute(r R
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest struct {
-	ctx context.Context
-	ApiService *RealmsAdminAPIService
-	realm string
-	requestBody *map[string]string
-}
-
-func (r RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest) RequestBody(requestBody map[string]string) RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest {
-	r.requestBody = &requestBody
-	return r
-}
-
-func (r RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest) Execute() (*http.Response, error) {
-	return r.ApiService.AdminRealmsRealmTestSMTPConnectionPostExecute(r)
-}
-
-/*
-AdminRealmsRealmTestSMTPConnectionPost Test SMTP connection with current logged in user
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @return RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest
-
-Deprecated
-*/
-func (a *RealmsAdminAPIService) AdminRealmsRealmTestSMTPConnectionPost(ctx context.Context, realm string) RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest {
-	return RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest{
-		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-	}
-}
-
-// Execute executes the request
-// Deprecated
-func (a *RealmsAdminAPIService) AdminRealmsRealmTestSMTPConnectionPostExecute(r RealmsAdminAPIAdminRealmsRealmTestSMTPConnectionPostRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RealmsAdminAPIService.AdminRealmsRealmTestSMTPConnectionPost")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/admin/realms/{realm}/testSMTPConnection"
-	localVarPath = strings.Replace(localVarPath, "{"+"realm"+"}", url.PathEscape(parameterValueToString(r.realm, "realm")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json", "application/x-www-form-urlencoded"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.requestBody
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

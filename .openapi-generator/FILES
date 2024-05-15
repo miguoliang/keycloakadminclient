@@ -29,7 +29,6 @@ docs/Access.md
 docs/AccessToken.md
 docs/AddressClaimSet.md
 docs/AdminEventRepresentation.md
-docs/ApplicationRepresentation.md
 docs/AttackDetectionAPI.md
 docs/AuthDetailsRepresentation.md
 docs/AuthenticationExecutionExportRepresentation.md
@@ -58,7 +57,6 @@ docs/ClientRepresentation.md
 docs/ClientRoleMappingsAPI.md
 docs/ClientScopeRepresentation.md
 docs/ClientScopesAPI.md
-docs/ClientTemplateRepresentation.md
 docs/ClientsAPI.md
 docs/ComponentAPI.md
 docs/ComponentExportRepresentation.md
@@ -93,7 +91,6 @@ docs/Logic.md
 docs/ManagementPermissionReference.md
 docs/MappingsRepresentation.md
 docs/MethodConfig.md
-docs/OAuthClientRepresentation.md
 docs/PathCacheConfig.md
 docs/PathConfig.md
 docs/PathSegment.md
@@ -151,7 +148,6 @@ model_access.go
 model_access_token.go
 model_address_claim_set.go
 model_admin_event_representation.go
-model_application_representation.go
 model_auth_details_representation.go
 model_authentication_execution_export_representation.go
 model_authentication_execution_info_representation.go
@@ -173,7 +169,6 @@ model_client_profile_representation.go
 model_client_profiles_representation.go
 model_client_representation.go
 model_client_scope_representation.go
-model_client_template_representation.go
 model_component_export_representation.go
 model_component_representation.go
 model_component_type_representation.go
@@ -202,7 +197,6 @@ model_logic.go
 model_management_permission_reference.go
 model_mappings_representation.go
 model_method_config.go
-model_o_auth_client_representation.go
 model_path_cache_config.go
 model_path_config.go
 model_path_segment.go

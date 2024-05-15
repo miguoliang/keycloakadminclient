@@ -29,8 +29,6 @@ type ResourceRepresentation struct {
 	OwnerManagedAccess *bool `json:"ownerManagedAccess,omitempty"`
 	DisplayName *string `json:"displayName,omitempty"`
 	Attributes *map[string][]string `json:"attributes,omitempty"`
-	// Deprecated
-	Uri *string `json:"uri,omitempty"`
 	ScopesUma []ScopeRepresentation `json:"scopesUma,omitempty"`
 }
 
@@ -371,41 +369,6 @@ func (o *ResourceRepresentation) SetAttributes(v map[string][]string) {
 	o.Attributes = &v
 }
 
-// GetUri returns the Uri field value if set, zero value otherwise.
-// Deprecated
-func (o *ResourceRepresentation) GetUri() string {
-	if o == nil || IsNil(o.Uri) {
-		var ret string
-		return ret
-	}
-	return *o.Uri
-}
-
-// GetUriOk returns a tuple with the Uri field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ResourceRepresentation) GetUriOk() (*string, bool) {
-	if o == nil || IsNil(o.Uri) {
-		return nil, false
-	}
-	return o.Uri, true
-}
-
-// HasUri returns a boolean if a field has been set.
-func (o *ResourceRepresentation) HasUri() bool {
-	if o != nil && !IsNil(o.Uri) {
-		return true
-	}
-
-	return false
-}
-
-// SetUri gets a reference to the given string and assigns it to the Uri field.
-// Deprecated
-func (o *ResourceRepresentation) SetUri(v string) {
-	o.Uri = &v
-}
-
 // GetScopesUma returns the ScopesUma field value if set, zero value otherwise.
 func (o *ResourceRepresentation) GetScopesUma() []ScopeRepresentation {
 	if o == nil || IsNil(o.ScopesUma) {
@@ -477,9 +440,6 @@ func (o ResourceRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
-	}
-	if !IsNil(o.Uri) {
-		toSerialize["uri"] = o.Uri
 	}
 	if !IsNil(o.ScopesUma) {
 		toSerialize["scopesUma"] = o.ScopesUma

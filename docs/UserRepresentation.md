@@ -27,8 +27,6 @@ Name | Type | Description | Notes
 **ClientRoles** | Pointer to **map[string][]string** |  | [optional] 
 **ClientConsents** | Pointer to [**[]UserConsentRepresentation**](UserConsentRepresentation.md) |  | [optional] 
 **NotBefore** | Pointer to **int32** |  | [optional] 
-**ApplicationRoles** | Pointer to **map[string][]string** |  | [optional] 
-**SocialLinks** | Pointer to [**[]SocialLinkRepresentation**](SocialLinkRepresentation.md) |  | [optional] 
 **Groups** | Pointer to **[]string** |  | [optional] 
 **Access** | Pointer to **map[string]bool** |  | [optional] 
 
@@ -625,56 +623,6 @@ SetNotBefore sets NotBefore field to given value.
 `func (o *UserRepresentation) HasNotBefore() bool`
 
 HasNotBefore returns a boolean if a field has been set.
-
-### GetApplicationRoles
-
-`func (o *UserRepresentation) GetApplicationRoles() map[string][]string`
-
-GetApplicationRoles returns the ApplicationRoles field if non-nil, zero value otherwise.
-
-### GetApplicationRolesOk
-
-`func (o *UserRepresentation) GetApplicationRolesOk() (*map[string][]string, bool)`
-
-GetApplicationRolesOk returns a tuple with the ApplicationRoles field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplicationRoles
-
-`func (o *UserRepresentation) SetApplicationRoles(v map[string][]string)`
-
-SetApplicationRoles sets ApplicationRoles field to given value.
-
-### HasApplicationRoles
-
-`func (o *UserRepresentation) HasApplicationRoles() bool`
-
-HasApplicationRoles returns a boolean if a field has been set.
-
-### GetSocialLinks
-
-`func (o *UserRepresentation) GetSocialLinks() []SocialLinkRepresentation`
-
-GetSocialLinks returns the SocialLinks field if non-nil, zero value otherwise.
-
-### GetSocialLinksOk
-
-`func (o *UserRepresentation) GetSocialLinksOk() (*[]SocialLinkRepresentation, bool)`
-
-GetSocialLinksOk returns a tuple with the SocialLinks field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSocialLinks
-
-`func (o *UserRepresentation) SetSocialLinks(v []SocialLinkRepresentation)`
-
-SetSocialLinks sets SocialLinks field to given value.
-
-### HasSocialLinks
-
-`func (o *UserRepresentation) HasSocialLinks() bool`
-
-HasSocialLinks returns a boolean if a field has been set.
 
 ### GetGroups
 

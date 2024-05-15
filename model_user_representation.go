@@ -42,10 +42,6 @@ type UserRepresentation struct {
 	ClientRoles *map[string][]string `json:"clientRoles,omitempty"`
 	ClientConsents []UserConsentRepresentation `json:"clientConsents,omitempty"`
 	NotBefore *int32 `json:"notBefore,omitempty"`
-	// Deprecated
-	ApplicationRoles *map[string][]string `json:"applicationRoles,omitempty"`
-	// Deprecated
-	SocialLinks []SocialLinkRepresentation `json:"socialLinks,omitempty"`
 	Groups []string `json:"groups,omitempty"`
 	Access *map[string]bool `json:"access,omitempty"`
 }
@@ -803,76 +799,6 @@ func (o *UserRepresentation) SetNotBefore(v int32) {
 	o.NotBefore = &v
 }
 
-// GetApplicationRoles returns the ApplicationRoles field value if set, zero value otherwise.
-// Deprecated
-func (o *UserRepresentation) GetApplicationRoles() map[string][]string {
-	if o == nil || IsNil(o.ApplicationRoles) {
-		var ret map[string][]string
-		return ret
-	}
-	return *o.ApplicationRoles
-}
-
-// GetApplicationRolesOk returns a tuple with the ApplicationRoles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *UserRepresentation) GetApplicationRolesOk() (*map[string][]string, bool) {
-	if o == nil || IsNil(o.ApplicationRoles) {
-		return nil, false
-	}
-	return o.ApplicationRoles, true
-}
-
-// HasApplicationRoles returns a boolean if a field has been set.
-func (o *UserRepresentation) HasApplicationRoles() bool {
-	if o != nil && !IsNil(o.ApplicationRoles) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplicationRoles gets a reference to the given map[string][]string and assigns it to the ApplicationRoles field.
-// Deprecated
-func (o *UserRepresentation) SetApplicationRoles(v map[string][]string) {
-	o.ApplicationRoles = &v
-}
-
-// GetSocialLinks returns the SocialLinks field value if set, zero value otherwise.
-// Deprecated
-func (o *UserRepresentation) GetSocialLinks() []SocialLinkRepresentation {
-	if o == nil || IsNil(o.SocialLinks) {
-		var ret []SocialLinkRepresentation
-		return ret
-	}
-	return o.SocialLinks
-}
-
-// GetSocialLinksOk returns a tuple with the SocialLinks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *UserRepresentation) GetSocialLinksOk() ([]SocialLinkRepresentation, bool) {
-	if o == nil || IsNil(o.SocialLinks) {
-		return nil, false
-	}
-	return o.SocialLinks, true
-}
-
-// HasSocialLinks returns a boolean if a field has been set.
-func (o *UserRepresentation) HasSocialLinks() bool {
-	if o != nil && !IsNil(o.SocialLinks) {
-		return true
-	}
-
-	return false
-}
-
-// SetSocialLinks gets a reference to the given []SocialLinkRepresentation and assigns it to the SocialLinks field.
-// Deprecated
-func (o *UserRepresentation) SetSocialLinks(v []SocialLinkRepresentation) {
-	o.SocialLinks = v
-}
-
 // GetGroups returns the Groups field value if set, zero value otherwise.
 func (o *UserRepresentation) GetGroups() []string {
 	if o == nil || IsNil(o.Groups) {
@@ -1015,12 +941,6 @@ func (o UserRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.NotBefore) {
 		toSerialize["notBefore"] = o.NotBefore
-	}
-	if !IsNil(o.ApplicationRoles) {
-		toSerialize["applicationRoles"] = o.ApplicationRoles
-	}
-	if !IsNil(o.SocialLinks) {
-		toSerialize["socialLinks"] = o.SocialLinks
 	}
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups

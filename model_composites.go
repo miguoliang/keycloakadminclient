@@ -21,8 +21,6 @@ var _ MappedNullable = &Composites{}
 type Composites struct {
 	Realm []string `json:"realm,omitempty"`
 	Client *map[string][]string `json:"client,omitempty"`
-	// Deprecated
-	Application *map[string][]string `json:"application,omitempty"`
 }
 
 // NewComposites instantiates a new Composites object
@@ -106,41 +104,6 @@ func (o *Composites) SetClient(v map[string][]string) {
 	o.Client = &v
 }
 
-// GetApplication returns the Application field value if set, zero value otherwise.
-// Deprecated
-func (o *Composites) GetApplication() map[string][]string {
-	if o == nil || IsNil(o.Application) {
-		var ret map[string][]string
-		return ret
-	}
-	return *o.Application
-}
-
-// GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *Composites) GetApplicationOk() (*map[string][]string, bool) {
-	if o == nil || IsNil(o.Application) {
-		return nil, false
-	}
-	return o.Application, true
-}
-
-// HasApplication returns a boolean if a field has been set.
-func (o *Composites) HasApplication() bool {
-	if o != nil && !IsNil(o.Application) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplication gets a reference to the given map[string][]string and assigns it to the Application field.
-// Deprecated
-func (o *Composites) SetApplication(v map[string][]string) {
-	o.Application = &v
-}
-
 func (o Composites) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,9 +119,6 @@ func (o Composites) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Client) {
 		toSerialize["client"] = o.Client
-	}
-	if !IsNil(o.Application) {
-		toSerialize["application"] = o.Application
 	}
 	return toSerialize, nil
 }

@@ -9,9 +9,8 @@ Method | HTTP request | Description
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsClientsClientDelete**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsClientsClientDelete) | **Delete** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/clients/{client} | Remove client-level roles from the client&#39;s scope.
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsClientsClientGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsClientsClientGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/clients/{client} | Get the roles associated with a client&#39;s scope Returns roles for the client.
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsClientsClientPost**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsClientsClientPost) | **Post** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/clients/{client} | Add client-level roles to the client&#39;s scope
-[**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings | Get all scope mappings for the client
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmAvailableGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmAvailableGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/realm/available | Get realm-level roles that are available to attach to this client&#39;s scope
-[**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/realm/composite | Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+[**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/realm/composite | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmDelete**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmDelete) | **Delete** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/realm | Remove a set of realm-level roles from the client&#39;s scope
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/realm | Get realm-level roles associated with the client&#39;s scope
 [**AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmPost**](ScopeMappingsAPI.md#AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmPost) | **Post** /admin/realms/{realm}/client-scopes/{client-scope-id}/scope-mappings/realm | Add a set of realm-level roles to the client&#39;s scope
@@ -20,9 +19,8 @@ Method | HTTP request | Description
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsClientsClientDelete**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsClientsClientDelete) | **Delete** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/clients/{client} | Remove client-level roles from the client&#39;s scope.
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsClientsClientGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsClientsClientGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/clients/{client} | Get the roles associated with a client&#39;s scope Returns roles for the client.
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsClientsClientPost**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsClientsClientPost) | **Post** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/clients/{client} | Add client-level roles to the client&#39;s scope
-[**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings | Get all scope mappings for the client
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmAvailableGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmAvailableGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/realm/available | Get realm-level roles that are available to attach to this client&#39;s scope
-[**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/realm/composite | Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+[**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/realm/composite | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmDelete**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmDelete) | **Delete** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/realm | Remove a set of realm-level roles from the client&#39;s scope
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/realm | Get realm-level roles associated with the client&#39;s scope
 [**AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmPost**](ScopeMappingsAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmPost) | **Post** /admin/realms/{realm}/client-templates/{client-scope-id}/scope-mappings/realm | Add a set of realm-level roles to the client&#39;s scope
@@ -31,9 +29,8 @@ Method | HTTP request | Description
 [**AdminRealmsRealmClientsClientUuidScopeMappingsClientsClientDelete**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsClientsClientDelete) | **Delete** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/clients/{client} | Remove client-level roles from the client&#39;s scope.
 [**AdminRealmsRealmClientsClientUuidScopeMappingsClientsClientGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsClientsClientGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/clients/{client} | Get the roles associated with a client&#39;s scope Returns roles for the client.
 [**AdminRealmsRealmClientsClientUuidScopeMappingsClientsClientPost**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsClientsClientPost) | **Post** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/clients/{client} | Add client-level roles to the client&#39;s scope
-[**AdminRealmsRealmClientsClientUuidScopeMappingsGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings | Get all scope mappings for the client
 [**AdminRealmsRealmClientsClientUuidScopeMappingsRealmAvailableGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsRealmAvailableGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/realm/available | Get realm-level roles that are available to attach to this client&#39;s scope
-[**AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/realm/composite | Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+[**AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/realm/composite | Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 [**AdminRealmsRealmClientsClientUuidScopeMappingsRealmDelete**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsRealmDelete) | **Delete** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/realm | Remove a set of realm-level roles from the client&#39;s scope
 [**AdminRealmsRealmClientsClientUuidScopeMappingsRealmGet**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsRealmGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/realm | Get realm-level roles associated with the client&#39;s scope
 [**AdminRealmsRealmClientsClientUuidScopeMappingsRealmPost**](ScopeMappingsAPI.md#AdminRealmsRealmClientsClientUuidScopeMappingsRealmPost) | **Post** /admin/realms/{realm}/clients/{client-uuid}/scope-mappings/realm | Add a set of realm-level roles to the client&#39;s scope
@@ -412,77 +409,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet
-
-> MappingsRepresentation AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet(ctx, realm, clientScopeId).Execute()
-
-Get all scope mappings for the client
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/miguoliang/keycloakadminclient"
-)
-
-func main() {
-	realm := "realm_example" // string | realm name (not id!)
-	clientScopeId := "clientScopeId_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScopeMappingsAPI.AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet(context.Background(), realm, clientScopeId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScopeMappingsAPI.AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet`: MappingsRepresentation
-	fmt.Fprintf(os.Stdout, "Response from `ScopeMappingsAPI.AdminRealmsRealmClientScopesClientScopeIdScopeMappingsGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**realm** | **string** | realm name (not id!) | 
-**clientScopeId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAdminRealmsRealmClientScopesClientScopeIdScopeMappingsGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**MappingsRepresentation**](MappingsRepresentation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmAvailableGet
 
 > []RoleRepresentation AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmAvailableGet(ctx, realm, clientScopeId).Execute()
@@ -558,7 +484,7 @@ No authorization required
 
 > []RoleRepresentation AdminRealmsRealmClientScopesClientScopeIdScopeMappingsRealmCompositeGet(ctx, realm, clientScopeId).BriefRepresentation(briefRepresentation).Execute()
 
-Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 
 
 
@@ -1214,77 +1140,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet
-
-> MappingsRepresentation AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet(ctx, realm, clientScopeId).Execute()
-
-Get all scope mappings for the client
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/miguoliang/keycloakadminclient"
-)
-
-func main() {
-	realm := "realm_example" // string | realm name (not id!)
-	clientScopeId := "clientScopeId_example" // string | 
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScopeMappingsAPI.AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet(context.Background(), realm, clientScopeId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScopeMappingsAPI.AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet`: MappingsRepresentation
-	fmt.Fprintf(os.Stdout, "Response from `ScopeMappingsAPI.AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**realm** | **string** | realm name (not id!) | 
-**clientScopeId** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**MappingsRepresentation**](MappingsRepresentation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmAvailableGet
 
 > []RoleRepresentation AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmAvailableGet(ctx, realm, clientScopeId).Execute()
@@ -1360,7 +1215,7 @@ No authorization required
 
 > []RoleRepresentation AdminRealmsRealmClientTemplatesClientScopeIdScopeMappingsRealmCompositeGet(ctx, realm, clientScopeId).BriefRepresentation(briefRepresentation).Execute()
 
-Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 
 
 
@@ -2016,77 +1871,6 @@ No authorization required
 [[Back to README]](../README.md)
 
 
-## AdminRealmsRealmClientsClientUuidScopeMappingsGet
-
-> MappingsRepresentation AdminRealmsRealmClientsClientUuidScopeMappingsGet(ctx, realm, clientUuid).Execute()
-
-Get all scope mappings for the client
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/miguoliang/keycloakadminclient"
-)
-
-func main() {
-	realm := "realm_example" // string | realm name (not id!)
-	clientUuid := "clientUuid_example" // string | id of client (not client-id!)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScopeMappingsAPI.AdminRealmsRealmClientsClientUuidScopeMappingsGet(context.Background(), realm, clientUuid).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScopeMappingsAPI.AdminRealmsRealmClientsClientUuidScopeMappingsGet``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `AdminRealmsRealmClientsClientUuidScopeMappingsGet`: MappingsRepresentation
-	fmt.Fprintf(os.Stdout, "Response from `ScopeMappingsAPI.AdminRealmsRealmClientsClientUuidScopeMappingsGet`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**realm** | **string** | realm name (not id!) | 
-**clientUuid** | **string** | id of client (not client-id!) | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAdminRealmsRealmClientsClientUuidScopeMappingsGetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**MappingsRepresentation**](MappingsRepresentation.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## AdminRealmsRealmClientsClientUuidScopeMappingsRealmAvailableGet
 
 > []RoleRepresentation AdminRealmsRealmClientsClientUuidScopeMappingsRealmAvailableGet(ctx, realm, clientUuid).Execute()
@@ -2162,7 +1946,7 @@ No authorization required
 
 > []RoleRepresentation AdminRealmsRealmClientsClientUuidScopeMappingsRealmCompositeGet(ctx, realm, clientUuid).BriefRepresentation(briefRepresentation).Execute()
 
-Get effective realm-level roles associated with the clientâ€™s scope What this does is recurse any composite roles associated with the clientâ€™s scope and adds the roles to this lists.
+Get effective realm-level roles associated with the client’s scope What this does is recurse any composite roles associated with the client’s scope and adds the roles to this lists.
 
 
 

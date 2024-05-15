@@ -442,7 +442,7 @@ func (r ClientScopesAPIAdminRealmsRealmClientScopesPostRequest) Execute() (*http
 }
 
 /*
-AdminRealmsRealmClientScopesPost Create a new client scope Client Scopeâ€™s name must be unique!
+AdminRealmsRealmClientScopesPost Create a new client scope Client Scope’s name must be unique!
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)
@@ -942,7 +942,7 @@ func (r ClientScopesAPIAdminRealmsRealmClientTemplatesPostRequest) Execute() (*h
 }
 
 /*
-AdminRealmsRealmClientTemplatesPost Create a new client scope Client Scopeâ€™s name must be unique!
+AdminRealmsRealmClientTemplatesPost Create a new client scope Client Scope’s name must be unique!
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)

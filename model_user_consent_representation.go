@@ -23,8 +23,6 @@ type UserConsentRepresentation struct {
 	GrantedClientScopes []string `json:"grantedClientScopes,omitempty"`
 	CreatedDate *int64 `json:"createdDate,omitempty"`
 	LastUpdatedDate *int64 `json:"lastUpdatedDate,omitempty"`
-	// Deprecated
-	GrantedRealmRoles []string `json:"grantedRealmRoles,omitempty"`
 }
 
 // NewUserConsentRepresentation instantiates a new UserConsentRepresentation object
@@ -172,41 +170,6 @@ func (o *UserConsentRepresentation) SetLastUpdatedDate(v int64) {
 	o.LastUpdatedDate = &v
 }
 
-// GetGrantedRealmRoles returns the GrantedRealmRoles field value if set, zero value otherwise.
-// Deprecated
-func (o *UserConsentRepresentation) GetGrantedRealmRoles() []string {
-	if o == nil || IsNil(o.GrantedRealmRoles) {
-		var ret []string
-		return ret
-	}
-	return o.GrantedRealmRoles
-}
-
-// GetGrantedRealmRolesOk returns a tuple with the GrantedRealmRoles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *UserConsentRepresentation) GetGrantedRealmRolesOk() ([]string, bool) {
-	if o == nil || IsNil(o.GrantedRealmRoles) {
-		return nil, false
-	}
-	return o.GrantedRealmRoles, true
-}
-
-// HasGrantedRealmRoles returns a boolean if a field has been set.
-func (o *UserConsentRepresentation) HasGrantedRealmRoles() bool {
-	if o != nil && !IsNil(o.GrantedRealmRoles) {
-		return true
-	}
-
-	return false
-}
-
-// SetGrantedRealmRoles gets a reference to the given []string and assigns it to the GrantedRealmRoles field.
-// Deprecated
-func (o *UserConsentRepresentation) SetGrantedRealmRoles(v []string) {
-	o.GrantedRealmRoles = v
-}
-
 func (o UserConsentRepresentation) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -228,9 +191,6 @@ func (o UserConsentRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.LastUpdatedDate) {
 		toSerialize["lastUpdatedDate"] = o.LastUpdatedDate
-	}
-	if !IsNil(o.GrantedRealmRoles) {
-		toSerialize["grantedRealmRoles"] = o.GrantedRealmRoles
 	}
 	return toSerialize, nil
 }

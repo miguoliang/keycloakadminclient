@@ -23,10 +23,6 @@ type ProtocolMapperRepresentation struct {
 	Name *string `json:"name,omitempty"`
 	Protocol *string `json:"protocol,omitempty"`
 	ProtocolMapper *string `json:"protocolMapper,omitempty"`
-	// Deprecated
-	ConsentRequired *bool `json:"consentRequired,omitempty"`
-	// Deprecated
-	ConsentText *string `json:"consentText,omitempty"`
 	Config *map[string]string `json:"config,omitempty"`
 }
 
@@ -175,76 +171,6 @@ func (o *ProtocolMapperRepresentation) SetProtocolMapper(v string) {
 	o.ProtocolMapper = &v
 }
 
-// GetConsentRequired returns the ConsentRequired field value if set, zero value otherwise.
-// Deprecated
-func (o *ProtocolMapperRepresentation) GetConsentRequired() bool {
-	if o == nil || IsNil(o.ConsentRequired) {
-		var ret bool
-		return ret
-	}
-	return *o.ConsentRequired
-}
-
-// GetConsentRequiredOk returns a tuple with the ConsentRequired field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ProtocolMapperRepresentation) GetConsentRequiredOk() (*bool, bool) {
-	if o == nil || IsNil(o.ConsentRequired) {
-		return nil, false
-	}
-	return o.ConsentRequired, true
-}
-
-// HasConsentRequired returns a boolean if a field has been set.
-func (o *ProtocolMapperRepresentation) HasConsentRequired() bool {
-	if o != nil && !IsNil(o.ConsentRequired) {
-		return true
-	}
-
-	return false
-}
-
-// SetConsentRequired gets a reference to the given bool and assigns it to the ConsentRequired field.
-// Deprecated
-func (o *ProtocolMapperRepresentation) SetConsentRequired(v bool) {
-	o.ConsentRequired = &v
-}
-
-// GetConsentText returns the ConsentText field value if set, zero value otherwise.
-// Deprecated
-func (o *ProtocolMapperRepresentation) GetConsentText() string {
-	if o == nil || IsNil(o.ConsentText) {
-		var ret string
-		return ret
-	}
-	return *o.ConsentText
-}
-
-// GetConsentTextOk returns a tuple with the ConsentText field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ProtocolMapperRepresentation) GetConsentTextOk() (*string, bool) {
-	if o == nil || IsNil(o.ConsentText) {
-		return nil, false
-	}
-	return o.ConsentText, true
-}
-
-// HasConsentText returns a boolean if a field has been set.
-func (o *ProtocolMapperRepresentation) HasConsentText() bool {
-	if o != nil && !IsNil(o.ConsentText) {
-		return true
-	}
-
-	return false
-}
-
-// SetConsentText gets a reference to the given string and assigns it to the ConsentText field.
-// Deprecated
-func (o *ProtocolMapperRepresentation) SetConsentText(v string) {
-	o.ConsentText = &v
-}
-
 // GetConfig returns the Config field value if set, zero value otherwise.
 func (o *ProtocolMapperRepresentation) GetConfig() map[string]string {
 	if o == nil || IsNil(o.Config) {
@@ -298,12 +224,6 @@ func (o ProtocolMapperRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProtocolMapper) {
 		toSerialize["protocolMapper"] = o.ProtocolMapper
-	}
-	if !IsNil(o.ConsentRequired) {
-		toSerialize["consentRequired"] = o.ConsentRequired
-	}
-	if !IsNil(o.ConsentText) {
-		toSerialize["consentText"] = o.ConsentText
 	}
 	if !IsNil(o.Config) {
 		toSerialize["config"] = o.Config

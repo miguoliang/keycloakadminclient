@@ -49,8 +49,6 @@ type RealmRepresentation struct {
 	Oauth2DevicePollingInterval *int32 `json:"oauth2DevicePollingInterval,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	SslRequired *string `json:"sslRequired,omitempty"`
-	// Deprecated
-	PasswordCredentialGrantAllowed *bool `json:"passwordCredentialGrantAllowed,omitempty"`
 	RegistrationAllowed *bool `json:"registrationAllowed,omitempty"`
 	RegistrationEmailAsUsername *bool `json:"registrationEmailAsUsername,omitempty"`
 	RememberMe *bool `json:"rememberMe,omitempty"`
@@ -59,10 +57,6 @@ type RealmRepresentation struct {
 	DuplicateEmailsAllowed *bool `json:"duplicateEmailsAllowed,omitempty"`
 	ResetPasswordAllowed *bool `json:"resetPasswordAllowed,omitempty"`
 	EditUsernameAllowed *bool `json:"editUsernameAllowed,omitempty"`
-	// Deprecated
-	UserCacheEnabled *bool `json:"userCacheEnabled,omitempty"`
-	// Deprecated
-	RealmCacheEnabled *bool `json:"realmCacheEnabled,omitempty"`
 	BruteForceProtected *bool `json:"bruteForceProtected,omitempty"`
 	PermanentLockout *bool `json:"permanentLockout,omitempty"`
 	MaxTemporaryLockouts *int32 `json:"maxTemporaryLockouts,omitempty"`
@@ -72,22 +66,10 @@ type RealmRepresentation struct {
 	QuickLoginCheckMilliSeconds *int64 `json:"quickLoginCheckMilliSeconds,omitempty"`
 	MaxDeltaTimeSeconds *int32 `json:"maxDeltaTimeSeconds,omitempty"`
 	FailureFactor *int32 `json:"failureFactor,omitempty"`
-	// Deprecated
-	PrivateKey *string `json:"privateKey,omitempty"`
-	// Deprecated
-	PublicKey *string `json:"publicKey,omitempty"`
-	// Deprecated
-	Certificate *string `json:"certificate,omitempty"`
-	// Deprecated
-	CodeSecret *string `json:"codeSecret,omitempty"`
 	Roles *RolesRepresentation `json:"roles,omitempty"`
 	Groups []GroupRepresentation `json:"groups,omitempty"`
-	// Deprecated
-	DefaultRoles []string `json:"defaultRoles,omitempty"`
 	DefaultRole *RoleRepresentation `json:"defaultRole,omitempty"`
 	DefaultGroups []string `json:"defaultGroups,omitempty"`
-	// Deprecated
-	RequiredCredentials []string `json:"requiredCredentials,omitempty"`
 	PasswordPolicy *string `json:"passwordPolicy,omitempty"`
 	OtpPolicyType *string `json:"otpPolicyType,omitempty"`
 	OtpPolicyAlgorithm *string `json:"otpPolicyAlgorithm,omitempty"`
@@ -164,20 +146,6 @@ type RealmRepresentation struct {
 	Attributes *map[string]string `json:"attributes,omitempty"`
 	KeycloakVersion *string `json:"keycloakVersion,omitempty"`
 	UserManagedAccessAllowed *bool `json:"userManagedAccessAllowed,omitempty"`
-	// Deprecated
-	Social *bool `json:"social,omitempty"`
-	// Deprecated
-	UpdateProfileOnInitialSocialLogin *bool `json:"updateProfileOnInitialSocialLogin,omitempty"`
-	// Deprecated
-	SocialProviders *map[string]string `json:"socialProviders,omitempty"`
-	// Deprecated
-	ApplicationScopeMappings *map[string][]ScopeMappingRepresentation `json:"applicationScopeMappings,omitempty"`
-	// Deprecated
-	Applications []ApplicationRepresentation `json:"applications,omitempty"`
-	// Deprecated
-	OauthClients []OAuthClientRepresentation `json:"oauthClients,omitempty"`
-	// Deprecated
-	ClientTemplates []ClientTemplateRepresentation `json:"clientTemplates,omitempty"`
 	OAuth2DeviceCodeLifespan *int32 `json:"oAuth2DeviceCodeLifespan,omitempty"`
 	OAuth2DevicePollingInterval *int32 `json:"oAuth2DevicePollingInterval,omitempty"`
 }
@@ -1159,41 +1127,6 @@ func (o *RealmRepresentation) SetSslRequired(v string) {
 	o.SslRequired = &v
 }
 
-// GetPasswordCredentialGrantAllowed returns the PasswordCredentialGrantAllowed field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetPasswordCredentialGrantAllowed() bool {
-	if o == nil || IsNil(o.PasswordCredentialGrantAllowed) {
-		var ret bool
-		return ret
-	}
-	return *o.PasswordCredentialGrantAllowed
-}
-
-// GetPasswordCredentialGrantAllowedOk returns a tuple with the PasswordCredentialGrantAllowed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetPasswordCredentialGrantAllowedOk() (*bool, bool) {
-	if o == nil || IsNil(o.PasswordCredentialGrantAllowed) {
-		return nil, false
-	}
-	return o.PasswordCredentialGrantAllowed, true
-}
-
-// HasPasswordCredentialGrantAllowed returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasPasswordCredentialGrantAllowed() bool {
-	if o != nil && !IsNil(o.PasswordCredentialGrantAllowed) {
-		return true
-	}
-
-	return false
-}
-
-// SetPasswordCredentialGrantAllowed gets a reference to the given bool and assigns it to the PasswordCredentialGrantAllowed field.
-// Deprecated
-func (o *RealmRepresentation) SetPasswordCredentialGrantAllowed(v bool) {
-	o.PasswordCredentialGrantAllowed = &v
-}
-
 // GetRegistrationAllowed returns the RegistrationAllowed field value if set, zero value otherwise.
 func (o *RealmRepresentation) GetRegistrationAllowed() bool {
 	if o == nil || IsNil(o.RegistrationAllowed) {
@@ -1448,76 +1381,6 @@ func (o *RealmRepresentation) HasEditUsernameAllowed() bool {
 // SetEditUsernameAllowed gets a reference to the given bool and assigns it to the EditUsernameAllowed field.
 func (o *RealmRepresentation) SetEditUsernameAllowed(v bool) {
 	o.EditUsernameAllowed = &v
-}
-
-// GetUserCacheEnabled returns the UserCacheEnabled field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetUserCacheEnabled() bool {
-	if o == nil || IsNil(o.UserCacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.UserCacheEnabled
-}
-
-// GetUserCacheEnabledOk returns a tuple with the UserCacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetUserCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.UserCacheEnabled) {
-		return nil, false
-	}
-	return o.UserCacheEnabled, true
-}
-
-// HasUserCacheEnabled returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasUserCacheEnabled() bool {
-	if o != nil && !IsNil(o.UserCacheEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetUserCacheEnabled gets a reference to the given bool and assigns it to the UserCacheEnabled field.
-// Deprecated
-func (o *RealmRepresentation) SetUserCacheEnabled(v bool) {
-	o.UserCacheEnabled = &v
-}
-
-// GetRealmCacheEnabled returns the RealmCacheEnabled field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetRealmCacheEnabled() bool {
-	if o == nil || IsNil(o.RealmCacheEnabled) {
-		var ret bool
-		return ret
-	}
-	return *o.RealmCacheEnabled
-}
-
-// GetRealmCacheEnabledOk returns a tuple with the RealmCacheEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetRealmCacheEnabledOk() (*bool, bool) {
-	if o == nil || IsNil(o.RealmCacheEnabled) {
-		return nil, false
-	}
-	return o.RealmCacheEnabled, true
-}
-
-// HasRealmCacheEnabled returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasRealmCacheEnabled() bool {
-	if o != nil && !IsNil(o.RealmCacheEnabled) {
-		return true
-	}
-
-	return false
-}
-
-// SetRealmCacheEnabled gets a reference to the given bool and assigns it to the RealmCacheEnabled field.
-// Deprecated
-func (o *RealmRepresentation) SetRealmCacheEnabled(v bool) {
-	o.RealmCacheEnabled = &v
 }
 
 // GetBruteForceProtected returns the BruteForceProtected field value if set, zero value otherwise.
@@ -1808,146 +1671,6 @@ func (o *RealmRepresentation) SetFailureFactor(v int32) {
 	o.FailureFactor = &v
 }
 
-// GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetPrivateKey() string {
-	if o == nil || IsNil(o.PrivateKey) {
-		var ret string
-		return ret
-	}
-	return *o.PrivateKey
-}
-
-// GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetPrivateKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.PrivateKey) {
-		return nil, false
-	}
-	return o.PrivateKey, true
-}
-
-// HasPrivateKey returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasPrivateKey() bool {
-	if o != nil && !IsNil(o.PrivateKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
-// Deprecated
-func (o *RealmRepresentation) SetPrivateKey(v string) {
-	o.PrivateKey = &v
-}
-
-// GetPublicKey returns the PublicKey field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetPublicKey() string {
-	if o == nil || IsNil(o.PublicKey) {
-		var ret string
-		return ret
-	}
-	return *o.PublicKey
-}
-
-// GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetPublicKeyOk() (*string, bool) {
-	if o == nil || IsNil(o.PublicKey) {
-		return nil, false
-	}
-	return o.PublicKey, true
-}
-
-// HasPublicKey returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasPublicKey() bool {
-	if o != nil && !IsNil(o.PublicKey) {
-		return true
-	}
-
-	return false
-}
-
-// SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
-// Deprecated
-func (o *RealmRepresentation) SetPublicKey(v string) {
-	o.PublicKey = &v
-}
-
-// GetCertificate returns the Certificate field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetCertificate() string {
-	if o == nil || IsNil(o.Certificate) {
-		var ret string
-		return ret
-	}
-	return *o.Certificate
-}
-
-// GetCertificateOk returns a tuple with the Certificate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetCertificateOk() (*string, bool) {
-	if o == nil || IsNil(o.Certificate) {
-		return nil, false
-	}
-	return o.Certificate, true
-}
-
-// HasCertificate returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasCertificate() bool {
-	if o != nil && !IsNil(o.Certificate) {
-		return true
-	}
-
-	return false
-}
-
-// SetCertificate gets a reference to the given string and assigns it to the Certificate field.
-// Deprecated
-func (o *RealmRepresentation) SetCertificate(v string) {
-	o.Certificate = &v
-}
-
-// GetCodeSecret returns the CodeSecret field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetCodeSecret() string {
-	if o == nil || IsNil(o.CodeSecret) {
-		var ret string
-		return ret
-	}
-	return *o.CodeSecret
-}
-
-// GetCodeSecretOk returns a tuple with the CodeSecret field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetCodeSecretOk() (*string, bool) {
-	if o == nil || IsNil(o.CodeSecret) {
-		return nil, false
-	}
-	return o.CodeSecret, true
-}
-
-// HasCodeSecret returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasCodeSecret() bool {
-	if o != nil && !IsNil(o.CodeSecret) {
-		return true
-	}
-
-	return false
-}
-
-// SetCodeSecret gets a reference to the given string and assigns it to the CodeSecret field.
-// Deprecated
-func (o *RealmRepresentation) SetCodeSecret(v string) {
-	o.CodeSecret = &v
-}
-
 // GetRoles returns the Roles field value if set, zero value otherwise.
 func (o *RealmRepresentation) GetRoles() RolesRepresentation {
 	if o == nil || IsNil(o.Roles) {
@@ -2012,41 +1735,6 @@ func (o *RealmRepresentation) SetGroups(v []GroupRepresentation) {
 	o.Groups = v
 }
 
-// GetDefaultRoles returns the DefaultRoles field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetDefaultRoles() []string {
-	if o == nil || IsNil(o.DefaultRoles) {
-		var ret []string
-		return ret
-	}
-	return o.DefaultRoles
-}
-
-// GetDefaultRolesOk returns a tuple with the DefaultRoles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetDefaultRolesOk() ([]string, bool) {
-	if o == nil || IsNil(o.DefaultRoles) {
-		return nil, false
-	}
-	return o.DefaultRoles, true
-}
-
-// HasDefaultRoles returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasDefaultRoles() bool {
-	if o != nil && !IsNil(o.DefaultRoles) {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultRoles gets a reference to the given []string and assigns it to the DefaultRoles field.
-// Deprecated
-func (o *RealmRepresentation) SetDefaultRoles(v []string) {
-	o.DefaultRoles = v
-}
-
 // GetDefaultRole returns the DefaultRole field value if set, zero value otherwise.
 func (o *RealmRepresentation) GetDefaultRole() RoleRepresentation {
 	if o == nil || IsNil(o.DefaultRole) {
@@ -2109,41 +1797,6 @@ func (o *RealmRepresentation) HasDefaultGroups() bool {
 // SetDefaultGroups gets a reference to the given []string and assigns it to the DefaultGroups field.
 func (o *RealmRepresentation) SetDefaultGroups(v []string) {
 	o.DefaultGroups = v
-}
-
-// GetRequiredCredentials returns the RequiredCredentials field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetRequiredCredentials() []string {
-	if o == nil || IsNil(o.RequiredCredentials) {
-		var ret []string
-		return ret
-	}
-	return o.RequiredCredentials
-}
-
-// GetRequiredCredentialsOk returns a tuple with the RequiredCredentials field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetRequiredCredentialsOk() ([]string, bool) {
-	if o == nil || IsNil(o.RequiredCredentials) {
-		return nil, false
-	}
-	return o.RequiredCredentials, true
-}
-
-// HasRequiredCredentials returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasRequiredCredentials() bool {
-	if o != nil && !IsNil(o.RequiredCredentials) {
-		return true
-	}
-
-	return false
-}
-
-// SetRequiredCredentials gets a reference to the given []string and assigns it to the RequiredCredentials field.
-// Deprecated
-func (o *RealmRepresentation) SetRequiredCredentials(v []string) {
-	o.RequiredCredentials = v
 }
 
 // GetPasswordPolicy returns the PasswordPolicy field value if set, zero value otherwise.
@@ -4578,251 +4231,6 @@ func (o *RealmRepresentation) SetUserManagedAccessAllowed(v bool) {
 	o.UserManagedAccessAllowed = &v
 }
 
-// GetSocial returns the Social field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetSocial() bool {
-	if o == nil || IsNil(o.Social) {
-		var ret bool
-		return ret
-	}
-	return *o.Social
-}
-
-// GetSocialOk returns a tuple with the Social field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetSocialOk() (*bool, bool) {
-	if o == nil || IsNil(o.Social) {
-		return nil, false
-	}
-	return o.Social, true
-}
-
-// HasSocial returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasSocial() bool {
-	if o != nil && !IsNil(o.Social) {
-		return true
-	}
-
-	return false
-}
-
-// SetSocial gets a reference to the given bool and assigns it to the Social field.
-// Deprecated
-func (o *RealmRepresentation) SetSocial(v bool) {
-	o.Social = &v
-}
-
-// GetUpdateProfileOnInitialSocialLogin returns the UpdateProfileOnInitialSocialLogin field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetUpdateProfileOnInitialSocialLogin() bool {
-	if o == nil || IsNil(o.UpdateProfileOnInitialSocialLogin) {
-		var ret bool
-		return ret
-	}
-	return *o.UpdateProfileOnInitialSocialLogin
-}
-
-// GetUpdateProfileOnInitialSocialLoginOk returns a tuple with the UpdateProfileOnInitialSocialLogin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetUpdateProfileOnInitialSocialLoginOk() (*bool, bool) {
-	if o == nil || IsNil(o.UpdateProfileOnInitialSocialLogin) {
-		return nil, false
-	}
-	return o.UpdateProfileOnInitialSocialLogin, true
-}
-
-// HasUpdateProfileOnInitialSocialLogin returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasUpdateProfileOnInitialSocialLogin() bool {
-	if o != nil && !IsNil(o.UpdateProfileOnInitialSocialLogin) {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdateProfileOnInitialSocialLogin gets a reference to the given bool and assigns it to the UpdateProfileOnInitialSocialLogin field.
-// Deprecated
-func (o *RealmRepresentation) SetUpdateProfileOnInitialSocialLogin(v bool) {
-	o.UpdateProfileOnInitialSocialLogin = &v
-}
-
-// GetSocialProviders returns the SocialProviders field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetSocialProviders() map[string]string {
-	if o == nil || IsNil(o.SocialProviders) {
-		var ret map[string]string
-		return ret
-	}
-	return *o.SocialProviders
-}
-
-// GetSocialProvidersOk returns a tuple with the SocialProviders field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetSocialProvidersOk() (*map[string]string, bool) {
-	if o == nil || IsNil(o.SocialProviders) {
-		return nil, false
-	}
-	return o.SocialProviders, true
-}
-
-// HasSocialProviders returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasSocialProviders() bool {
-	if o != nil && !IsNil(o.SocialProviders) {
-		return true
-	}
-
-	return false
-}
-
-// SetSocialProviders gets a reference to the given map[string]string and assigns it to the SocialProviders field.
-// Deprecated
-func (o *RealmRepresentation) SetSocialProviders(v map[string]string) {
-	o.SocialProviders = &v
-}
-
-// GetApplicationScopeMappings returns the ApplicationScopeMappings field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetApplicationScopeMappings() map[string][]ScopeMappingRepresentation {
-	if o == nil || IsNil(o.ApplicationScopeMappings) {
-		var ret map[string][]ScopeMappingRepresentation
-		return ret
-	}
-	return *o.ApplicationScopeMappings
-}
-
-// GetApplicationScopeMappingsOk returns a tuple with the ApplicationScopeMappings field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetApplicationScopeMappingsOk() (*map[string][]ScopeMappingRepresentation, bool) {
-	if o == nil || IsNil(o.ApplicationScopeMappings) {
-		return nil, false
-	}
-	return o.ApplicationScopeMappings, true
-}
-
-// HasApplicationScopeMappings returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasApplicationScopeMappings() bool {
-	if o != nil && !IsNil(o.ApplicationScopeMappings) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplicationScopeMappings gets a reference to the given map[string][]ScopeMappingRepresentation and assigns it to the ApplicationScopeMappings field.
-// Deprecated
-func (o *RealmRepresentation) SetApplicationScopeMappings(v map[string][]ScopeMappingRepresentation) {
-	o.ApplicationScopeMappings = &v
-}
-
-// GetApplications returns the Applications field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetApplications() []ApplicationRepresentation {
-	if o == nil || IsNil(o.Applications) {
-		var ret []ApplicationRepresentation
-		return ret
-	}
-	return o.Applications
-}
-
-// GetApplicationsOk returns a tuple with the Applications field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetApplicationsOk() ([]ApplicationRepresentation, bool) {
-	if o == nil || IsNil(o.Applications) {
-		return nil, false
-	}
-	return o.Applications, true
-}
-
-// HasApplications returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasApplications() bool {
-	if o != nil && !IsNil(o.Applications) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplications gets a reference to the given []ApplicationRepresentation and assigns it to the Applications field.
-// Deprecated
-func (o *RealmRepresentation) SetApplications(v []ApplicationRepresentation) {
-	o.Applications = v
-}
-
-// GetOauthClients returns the OauthClients field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetOauthClients() []OAuthClientRepresentation {
-	if o == nil || IsNil(o.OauthClients) {
-		var ret []OAuthClientRepresentation
-		return ret
-	}
-	return o.OauthClients
-}
-
-// GetOauthClientsOk returns a tuple with the OauthClients field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetOauthClientsOk() ([]OAuthClientRepresentation, bool) {
-	if o == nil || IsNil(o.OauthClients) {
-		return nil, false
-	}
-	return o.OauthClients, true
-}
-
-// HasOauthClients returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasOauthClients() bool {
-	if o != nil && !IsNil(o.OauthClients) {
-		return true
-	}
-
-	return false
-}
-
-// SetOauthClients gets a reference to the given []OAuthClientRepresentation and assigns it to the OauthClients field.
-// Deprecated
-func (o *RealmRepresentation) SetOauthClients(v []OAuthClientRepresentation) {
-	o.OauthClients = v
-}
-
-// GetClientTemplates returns the ClientTemplates field value if set, zero value otherwise.
-// Deprecated
-func (o *RealmRepresentation) GetClientTemplates() []ClientTemplateRepresentation {
-	if o == nil || IsNil(o.ClientTemplates) {
-		var ret []ClientTemplateRepresentation
-		return ret
-	}
-	return o.ClientTemplates
-}
-
-// GetClientTemplatesOk returns a tuple with the ClientTemplates field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealmRepresentation) GetClientTemplatesOk() ([]ClientTemplateRepresentation, bool) {
-	if o == nil || IsNil(o.ClientTemplates) {
-		return nil, false
-	}
-	return o.ClientTemplates, true
-}
-
-// HasClientTemplates returns a boolean if a field has been set.
-func (o *RealmRepresentation) HasClientTemplates() bool {
-	if o != nil && !IsNil(o.ClientTemplates) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientTemplates gets a reference to the given []ClientTemplateRepresentation and assigns it to the ClientTemplates field.
-// Deprecated
-func (o *RealmRepresentation) SetClientTemplates(v []ClientTemplateRepresentation) {
-	o.ClientTemplates = v
-}
-
 // GetOAuth2DeviceCodeLifespan returns the OAuth2DeviceCodeLifespan field value if set, zero value otherwise.
 func (o *RealmRepresentation) GetOAuth2DeviceCodeLifespan() int32 {
 	if o == nil || IsNil(o.OAuth2DeviceCodeLifespan) {
@@ -4987,9 +4395,6 @@ func (o RealmRepresentation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.SslRequired) {
 		toSerialize["sslRequired"] = o.SslRequired
 	}
-	if !IsNil(o.PasswordCredentialGrantAllowed) {
-		toSerialize["passwordCredentialGrantAllowed"] = o.PasswordCredentialGrantAllowed
-	}
 	if !IsNil(o.RegistrationAllowed) {
 		toSerialize["registrationAllowed"] = o.RegistrationAllowed
 	}
@@ -5013,12 +4418,6 @@ func (o RealmRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.EditUsernameAllowed) {
 		toSerialize["editUsernameAllowed"] = o.EditUsernameAllowed
-	}
-	if !IsNil(o.UserCacheEnabled) {
-		toSerialize["userCacheEnabled"] = o.UserCacheEnabled
-	}
-	if !IsNil(o.RealmCacheEnabled) {
-		toSerialize["realmCacheEnabled"] = o.RealmCacheEnabled
 	}
 	if !IsNil(o.BruteForceProtected) {
 		toSerialize["bruteForceProtected"] = o.BruteForceProtected
@@ -5047,35 +4446,17 @@ func (o RealmRepresentation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.FailureFactor) {
 		toSerialize["failureFactor"] = o.FailureFactor
 	}
-	if !IsNil(o.PrivateKey) {
-		toSerialize["privateKey"] = o.PrivateKey
-	}
-	if !IsNil(o.PublicKey) {
-		toSerialize["publicKey"] = o.PublicKey
-	}
-	if !IsNil(o.Certificate) {
-		toSerialize["certificate"] = o.Certificate
-	}
-	if !IsNil(o.CodeSecret) {
-		toSerialize["codeSecret"] = o.CodeSecret
-	}
 	if !IsNil(o.Roles) {
 		toSerialize["roles"] = o.Roles
 	}
 	if !IsNil(o.Groups) {
 		toSerialize["groups"] = o.Groups
 	}
-	if !IsNil(o.DefaultRoles) {
-		toSerialize["defaultRoles"] = o.DefaultRoles
-	}
 	if !IsNil(o.DefaultRole) {
 		toSerialize["defaultRole"] = o.DefaultRole
 	}
 	if !IsNil(o.DefaultGroups) {
 		toSerialize["defaultGroups"] = o.DefaultGroups
-	}
-	if !IsNil(o.RequiredCredentials) {
-		toSerialize["requiredCredentials"] = o.RequiredCredentials
 	}
 	if !IsNil(o.PasswordPolicy) {
 		toSerialize["passwordPolicy"] = o.PasswordPolicy
@@ -5304,27 +4685,6 @@ func (o RealmRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.UserManagedAccessAllowed) {
 		toSerialize["userManagedAccessAllowed"] = o.UserManagedAccessAllowed
-	}
-	if !IsNil(o.Social) {
-		toSerialize["social"] = o.Social
-	}
-	if !IsNil(o.UpdateProfileOnInitialSocialLogin) {
-		toSerialize["updateProfileOnInitialSocialLogin"] = o.UpdateProfileOnInitialSocialLogin
-	}
-	if !IsNil(o.SocialProviders) {
-		toSerialize["socialProviders"] = o.SocialProviders
-	}
-	if !IsNil(o.ApplicationScopeMappings) {
-		toSerialize["applicationScopeMappings"] = o.ApplicationScopeMappings
-	}
-	if !IsNil(o.Applications) {
-		toSerialize["applications"] = o.Applications
-	}
-	if !IsNil(o.OauthClients) {
-		toSerialize["oauthClients"] = o.OauthClients
-	}
-	if !IsNil(o.ClientTemplates) {
-		toSerialize["clientTemplates"] = o.ClientTemplates
 	}
 	if !IsNil(o.OAuth2DeviceCodeLifespan) {
 		toSerialize["oAuth2DeviceCodeLifespan"] = o.OAuth2DeviceCodeLifespan

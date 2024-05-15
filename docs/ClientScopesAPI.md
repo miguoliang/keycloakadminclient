@@ -8,12 +8,12 @@ Method | HTTP request | Description
 [**AdminRealmsRealmClientScopesClientScopeIdGet**](ClientScopesAPI.md#AdminRealmsRealmClientScopesClientScopeIdGet) | **Get** /admin/realms/{realm}/client-scopes/{client-scope-id} | Get representation of the client scope
 [**AdminRealmsRealmClientScopesClientScopeIdPut**](ClientScopesAPI.md#AdminRealmsRealmClientScopesClientScopeIdPut) | **Put** /admin/realms/{realm}/client-scopes/{client-scope-id} | Update the client scope
 [**AdminRealmsRealmClientScopesGet**](ClientScopesAPI.md#AdminRealmsRealmClientScopesGet) | **Get** /admin/realms/{realm}/client-scopes | Get client scopes belonging to the realm Returns a list of client scopes belonging to the realm
-[**AdminRealmsRealmClientScopesPost**](ClientScopesAPI.md#AdminRealmsRealmClientScopesPost) | **Post** /admin/realms/{realm}/client-scopes | Create a new client scope Client Scopeâ€™s name must be unique!
+[**AdminRealmsRealmClientScopesPost**](ClientScopesAPI.md#AdminRealmsRealmClientScopesPost) | **Post** /admin/realms/{realm}/client-scopes | Create a new client scope Client Scope’s name must be unique!
 [**AdminRealmsRealmClientTemplatesClientScopeIdDelete**](ClientScopesAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdDelete) | **Delete** /admin/realms/{realm}/client-templates/{client-scope-id} | Delete the client scope
 [**AdminRealmsRealmClientTemplatesClientScopeIdGet**](ClientScopesAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdGet) | **Get** /admin/realms/{realm}/client-templates/{client-scope-id} | Get representation of the client scope
 [**AdminRealmsRealmClientTemplatesClientScopeIdPut**](ClientScopesAPI.md#AdminRealmsRealmClientTemplatesClientScopeIdPut) | **Put** /admin/realms/{realm}/client-templates/{client-scope-id} | Update the client scope
 [**AdminRealmsRealmClientTemplatesGet**](ClientScopesAPI.md#AdminRealmsRealmClientTemplatesGet) | **Get** /admin/realms/{realm}/client-templates | Get client scopes belonging to the realm Returns a list of client scopes belonging to the realm
-[**AdminRealmsRealmClientTemplatesPost**](ClientScopesAPI.md#AdminRealmsRealmClientTemplatesPost) | **Post** /admin/realms/{realm}/client-templates | Create a new client scope Client Scopeâ€™s name must be unique!
+[**AdminRealmsRealmClientTemplatesPost**](ClientScopesAPI.md#AdminRealmsRealmClientTemplatesPost) | **Post** /admin/realms/{realm}/client-templates | Create a new client scope Client Scope’s name must be unique!
 
 
 
@@ -300,7 +300,7 @@ No authorization required
 
 > AdminRealmsRealmClientScopesPost(ctx, realm).ClientScopeRepresentation(clientScopeRepresentation).Execute()
 
-Create a new client scope Client Scopeâ€™s name must be unique!
+Create a new client scope Client Scope’s name must be unique!
 
 ### Example
 
@@ -647,7 +647,7 @@ No authorization required
 
 > AdminRealmsRealmClientTemplatesPost(ctx, realm).ClientScopeRepresentation(clientScopeRepresentation).Execute()
 
-Create a new client scope Client Scopeâ€™s name must be unique!
+Create a new client scope Client Scope’s name must be unique!
 
 ### Example
 

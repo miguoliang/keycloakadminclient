@@ -32,8 +32,6 @@ type ClientRepresentation struct {
 	ClientAuthenticatorType *string `json:"clientAuthenticatorType,omitempty"`
 	Secret *string `json:"secret,omitempty"`
 	RegistrationAccessToken *string `json:"registrationAccessToken,omitempty"`
-	// Deprecated
-	DefaultRoles []string `json:"defaultRoles,omitempty"`
 	RedirectUris []string `json:"redirectUris,omitempty"`
 	WebOrigins []string `json:"webOrigins,omitempty"`
 	NotBefore *int32 `json:"notBefore,omitempty"`
@@ -44,8 +42,6 @@ type ClientRepresentation struct {
 	DirectAccessGrantsEnabled *bool `json:"directAccessGrantsEnabled,omitempty"`
 	ServiceAccountsEnabled *bool `json:"serviceAccountsEnabled,omitempty"`
 	AuthorizationServicesEnabled *bool `json:"authorizationServicesEnabled,omitempty"`
-	// Deprecated
-	DirectGrantsOnly *bool `json:"directGrantsOnly,omitempty"`
 	PublicClient *bool `json:"publicClient,omitempty"`
 	FrontchannelLogout *bool `json:"frontchannelLogout,omitempty"`
 	Protocol *string `json:"protocol,omitempty"`
@@ -55,14 +51,6 @@ type ClientRepresentation struct {
 	NodeReRegistrationTimeout *int32 `json:"nodeReRegistrationTimeout,omitempty"`
 	RegisteredNodes *map[string]int32 `json:"registeredNodes,omitempty"`
 	ProtocolMappers []ProtocolMapperRepresentation `json:"protocolMappers,omitempty"`
-	// Deprecated
-	ClientTemplate *string `json:"clientTemplate,omitempty"`
-	// Deprecated
-	UseTemplateConfig *bool `json:"useTemplateConfig,omitempty"`
-	// Deprecated
-	UseTemplateScope *bool `json:"useTemplateScope,omitempty"`
-	// Deprecated
-	UseTemplateMappers *bool `json:"useTemplateMappers,omitempty"`
 	DefaultClientScopes []string `json:"defaultClientScopes,omitempty"`
 	OptionalClientScopes []string `json:"optionalClientScopes,omitempty"`
 	AuthorizationSettings *ResourceServerRepresentation `json:"authorizationSettings,omitempty"`
@@ -503,41 +491,6 @@ func (o *ClientRepresentation) SetRegistrationAccessToken(v string) {
 	o.RegistrationAccessToken = &v
 }
 
-// GetDefaultRoles returns the DefaultRoles field value if set, zero value otherwise.
-// Deprecated
-func (o *ClientRepresentation) GetDefaultRoles() []string {
-	if o == nil || IsNil(o.DefaultRoles) {
-		var ret []string
-		return ret
-	}
-	return o.DefaultRoles
-}
-
-// GetDefaultRolesOk returns a tuple with the DefaultRoles field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ClientRepresentation) GetDefaultRolesOk() ([]string, bool) {
-	if o == nil || IsNil(o.DefaultRoles) {
-		return nil, false
-	}
-	return o.DefaultRoles, true
-}
-
-// HasDefaultRoles returns a boolean if a field has been set.
-func (o *ClientRepresentation) HasDefaultRoles() bool {
-	if o != nil && !IsNil(o.DefaultRoles) {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultRoles gets a reference to the given []string and assigns it to the DefaultRoles field.
-// Deprecated
-func (o *ClientRepresentation) SetDefaultRoles(v []string) {
-	o.DefaultRoles = v
-}
-
 // GetRedirectUris returns the RedirectUris field value if set, zero value otherwise.
 func (o *ClientRepresentation) GetRedirectUris() []string {
 	if o == nil || IsNil(o.RedirectUris) {
@@ -858,41 +811,6 @@ func (o *ClientRepresentation) SetAuthorizationServicesEnabled(v bool) {
 	o.AuthorizationServicesEnabled = &v
 }
 
-// GetDirectGrantsOnly returns the DirectGrantsOnly field value if set, zero value otherwise.
-// Deprecated
-func (o *ClientRepresentation) GetDirectGrantsOnly() bool {
-	if o == nil || IsNil(o.DirectGrantsOnly) {
-		var ret bool
-		return ret
-	}
-	return *o.DirectGrantsOnly
-}
-
-// GetDirectGrantsOnlyOk returns a tuple with the DirectGrantsOnly field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ClientRepresentation) GetDirectGrantsOnlyOk() (*bool, bool) {
-	if o == nil || IsNil(o.DirectGrantsOnly) {
-		return nil, false
-	}
-	return o.DirectGrantsOnly, true
-}
-
-// HasDirectGrantsOnly returns a boolean if a field has been set.
-func (o *ClientRepresentation) HasDirectGrantsOnly() bool {
-	if o != nil && !IsNil(o.DirectGrantsOnly) {
-		return true
-	}
-
-	return false
-}
-
-// SetDirectGrantsOnly gets a reference to the given bool and assigns it to the DirectGrantsOnly field.
-// Deprecated
-func (o *ClientRepresentation) SetDirectGrantsOnly(v bool) {
-	o.DirectGrantsOnly = &v
-}
-
 // GetPublicClient returns the PublicClient field value if set, zero value otherwise.
 func (o *ClientRepresentation) GetPublicClient() bool {
 	if o == nil || IsNil(o.PublicClient) {
@@ -1181,146 +1099,6 @@ func (o *ClientRepresentation) SetProtocolMappers(v []ProtocolMapperRepresentati
 	o.ProtocolMappers = v
 }
 
-// GetClientTemplate returns the ClientTemplate field value if set, zero value otherwise.
-// Deprecated
-func (o *ClientRepresentation) GetClientTemplate() string {
-	if o == nil || IsNil(o.ClientTemplate) {
-		var ret string
-		return ret
-	}
-	return *o.ClientTemplate
-}
-
-// GetClientTemplateOk returns a tuple with the ClientTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ClientRepresentation) GetClientTemplateOk() (*string, bool) {
-	if o == nil || IsNil(o.ClientTemplate) {
-		return nil, false
-	}
-	return o.ClientTemplate, true
-}
-
-// HasClientTemplate returns a boolean if a field has been set.
-func (o *ClientRepresentation) HasClientTemplate() bool {
-	if o != nil && !IsNil(o.ClientTemplate) {
-		return true
-	}
-
-	return false
-}
-
-// SetClientTemplate gets a reference to the given string and assigns it to the ClientTemplate field.
-// Deprecated
-func (o *ClientRepresentation) SetClientTemplate(v string) {
-	o.ClientTemplate = &v
-}
-
-// GetUseTemplateConfig returns the UseTemplateConfig field value if set, zero value otherwise.
-// Deprecated
-func (o *ClientRepresentation) GetUseTemplateConfig() bool {
-	if o == nil || IsNil(o.UseTemplateConfig) {
-		var ret bool
-		return ret
-	}
-	return *o.UseTemplateConfig
-}
-
-// GetUseTemplateConfigOk returns a tuple with the UseTemplateConfig field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ClientRepresentation) GetUseTemplateConfigOk() (*bool, bool) {
-	if o == nil || IsNil(o.UseTemplateConfig) {
-		return nil, false
-	}
-	return o.UseTemplateConfig, true
-}
-
-// HasUseTemplateConfig returns a boolean if a field has been set.
-func (o *ClientRepresentation) HasUseTemplateConfig() bool {
-	if o != nil && !IsNil(o.UseTemplateConfig) {
-		return true
-	}
-
-	return false
-}
-
-// SetUseTemplateConfig gets a reference to the given bool and assigns it to the UseTemplateConfig field.
-// Deprecated
-func (o *ClientRepresentation) SetUseTemplateConfig(v bool) {
-	o.UseTemplateConfig = &v
-}
-
-// GetUseTemplateScope returns the UseTemplateScope field value if set, zero value otherwise.
-// Deprecated
-func (o *ClientRepresentation) GetUseTemplateScope() bool {
-	if o == nil || IsNil(o.UseTemplateScope) {
-		var ret bool
-		return ret
-	}
-	return *o.UseTemplateScope
-}
-
-// GetUseTemplateScopeOk returns a tuple with the UseTemplateScope field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ClientRepresentation) GetUseTemplateScopeOk() (*bool, bool) {
-	if o == nil || IsNil(o.UseTemplateScope) {
-		return nil, false
-	}
-	return o.UseTemplateScope, true
-}
-
-// HasUseTemplateScope returns a boolean if a field has been set.
-func (o *ClientRepresentation) HasUseTemplateScope() bool {
-	if o != nil && !IsNil(o.UseTemplateScope) {
-		return true
-	}
-
-	return false
-}
-
-// SetUseTemplateScope gets a reference to the given bool and assigns it to the UseTemplateScope field.
-// Deprecated
-func (o *ClientRepresentation) SetUseTemplateScope(v bool) {
-	o.UseTemplateScope = &v
-}
-
-// GetUseTemplateMappers returns the UseTemplateMappers field value if set, zero value otherwise.
-// Deprecated
-func (o *ClientRepresentation) GetUseTemplateMappers() bool {
-	if o == nil || IsNil(o.UseTemplateMappers) {
-		var ret bool
-		return ret
-	}
-	return *o.UseTemplateMappers
-}
-
-// GetUseTemplateMappersOk returns a tuple with the UseTemplateMappers field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *ClientRepresentation) GetUseTemplateMappersOk() (*bool, bool) {
-	if o == nil || IsNil(o.UseTemplateMappers) {
-		return nil, false
-	}
-	return o.UseTemplateMappers, true
-}
-
-// HasUseTemplateMappers returns a boolean if a field has been set.
-func (o *ClientRepresentation) HasUseTemplateMappers() bool {
-	if o != nil && !IsNil(o.UseTemplateMappers) {
-		return true
-	}
-
-	return false
-}
-
-// SetUseTemplateMappers gets a reference to the given bool and assigns it to the UseTemplateMappers field.
-// Deprecated
-func (o *ClientRepresentation) SetUseTemplateMappers(v bool) {
-	o.UseTemplateMappers = &v
-}
-
 // GetDefaultClientScopes returns the DefaultClientScopes field value if set, zero value otherwise.
 func (o *ClientRepresentation) GetDefaultClientScopes() []string {
 	if o == nil || IsNil(o.DefaultClientScopes) {
@@ -1530,9 +1308,6 @@ func (o ClientRepresentation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.RegistrationAccessToken) {
 		toSerialize["registrationAccessToken"] = o.RegistrationAccessToken
 	}
-	if !IsNil(o.DefaultRoles) {
-		toSerialize["defaultRoles"] = o.DefaultRoles
-	}
 	if !IsNil(o.RedirectUris) {
 		toSerialize["redirectUris"] = o.RedirectUris
 	}
@@ -1563,9 +1338,6 @@ func (o ClientRepresentation) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AuthorizationServicesEnabled) {
 		toSerialize["authorizationServicesEnabled"] = o.AuthorizationServicesEnabled
 	}
-	if !IsNil(o.DirectGrantsOnly) {
-		toSerialize["directGrantsOnly"] = o.DirectGrantsOnly
-	}
 	if !IsNil(o.PublicClient) {
 		toSerialize["publicClient"] = o.PublicClient
 	}
@@ -1592,18 +1364,6 @@ func (o ClientRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.ProtocolMappers) {
 		toSerialize["protocolMappers"] = o.ProtocolMappers
-	}
-	if !IsNil(o.ClientTemplate) {
-		toSerialize["clientTemplate"] = o.ClientTemplate
-	}
-	if !IsNil(o.UseTemplateConfig) {
-		toSerialize["useTemplateConfig"] = o.UseTemplateConfig
-	}
-	if !IsNil(o.UseTemplateScope) {
-		toSerialize["useTemplateScope"] = o.UseTemplateScope
-	}
-	if !IsNil(o.UseTemplateMappers) {
-		toSerialize["useTemplateMappers"] = o.UseTemplateMappers
 	}
 	if !IsNil(o.DefaultClientScopes) {
 		toSerialize["defaultClientScopes"] = o.DefaultClientScopes

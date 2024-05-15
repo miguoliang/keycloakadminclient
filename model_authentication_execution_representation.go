@@ -24,8 +24,6 @@ type AuthenticationExecutionRepresentation struct {
 	AuthenticatorFlow *bool `json:"authenticatorFlow,omitempty"`
 	Requirement *string `json:"requirement,omitempty"`
 	Priority *int32 `json:"priority,omitempty"`
-	// Deprecated
-	AutheticatorFlow *bool `json:"autheticatorFlow,omitempty"`
 	Id *string `json:"id,omitempty"`
 	FlowId *string `json:"flowId,omitempty"`
 	ParentFlow *string `json:"parentFlow,omitempty"`
@@ -208,41 +206,6 @@ func (o *AuthenticationExecutionRepresentation) SetPriority(v int32) {
 	o.Priority = &v
 }
 
-// GetAutheticatorFlow returns the AutheticatorFlow field value if set, zero value otherwise.
-// Deprecated
-func (o *AuthenticationExecutionRepresentation) GetAutheticatorFlow() bool {
-	if o == nil || IsNil(o.AutheticatorFlow) {
-		var ret bool
-		return ret
-	}
-	return *o.AutheticatorFlow
-}
-
-// GetAutheticatorFlowOk returns a tuple with the AutheticatorFlow field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *AuthenticationExecutionRepresentation) GetAutheticatorFlowOk() (*bool, bool) {
-	if o == nil || IsNil(o.AutheticatorFlow) {
-		return nil, false
-	}
-	return o.AutheticatorFlow, true
-}
-
-// HasAutheticatorFlow returns a boolean if a field has been set.
-func (o *AuthenticationExecutionRepresentation) HasAutheticatorFlow() bool {
-	if o != nil && !IsNil(o.AutheticatorFlow) {
-		return true
-	}
-
-	return false
-}
-
-// SetAutheticatorFlow gets a reference to the given bool and assigns it to the AutheticatorFlow field.
-// Deprecated
-func (o *AuthenticationExecutionRepresentation) SetAutheticatorFlow(v bool) {
-	o.AutheticatorFlow = &v
-}
-
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AuthenticationExecutionRepresentation) GetId() string {
 	if o == nil || IsNil(o.Id) {
@@ -363,9 +326,6 @@ func (o AuthenticationExecutionRepresentation) ToMap() (map[string]interface{}, 
 	}
 	if !IsNil(o.Priority) {
 		toSerialize["priority"] = o.Priority
-	}
-	if !IsNil(o.AutheticatorFlow) {
-		toSerialize["autheticatorFlow"] = o.AutheticatorFlow
 	}
 	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id

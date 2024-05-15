@@ -90,7 +90,7 @@ func (r UsersAPIAdminRealmsRealmUsersCountGetRequest) Execute() (int32, *http.Re
 /*
 AdminRealmsRealmUsersCountGet Returns the number of users that match the given criteria.
 
-It can be called in three different ways. 1. Donâ€™t specify any criteria and pass {@code null}. The number of all users within that realm will be returned. <p> 2. If {@code search} is specified other criteria such as {@code last} will be ignored even though you set them. The {@code search} string will be matched against the first and last name, the username and the email of a user. <p> 3. If {@code search} is unspecified but any of {@code last}, {@code first}, {@code email} or {@code username} those criteria are matched against their respective fields on a user entity. Combined with a logical and.
+It can be called in three different ways. 1. Don’t specify any criteria and pass {@code null}. The number of all users within that realm will be returned. <p> 2. If {@code search} is specified other criteria such as {@code last} will be ignored even though you set them. The {@code search} string will be matched against the first and last name, the username and the email of a user. <p> 3. If {@code search} is unspecified but any of {@code last}, {@code first}, {@code email} or {@code username} those criteria are matched against their respective fields on a user entity. Combined with a logical and.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param realm realm name (not id!)
@@ -3261,125 +3261,6 @@ func (a *UsersAPIService) AdminRealmsRealmUsersUserIdPutExecute(r UsersAPIAdminR
 	}
 	// body params
 	localVarPostBody = r.userRepresentation
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest struct {
-	ctx context.Context
-	ApiService *UsersAPIService
-	realm string
-	userId string
-	clientId *string
-	redirectUri *string
-}
-
-// client id
-func (r UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest) ClientId(clientId string) UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest {
-	r.clientId = &clientId
-	return r
-}
-
-// redirect uri
-func (r UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest) RedirectUri(redirectUri string) UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest {
-	r.redirectUri = &redirectUri
-	return r
-}
-
-func (r UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest) Execute() (*http.Response, error) {
-	return r.ApiService.AdminRealmsRealmUsersUserIdResetPasswordEmailPutExecute(r)
-}
-
-/*
-AdminRealmsRealmUsersUserIdResetPasswordEmailPut Send an email to the user with a link they can click to reset their password.
-
-The redirectUri and clientId parameters are optional. The default for the redirect is the account client. This endpoint has been deprecated.  Please use the execute-actions-email passing a list with UPDATE_PASSWORD within it.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param realm realm name (not id!)
- @param userId
- @return UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest
-
-Deprecated
-*/
-func (a *UsersAPIService) AdminRealmsRealmUsersUserIdResetPasswordEmailPut(ctx context.Context, realm string, userId string) UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest {
-	return UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest{
-		ApiService: a,
-		ctx: ctx,
-		realm: realm,
-		userId: userId,
-	}
-}
-
-// Execute executes the request
-// Deprecated
-func (a *UsersAPIService) AdminRealmsRealmUsersUserIdResetPasswordEmailPutExecute(r UsersAPIAdminRealmsRealmUsersUserIdResetPasswordEmailPutRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.AdminRealmsRealmUsersUserIdResetPasswordEmailPut")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/admin/realms/{realm}/users/{user-id}/reset-password-email"
-	localVarPath = strings.Replace(localVarPath, "{"+"realm"+"}", url.PathEscape(parameterValueToString(r.realm, "realm")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"user-id"+"}", url.PathEscape(parameterValueToString(r.userId, "userId")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	if r.clientId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "client_id", r.clientId, "")
-	}
-	if r.redirectUri != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "redirect_uri", r.redirectUri, "")
-	}
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return nil, err

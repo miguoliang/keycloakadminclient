@@ -22,8 +22,6 @@ type RoleRepresentation struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Description *string `json:"description,omitempty"`
-	// Deprecated
-	ScopeParamRequired *bool `json:"scopeParamRequired,omitempty"`
 	Composite *bool `json:"composite,omitempty"`
 	Composites *Composites `json:"composites,omitempty"`
 	ClientRole *bool `json:"clientRole,omitempty"`
@@ -142,41 +140,6 @@ func (o *RoleRepresentation) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *RoleRepresentation) SetDescription(v string) {
 	o.Description = &v
-}
-
-// GetScopeParamRequired returns the ScopeParamRequired field value if set, zero value otherwise.
-// Deprecated
-func (o *RoleRepresentation) GetScopeParamRequired() bool {
-	if o == nil || IsNil(o.ScopeParamRequired) {
-		var ret bool
-		return ret
-	}
-	return *o.ScopeParamRequired
-}
-
-// GetScopeParamRequiredOk returns a tuple with the ScopeParamRequired field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RoleRepresentation) GetScopeParamRequiredOk() (*bool, bool) {
-	if o == nil || IsNil(o.ScopeParamRequired) {
-		return nil, false
-	}
-	return o.ScopeParamRequired, true
-}
-
-// HasScopeParamRequired returns a boolean if a field has been set.
-func (o *RoleRepresentation) HasScopeParamRequired() bool {
-	if o != nil && !IsNil(o.ScopeParamRequired) {
-		return true
-	}
-
-	return false
-}
-
-// SetScopeParamRequired gets a reference to the given bool and assigns it to the ScopeParamRequired field.
-// Deprecated
-func (o *RoleRepresentation) SetScopeParamRequired(v bool) {
-	o.ScopeParamRequired = &v
 }
 
 // GetComposite returns the Composite field value if set, zero value otherwise.
@@ -357,9 +320,6 @@ func (o RoleRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
-	}
-	if !IsNil(o.ScopeParamRequired) {
-		toSerialize["scopeParamRequired"] = o.ScopeParamRequired
 	}
 	if !IsNil(o.Composite) {
 		toSerialize["composite"] = o.Composite

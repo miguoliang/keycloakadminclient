@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Self** | Pointer to **string** |  | [optional] 
 **Client** | Pointer to **string** |  | [optional] 
-**ClientTemplate** | Pointer to **string** |  | [optional] 
 **ClientScope** | Pointer to **string** |  | [optional] 
 **Roles** | Pointer to **[]string** |  | [optional] 
 
@@ -78,31 +77,6 @@ SetClient sets Client field to given value.
 `func (o *ScopeMappingRepresentation) HasClient() bool`
 
 HasClient returns a boolean if a field has been set.
-
-### GetClientTemplate
-
-`func (o *ScopeMappingRepresentation) GetClientTemplate() string`
-
-GetClientTemplate returns the ClientTemplate field if non-nil, zero value otherwise.
-
-### GetClientTemplateOk
-
-`func (o *ScopeMappingRepresentation) GetClientTemplateOk() (*string, bool)`
-
-GetClientTemplateOk returns a tuple with the ClientTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientTemplate
-
-`func (o *ScopeMappingRepresentation) SetClientTemplate(v string)`
-
-SetClientTemplate sets ClientTemplate field to given value.
-
-### HasClientTemplate
-
-`func (o *ScopeMappingRepresentation) HasClientTemplate() bool`
-
-HasClientTemplate returns a boolean if a field has been set.
 
 ### GetClientScope
 

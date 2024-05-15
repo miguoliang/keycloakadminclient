@@ -1,0 +1,30 @@
+version: 2.1
+jobs:
+  get_and_clean_keycloak_yaml:
+    docker:
+      - image: circleci/python:3.8
+    steps:
+      - checkout
+      - run:
+          name: Install yq
+          command: pip install yq
+      - run:
+          name: Download Keycloak YAML
+          command: curl -o keycloak.yaml https://www.keycloak.org/docs-api/latest/rest-api/openapi.yaml
+      - persist_to_workspace:
+          root: .
+          paths:
+            - keycloak_clean.yaml
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
+      - run:
+          name: Build and Deploy
+          command: |
+            # Add your build and deploy commands here
+            # For example:
+            # - python build.py
+            # - python deploy.py

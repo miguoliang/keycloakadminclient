@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**ScopeParamRequired** | Pointer to **bool** |  | [optional] 
 **Composite** | Pointer to **bool** |  | [optional] 
 **Composites** | Pointer to [**Composites**](Composites.md) |  | [optional] 
 **ClientRole** | Pointer to **bool** |  | [optional] 
@@ -107,31 +106,6 @@ SetDescription sets Description field to given value.
 `func (o *RoleRepresentation) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetScopeParamRequired
-
-`func (o *RoleRepresentation) GetScopeParamRequired() bool`
-
-GetScopeParamRequired returns the ScopeParamRequired field if non-nil, zero value otherwise.
-
-### GetScopeParamRequiredOk
-
-`func (o *RoleRepresentation) GetScopeParamRequiredOk() (*bool, bool)`
-
-GetScopeParamRequiredOk returns a tuple with the ScopeParamRequired field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetScopeParamRequired
-
-`func (o *RoleRepresentation) SetScopeParamRequired(v bool)`
-
-SetScopeParamRequired sets ScopeParamRequired field to given value.
-
-### HasScopeParamRequired
-
-`func (o *RoleRepresentation) HasScopeParamRequired() bool`
-
-HasScopeParamRequired returns a boolean if a field has been set.
 
 ### GetComposite
 

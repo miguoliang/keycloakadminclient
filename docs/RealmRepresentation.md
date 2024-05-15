@@ -34,7 +34,6 @@ Name | Type | Description | Notes
 **Oauth2DevicePollingInterval** | Pointer to **int32** |  | [optional] 
 **Enabled** | Pointer to **bool** |  | [optional] 
 **SslRequired** | Pointer to **string** |  | [optional] 
-**PasswordCredentialGrantAllowed** | Pointer to **bool** |  | [optional] 
 **RegistrationAllowed** | Pointer to **bool** |  | [optional] 
 **RegistrationEmailAsUsername** | Pointer to **bool** |  | [optional] 
 **RememberMe** | Pointer to **bool** |  | [optional] 
@@ -43,8 +42,6 @@ Name | Type | Description | Notes
 **DuplicateEmailsAllowed** | Pointer to **bool** |  | [optional] 
 **ResetPasswordAllowed** | Pointer to **bool** |  | [optional] 
 **EditUsernameAllowed** | Pointer to **bool** |  | [optional] 
-**UserCacheEnabled** | Pointer to **bool** |  | [optional] 
-**RealmCacheEnabled** | Pointer to **bool** |  | [optional] 
 **BruteForceProtected** | Pointer to **bool** |  | [optional] 
 **PermanentLockout** | Pointer to **bool** |  | [optional] 
 **MaxTemporaryLockouts** | Pointer to **int32** |  | [optional] 
@@ -54,16 +51,10 @@ Name | Type | Description | Notes
 **QuickLoginCheckMilliSeconds** | Pointer to **int64** |  | [optional] 
 **MaxDeltaTimeSeconds** | Pointer to **int32** |  | [optional] 
 **FailureFactor** | Pointer to **int32** |  | [optional] 
-**PrivateKey** | Pointer to **string** |  | [optional] 
-**PublicKey** | Pointer to **string** |  | [optional] 
-**Certificate** | Pointer to **string** |  | [optional] 
-**CodeSecret** | Pointer to **string** |  | [optional] 
 **Roles** | Pointer to [**RolesRepresentation**](RolesRepresentation.md) |  | [optional] 
 **Groups** | Pointer to [**[]GroupRepresentation**](GroupRepresentation.md) |  | [optional] 
-**DefaultRoles** | Pointer to **[]string** |  | [optional] 
 **DefaultRole** | Pointer to [**RoleRepresentation**](RoleRepresentation.md) |  | [optional] 
 **DefaultGroups** | Pointer to **[]string** |  | [optional] 
-**RequiredCredentials** | Pointer to **[]string** |  | [optional] 
 **PasswordPolicy** | Pointer to **string** |  | [optional] 
 **OtpPolicyType** | Pointer to **string** |  | [optional] 
 **OtpPolicyAlgorithm** | Pointer to **string** |  | [optional] 
@@ -140,13 +131,6 @@ Name | Type | Description | Notes
 **Attributes** | Pointer to **map[string]string** |  | [optional] 
 **KeycloakVersion** | Pointer to **string** |  | [optional] 
 **UserManagedAccessAllowed** | Pointer to **bool** |  | [optional] 
-**Social** | Pointer to **bool** |  | [optional] 
-**UpdateProfileOnInitialSocialLogin** | Pointer to **bool** |  | [optional] 
-**SocialProviders** | Pointer to **map[string]string** |  | [optional] 
-**ApplicationScopeMappings** | Pointer to [**map[string][]ScopeMappingRepresentation**](array.md) |  | [optional] 
-**Applications** | Pointer to [**[]ApplicationRepresentation**](ApplicationRepresentation.md) |  | [optional] 
-**OauthClients** | Pointer to [**[]OAuthClientRepresentation**](OAuthClientRepresentation.md) |  | [optional] 
-**ClientTemplates** | Pointer to [**[]ClientTemplateRepresentation**](ClientTemplateRepresentation.md) |  | [optional] 
 **OAuth2DeviceCodeLifespan** | Pointer to **int32** |  | [optional] 
 **OAuth2DevicePollingInterval** | Pointer to **int32** |  | [optional] 
 
@@ -919,31 +903,6 @@ SetSslRequired sets SslRequired field to given value.
 
 HasSslRequired returns a boolean if a field has been set.
 
-### GetPasswordCredentialGrantAllowed
-
-`func (o *RealmRepresentation) GetPasswordCredentialGrantAllowed() bool`
-
-GetPasswordCredentialGrantAllowed returns the PasswordCredentialGrantAllowed field if non-nil, zero value otherwise.
-
-### GetPasswordCredentialGrantAllowedOk
-
-`func (o *RealmRepresentation) GetPasswordCredentialGrantAllowedOk() (*bool, bool)`
-
-GetPasswordCredentialGrantAllowedOk returns a tuple with the PasswordCredentialGrantAllowed field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPasswordCredentialGrantAllowed
-
-`func (o *RealmRepresentation) SetPasswordCredentialGrantAllowed(v bool)`
-
-SetPasswordCredentialGrantAllowed sets PasswordCredentialGrantAllowed field to given value.
-
-### HasPasswordCredentialGrantAllowed
-
-`func (o *RealmRepresentation) HasPasswordCredentialGrantAllowed() bool`
-
-HasPasswordCredentialGrantAllowed returns a boolean if a field has been set.
-
 ### GetRegistrationAllowed
 
 `func (o *RealmRepresentation) GetRegistrationAllowed() bool`
@@ -1143,56 +1102,6 @@ SetEditUsernameAllowed sets EditUsernameAllowed field to given value.
 `func (o *RealmRepresentation) HasEditUsernameAllowed() bool`
 
 HasEditUsernameAllowed returns a boolean if a field has been set.
-
-### GetUserCacheEnabled
-
-`func (o *RealmRepresentation) GetUserCacheEnabled() bool`
-
-GetUserCacheEnabled returns the UserCacheEnabled field if non-nil, zero value otherwise.
-
-### GetUserCacheEnabledOk
-
-`func (o *RealmRepresentation) GetUserCacheEnabledOk() (*bool, bool)`
-
-GetUserCacheEnabledOk returns a tuple with the UserCacheEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUserCacheEnabled
-
-`func (o *RealmRepresentation) SetUserCacheEnabled(v bool)`
-
-SetUserCacheEnabled sets UserCacheEnabled field to given value.
-
-### HasUserCacheEnabled
-
-`func (o *RealmRepresentation) HasUserCacheEnabled() bool`
-
-HasUserCacheEnabled returns a boolean if a field has been set.
-
-### GetRealmCacheEnabled
-
-`func (o *RealmRepresentation) GetRealmCacheEnabled() bool`
-
-GetRealmCacheEnabled returns the RealmCacheEnabled field if non-nil, zero value otherwise.
-
-### GetRealmCacheEnabledOk
-
-`func (o *RealmRepresentation) GetRealmCacheEnabledOk() (*bool, bool)`
-
-GetRealmCacheEnabledOk returns a tuple with the RealmCacheEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRealmCacheEnabled
-
-`func (o *RealmRepresentation) SetRealmCacheEnabled(v bool)`
-
-SetRealmCacheEnabled sets RealmCacheEnabled field to given value.
-
-### HasRealmCacheEnabled
-
-`func (o *RealmRepresentation) HasRealmCacheEnabled() bool`
-
-HasRealmCacheEnabled returns a boolean if a field has been set.
 
 ### GetBruteForceProtected
 
@@ -1419,106 +1328,6 @@ SetFailureFactor sets FailureFactor field to given value.
 
 HasFailureFactor returns a boolean if a field has been set.
 
-### GetPrivateKey
-
-`func (o *RealmRepresentation) GetPrivateKey() string`
-
-GetPrivateKey returns the PrivateKey field if non-nil, zero value otherwise.
-
-### GetPrivateKeyOk
-
-`func (o *RealmRepresentation) GetPrivateKeyOk() (*string, bool)`
-
-GetPrivateKeyOk returns a tuple with the PrivateKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPrivateKey
-
-`func (o *RealmRepresentation) SetPrivateKey(v string)`
-
-SetPrivateKey sets PrivateKey field to given value.
-
-### HasPrivateKey
-
-`func (o *RealmRepresentation) HasPrivateKey() bool`
-
-HasPrivateKey returns a boolean if a field has been set.
-
-### GetPublicKey
-
-`func (o *RealmRepresentation) GetPublicKey() string`
-
-GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
-
-### GetPublicKeyOk
-
-`func (o *RealmRepresentation) GetPublicKeyOk() (*string, bool)`
-
-GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublicKey
-
-`func (o *RealmRepresentation) SetPublicKey(v string)`
-
-SetPublicKey sets PublicKey field to given value.
-
-### HasPublicKey
-
-`func (o *RealmRepresentation) HasPublicKey() bool`
-
-HasPublicKey returns a boolean if a field has been set.
-
-### GetCertificate
-
-`func (o *RealmRepresentation) GetCertificate() string`
-
-GetCertificate returns the Certificate field if non-nil, zero value otherwise.
-
-### GetCertificateOk
-
-`func (o *RealmRepresentation) GetCertificateOk() (*string, bool)`
-
-GetCertificateOk returns a tuple with the Certificate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCertificate
-
-`func (o *RealmRepresentation) SetCertificate(v string)`
-
-SetCertificate sets Certificate field to given value.
-
-### HasCertificate
-
-`func (o *RealmRepresentation) HasCertificate() bool`
-
-HasCertificate returns a boolean if a field has been set.
-
-### GetCodeSecret
-
-`func (o *RealmRepresentation) GetCodeSecret() string`
-
-GetCodeSecret returns the CodeSecret field if non-nil, zero value otherwise.
-
-### GetCodeSecretOk
-
-`func (o *RealmRepresentation) GetCodeSecretOk() (*string, bool)`
-
-GetCodeSecretOk returns a tuple with the CodeSecret field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCodeSecret
-
-`func (o *RealmRepresentation) SetCodeSecret(v string)`
-
-SetCodeSecret sets CodeSecret field to given value.
-
-### HasCodeSecret
-
-`func (o *RealmRepresentation) HasCodeSecret() bool`
-
-HasCodeSecret returns a boolean if a field has been set.
-
 ### GetRoles
 
 `func (o *RealmRepresentation) GetRoles() RolesRepresentation`
@@ -1569,31 +1378,6 @@ SetGroups sets Groups field to given value.
 
 HasGroups returns a boolean if a field has been set.
 
-### GetDefaultRoles
-
-`func (o *RealmRepresentation) GetDefaultRoles() []string`
-
-GetDefaultRoles returns the DefaultRoles field if non-nil, zero value otherwise.
-
-### GetDefaultRolesOk
-
-`func (o *RealmRepresentation) GetDefaultRolesOk() (*[]string, bool)`
-
-GetDefaultRolesOk returns a tuple with the DefaultRoles field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultRoles
-
-`func (o *RealmRepresentation) SetDefaultRoles(v []string)`
-
-SetDefaultRoles sets DefaultRoles field to given value.
-
-### HasDefaultRoles
-
-`func (o *RealmRepresentation) HasDefaultRoles() bool`
-
-HasDefaultRoles returns a boolean if a field has been set.
-
 ### GetDefaultRole
 
 `func (o *RealmRepresentation) GetDefaultRole() RoleRepresentation`
@@ -1643,31 +1427,6 @@ SetDefaultGroups sets DefaultGroups field to given value.
 `func (o *RealmRepresentation) HasDefaultGroups() bool`
 
 HasDefaultGroups returns a boolean if a field has been set.
-
-### GetRequiredCredentials
-
-`func (o *RealmRepresentation) GetRequiredCredentials() []string`
-
-GetRequiredCredentials returns the RequiredCredentials field if non-nil, zero value otherwise.
-
-### GetRequiredCredentialsOk
-
-`func (o *RealmRepresentation) GetRequiredCredentialsOk() (*[]string, bool)`
-
-GetRequiredCredentialsOk returns a tuple with the RequiredCredentials field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRequiredCredentials
-
-`func (o *RealmRepresentation) SetRequiredCredentials(v []string)`
-
-SetRequiredCredentials sets RequiredCredentials field to given value.
-
-### HasRequiredCredentials
-
-`func (o *RealmRepresentation) HasRequiredCredentials() bool`
-
-HasRequiredCredentials returns a boolean if a field has been set.
 
 ### GetPasswordPolicy
 
@@ -3568,181 +3327,6 @@ SetUserManagedAccessAllowed sets UserManagedAccessAllowed field to given value.
 `func (o *RealmRepresentation) HasUserManagedAccessAllowed() bool`
 
 HasUserManagedAccessAllowed returns a boolean if a field has been set.
-
-### GetSocial
-
-`func (o *RealmRepresentation) GetSocial() bool`
-
-GetSocial returns the Social field if non-nil, zero value otherwise.
-
-### GetSocialOk
-
-`func (o *RealmRepresentation) GetSocialOk() (*bool, bool)`
-
-GetSocialOk returns a tuple with the Social field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSocial
-
-`func (o *RealmRepresentation) SetSocial(v bool)`
-
-SetSocial sets Social field to given value.
-
-### HasSocial
-
-`func (o *RealmRepresentation) HasSocial() bool`
-
-HasSocial returns a boolean if a field has been set.
-
-### GetUpdateProfileOnInitialSocialLogin
-
-`func (o *RealmRepresentation) GetUpdateProfileOnInitialSocialLogin() bool`
-
-GetUpdateProfileOnInitialSocialLogin returns the UpdateProfileOnInitialSocialLogin field if non-nil, zero value otherwise.
-
-### GetUpdateProfileOnInitialSocialLoginOk
-
-`func (o *RealmRepresentation) GetUpdateProfileOnInitialSocialLoginOk() (*bool, bool)`
-
-GetUpdateProfileOnInitialSocialLoginOk returns a tuple with the UpdateProfileOnInitialSocialLogin field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdateProfileOnInitialSocialLogin
-
-`func (o *RealmRepresentation) SetUpdateProfileOnInitialSocialLogin(v bool)`
-
-SetUpdateProfileOnInitialSocialLogin sets UpdateProfileOnInitialSocialLogin field to given value.
-
-### HasUpdateProfileOnInitialSocialLogin
-
-`func (o *RealmRepresentation) HasUpdateProfileOnInitialSocialLogin() bool`
-
-HasUpdateProfileOnInitialSocialLogin returns a boolean if a field has been set.
-
-### GetSocialProviders
-
-`func (o *RealmRepresentation) GetSocialProviders() map[string]string`
-
-GetSocialProviders returns the SocialProviders field if non-nil, zero value otherwise.
-
-### GetSocialProvidersOk
-
-`func (o *RealmRepresentation) GetSocialProvidersOk() (*map[string]string, bool)`
-
-GetSocialProvidersOk returns a tuple with the SocialProviders field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSocialProviders
-
-`func (o *RealmRepresentation) SetSocialProviders(v map[string]string)`
-
-SetSocialProviders sets SocialProviders field to given value.
-
-### HasSocialProviders
-
-`func (o *RealmRepresentation) HasSocialProviders() bool`
-
-HasSocialProviders returns a boolean if a field has been set.
-
-### GetApplicationScopeMappings
-
-`func (o *RealmRepresentation) GetApplicationScopeMappings() map[string][]ScopeMappingRepresentation`
-
-GetApplicationScopeMappings returns the ApplicationScopeMappings field if non-nil, zero value otherwise.
-
-### GetApplicationScopeMappingsOk
-
-`func (o *RealmRepresentation) GetApplicationScopeMappingsOk() (*map[string][]ScopeMappingRepresentation, bool)`
-
-GetApplicationScopeMappingsOk returns a tuple with the ApplicationScopeMappings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplicationScopeMappings
-
-`func (o *RealmRepresentation) SetApplicationScopeMappings(v map[string][]ScopeMappingRepresentation)`
-
-SetApplicationScopeMappings sets ApplicationScopeMappings field to given value.
-
-### HasApplicationScopeMappings
-
-`func (o *RealmRepresentation) HasApplicationScopeMappings() bool`
-
-HasApplicationScopeMappings returns a boolean if a field has been set.
-
-### GetApplications
-
-`func (o *RealmRepresentation) GetApplications() []ApplicationRepresentation`
-
-GetApplications returns the Applications field if non-nil, zero value otherwise.
-
-### GetApplicationsOk
-
-`func (o *RealmRepresentation) GetApplicationsOk() (*[]ApplicationRepresentation, bool)`
-
-GetApplicationsOk returns a tuple with the Applications field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplications
-
-`func (o *RealmRepresentation) SetApplications(v []ApplicationRepresentation)`
-
-SetApplications sets Applications field to given value.
-
-### HasApplications
-
-`func (o *RealmRepresentation) HasApplications() bool`
-
-HasApplications returns a boolean if a field has been set.
-
-### GetOauthClients
-
-`func (o *RealmRepresentation) GetOauthClients() []OAuthClientRepresentation`
-
-GetOauthClients returns the OauthClients field if non-nil, zero value otherwise.
-
-### GetOauthClientsOk
-
-`func (o *RealmRepresentation) GetOauthClientsOk() (*[]OAuthClientRepresentation, bool)`
-
-GetOauthClientsOk returns a tuple with the OauthClients field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOauthClients
-
-`func (o *RealmRepresentation) SetOauthClients(v []OAuthClientRepresentation)`
-
-SetOauthClients sets OauthClients field to given value.
-
-### HasOauthClients
-
-`func (o *RealmRepresentation) HasOauthClients() bool`
-
-HasOauthClients returns a boolean if a field has been set.
-
-### GetClientTemplates
-
-`func (o *RealmRepresentation) GetClientTemplates() []ClientTemplateRepresentation`
-
-GetClientTemplates returns the ClientTemplates field if non-nil, zero value otherwise.
-
-### GetClientTemplatesOk
-
-`func (o *RealmRepresentation) GetClientTemplatesOk() (*[]ClientTemplateRepresentation, bool)`
-
-GetClientTemplatesOk returns a tuple with the ClientTemplates field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetClientTemplates
-
-`func (o *RealmRepresentation) SetClientTemplates(v []ClientTemplateRepresentation)`
-
-SetClientTemplates sets ClientTemplates field to given value.
-
-### HasClientTemplates
-
-`func (o *RealmRepresentation) HasClientTemplates() bool`
-
-HasClientTemplates returns a boolean if a field has been set.
 
 ### GetOAuth2DeviceCodeLifespan
 

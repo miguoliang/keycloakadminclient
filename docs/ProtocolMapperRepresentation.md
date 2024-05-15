@@ -8,8 +8,6 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** |  | [optional] 
 **Protocol** | Pointer to **string** |  | [optional] 
 **ProtocolMapper** | Pointer to **string** |  | [optional] 
-**ConsentRequired** | Pointer to **bool** |  | [optional] 
-**ConsentText** | Pointer to **string** |  | [optional] 
 **Config** | Pointer to **map[string]string** |  | [optional] 
 
 ## Methods
@@ -130,56 +128,6 @@ SetProtocolMapper sets ProtocolMapper field to given value.
 `func (o *ProtocolMapperRepresentation) HasProtocolMapper() bool`
 
 HasProtocolMapper returns a boolean if a field has been set.
-
-### GetConsentRequired
-
-`func (o *ProtocolMapperRepresentation) GetConsentRequired() bool`
-
-GetConsentRequired returns the ConsentRequired field if non-nil, zero value otherwise.
-
-### GetConsentRequiredOk
-
-`func (o *ProtocolMapperRepresentation) GetConsentRequiredOk() (*bool, bool)`
-
-GetConsentRequiredOk returns a tuple with the ConsentRequired field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsentRequired
-
-`func (o *ProtocolMapperRepresentation) SetConsentRequired(v bool)`
-
-SetConsentRequired sets ConsentRequired field to given value.
-
-### HasConsentRequired
-
-`func (o *ProtocolMapperRepresentation) HasConsentRequired() bool`
-
-HasConsentRequired returns a boolean if a field has been set.
-
-### GetConsentText
-
-`func (o *ProtocolMapperRepresentation) GetConsentText() string`
-
-GetConsentText returns the ConsentText field if non-nil, zero value otherwise.
-
-### GetConsentTextOk
-
-`func (o *ProtocolMapperRepresentation) GetConsentTextOk() (*string, bool)`
-
-GetConsentTextOk returns a tuple with the ConsentText field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetConsentText
-
-`func (o *ProtocolMapperRepresentation) SetConsentText(v string)`
-
-SetConsentText sets ConsentText field to given value.
-
-### HasConsentText
-
-`func (o *ProtocolMapperRepresentation) HasConsentText() bool`
-
-HasConsentText returns a boolean if a field has been set.
 
 ### GetConfig
 

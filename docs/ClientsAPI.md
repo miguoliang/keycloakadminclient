@@ -23,7 +23,7 @@ Method | HTTP request | Description
 [**AdminRealmsRealmClientsClientUuidManagementPermissionsGet**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidManagementPermissionsGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference
 [**AdminRealmsRealmClientsClientUuidManagementPermissionsPut**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidManagementPermissionsPut) | **Put** /admin/realms/{realm}/clients/{client-uuid}/management/permissions | Return object stating whether client Authorization permissions have been initialized or not and a reference
 [**AdminRealmsRealmClientsClientUuidNodesNodeDelete**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidNodesNodeDelete) | **Delete** /admin/realms/{realm}/clients/{client-uuid}/nodes/{node} | Unregister a cluster node from the client
-[**AdminRealmsRealmClientsClientUuidNodesPost**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidNodesPost) | **Post** /admin/realms/{realm}/clients/{client-uuid}/nodes | Register a cluster node with the client Manually register cluster node to this client - usually itâ€™s not needed to call this directly as adapter should handle by sending registration request to Keycloak
+[**AdminRealmsRealmClientsClientUuidNodesPost**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidNodesPost) | **Post** /admin/realms/{realm}/clients/{client-uuid}/nodes | Register a cluster node with the client Manually register cluster node to this client - usually it’s not needed to call this directly as adapter should handle by sending registration request to Keycloak
 [**AdminRealmsRealmClientsClientUuidOfflineSessionCountGet**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidOfflineSessionCountGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/offline-session-count | Get application offline session count Returns a number of offline user sessions associated with this client { \&quot;count\&quot;: number }
 [**AdminRealmsRealmClientsClientUuidOfflineSessionsGet**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidOfflineSessionsGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/offline-sessions | Get offline sessions for client Returns a list of offline user sessions associated with this client
 [**AdminRealmsRealmClientsClientUuidOptionalClientScopesClientScopeIdDelete**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidOptionalClientScopesClientScopeIdDelete) | **Delete** /admin/realms/{realm}/clients/{client-uuid}/optional-client-scopes/{clientScopeId} | 
@@ -37,7 +37,7 @@ Method | HTTP request | Description
 [**AdminRealmsRealmClientsClientUuidTestNodesAvailableGet**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidTestNodesAvailableGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/test-nodes-available | Test if registered cluster nodes are available Tests availability by sending &#39;ping&#39; request to all cluster nodes.
 [**AdminRealmsRealmClientsClientUuidUserSessionsGet**](ClientsAPI.md#AdminRealmsRealmClientsClientUuidUserSessionsGet) | **Get** /admin/realms/{realm}/clients/{client-uuid}/user-sessions | Get user sessions for client Returns a list of user sessions associated with this client 
 [**AdminRealmsRealmClientsGet**](ClientsAPI.md#AdminRealmsRealmClientsGet) | **Get** /admin/realms/{realm}/clients | Get clients belonging to the realm.
-[**AdminRealmsRealmClientsPost**](ClientsAPI.md#AdminRealmsRealmClientsPost) | **Post** /admin/realms/{realm}/clients | Create a new client Clientâ€™s client_id must be unique!
+[**AdminRealmsRealmClientsPost**](ClientsAPI.md#AdminRealmsRealmClientsPost) | **Post** /admin/realms/{realm}/clients | Create a new client Client’s client_id must be unique!
 
 
 
@@ -1426,7 +1426,7 @@ No authorization required
 
 > AdminRealmsRealmClientsClientUuidNodesPost(ctx, realm, clientUuid).RequestBody(requestBody).Execute()
 
-Register a cluster node with the client Manually register cluster node to this client - usually itâ€™s not needed to call this directly as adapter should handle by sending registration request to Keycloak
+Register a cluster node with the client Manually register cluster node to this client - usually it’s not needed to call this directly as adapter should handle by sending registration request to Keycloak
 
 ### Example
 
@@ -2441,7 +2441,7 @@ No authorization required
 
 > AdminRealmsRealmClientsPost(ctx, realm).ClientRepresentation(clientRepresentation).Execute()
 
-Create a new client Clientâ€™s client_id must be unique!
+Create a new client Client’s client_id must be unique!
 
 ### Example
 

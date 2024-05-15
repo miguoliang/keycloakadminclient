@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Realm** | Pointer to [**[]RoleRepresentation**](RoleRepresentation.md) |  | [optional] 
 **Client** | Pointer to [**map[string][]RoleRepresentation**](array.md) |  | [optional] 
-**Application** | Pointer to [**map[string][]RoleRepresentation**](array.md) |  | [optional] 
 
 ## Methods
 
@@ -76,31 +75,6 @@ SetClient sets Client field to given value.
 `func (o *RolesRepresentation) HasClient() bool`
 
 HasClient returns a boolean if a field has been set.
-
-### GetApplication
-
-`func (o *RolesRepresentation) GetApplication() map[string][]RoleRepresentation`
-
-GetApplication returns the Application field if non-nil, zero value otherwise.
-
-### GetApplicationOk
-
-`func (o *RolesRepresentation) GetApplicationOk() (*map[string][]RoleRepresentation, bool)`
-
-GetApplicationOk returns a tuple with the Application field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetApplication
-
-`func (o *RolesRepresentation) SetApplication(v map[string][]RoleRepresentation)`
-
-SetApplication sets Application field to given value.
-
-### HasApplication
-
-`func (o *RolesRepresentation) HasApplication() bool`
-
-HasApplication returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

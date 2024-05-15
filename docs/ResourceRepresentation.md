@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **OwnerManagedAccess** | Pointer to **bool** |  | [optional] 
 **DisplayName** | Pointer to **string** |  | [optional] 
 **Attributes** | Pointer to **map[string][]string** |  | [optional] 
-**Uri** | Pointer to **string** |  | [optional] 
 **ScopesUma** | Pointer to [**[]ScopeRepresentation**](ScopeRepresentation.md) |  | [optional] 
 
 ## Methods
@@ -285,31 +284,6 @@ SetAttributes sets Attributes field to given value.
 `func (o *ResourceRepresentation) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
-
-### GetUri
-
-`func (o *ResourceRepresentation) GetUri() string`
-
-GetUri returns the Uri field if non-nil, zero value otherwise.
-
-### GetUriOk
-
-`func (o *ResourceRepresentation) GetUriOk() (*string, bool)`
-
-GetUriOk returns a tuple with the Uri field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUri
-
-`func (o *ResourceRepresentation) SetUri(v string)`
-
-SetUri sets Uri field to given value.
-
-### HasUri
-
-`func (o *ResourceRepresentation) HasUri() bool`
-
-HasUri returns a boolean if a field has been set.
 
 ### GetScopesUma
 

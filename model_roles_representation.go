@@ -21,8 +21,6 @@ var _ MappedNullable = &RolesRepresentation{}
 type RolesRepresentation struct {
 	Realm []RoleRepresentation `json:"realm,omitempty"`
 	Client *map[string][]RoleRepresentation `json:"client,omitempty"`
-	// Deprecated
-	Application *map[string][]RoleRepresentation `json:"application,omitempty"`
 }
 
 // NewRolesRepresentation instantiates a new RolesRepresentation object
@@ -106,41 +104,6 @@ func (o *RolesRepresentation) SetClient(v map[string][]RoleRepresentation) {
 	o.Client = &v
 }
 
-// GetApplication returns the Application field value if set, zero value otherwise.
-// Deprecated
-func (o *RolesRepresentation) GetApplication() map[string][]RoleRepresentation {
-	if o == nil || IsNil(o.Application) {
-		var ret map[string][]RoleRepresentation
-		return ret
-	}
-	return *o.Application
-}
-
-// GetApplicationOk returns a tuple with the Application field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RolesRepresentation) GetApplicationOk() (*map[string][]RoleRepresentation, bool) {
-	if o == nil || IsNil(o.Application) {
-		return nil, false
-	}
-	return o.Application, true
-}
-
-// HasApplication returns a boolean if a field has been set.
-func (o *RolesRepresentation) HasApplication() bool {
-	if o != nil && !IsNil(o.Application) {
-		return true
-	}
-
-	return false
-}
-
-// SetApplication gets a reference to the given map[string][]RoleRepresentation and assigns it to the Application field.
-// Deprecated
-func (o *RolesRepresentation) SetApplication(v map[string][]RoleRepresentation) {
-	o.Application = &v
-}
-
 func (o RolesRepresentation) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -156,9 +119,6 @@ func (o RolesRepresentation) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Client) {
 		toSerialize["client"] = o.Client
-	}
-	if !IsNil(o.Application) {
-		toSerialize["application"] = o.Application
 	}
 	return toSerialize, nil
 }

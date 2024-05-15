@@ -44,7 +44,6 @@ Method | HTTP request | Description
 [**AdminRealmsRealmPushRevocationPost**](RealmsAdminAPI.md#AdminRealmsRealmPushRevocationPost) | **Post** /admin/realms/{realm}/push-revocation | Push the realm&#39;s revocation policy to any client that has an admin url associated with it.
 [**AdminRealmsRealmPut**](RealmsAdminAPI.md#AdminRealmsRealmPut) | **Put** /admin/realms/{realm} | Update the top-level information of the realm Any user, roles or client information in the representation will be ignored.
 [**AdminRealmsRealmSessionsSessionDelete**](RealmsAdminAPI.md#AdminRealmsRealmSessionsSessionDelete) | **Delete** /admin/realms/{realm}/sessions/{session} | Remove a specific user session.
-[**AdminRealmsRealmTestSMTPConnectionPost**](RealmsAdminAPI.md#AdminRealmsRealmTestSMTPConnectionPost) | **Post** /admin/realms/{realm}/testSMTPConnection | Test SMTP connection with current logged in user
 [**AdminRealmsRealmUsersManagementPermissionsGet**](RealmsAdminAPI.md#AdminRealmsRealmUsersManagementPermissionsGet) | **Get** /admin/realms/{realm}/users-management-permissions | 
 [**AdminRealmsRealmUsersManagementPermissionsPut**](RealmsAdminAPI.md#AdminRealmsRealmUsersManagementPermissionsPut) | **Put** /admin/realms/{realm}/users-management-permissions | 
 
@@ -2066,7 +2065,7 @@ No authorization required
 
 ## AdminRealmsRealmLocalizationLocaleGet
 
-> map[string]string AdminRealmsRealmLocalizationLocaleGet(ctx, realm, locale).UseRealmDefaultLocaleFallback(useRealmDefaultLocaleFallback).Execute()
+> map[string]string AdminRealmsRealmLocalizationLocaleGet(ctx, realm, locale).Execute()
 
 
 
@@ -2085,11 +2084,10 @@ import (
 func main() {
 	realm := "realm_example" // string | realm name (not id!)
 	locale := "locale_example" // string | 
-	useRealmDefaultLocaleFallback := true // bool |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.RealmsAdminAPI.AdminRealmsRealmLocalizationLocaleGet(context.Background(), realm, locale).UseRealmDefaultLocaleFallback(useRealmDefaultLocaleFallback).Execute()
+	resp, r, err := apiClient.RealmsAdminAPI.AdminRealmsRealmLocalizationLocaleGet(context.Background(), realm, locale).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RealmsAdminAPI.AdminRealmsRealmLocalizationLocaleGet``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2117,7 +2115,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **useRealmDefaultLocaleFallback** | **bool** |  | 
 
 ### Return type
 
@@ -2840,74 +2837,6 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## AdminRealmsRealmTestSMTPConnectionPost
-
-> AdminRealmsRealmTestSMTPConnectionPost(ctx, realm).RequestBody(requestBody).Execute()
-
-Test SMTP connection with current logged in user
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	openapiclient "github.com/miguoliang/keycloakadminclient"
-)
-
-func main() {
-	realm := "realm_example" // string | realm name (not id!)
-	requestBody := map[string]string{"key": "Inner_example"} // map[string]string |  (optional)
-
-	configuration := openapiclient.NewConfiguration()
-	apiClient := openapiclient.NewAPIClient(configuration)
-	r, err := apiClient.RealmsAdminAPI.AdminRealmsRealmTestSMTPConnectionPost(context.Background(), realm).RequestBody(requestBody).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RealmsAdminAPI.AdminRealmsRealmTestSMTPConnectionPost``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**realm** | **string** | realm name (not id!) | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiAdminRealmsRealmTestSMTPConnectionPostRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **requestBody** | **map[string]string** |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json, application/x-www-form-urlencoded
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
